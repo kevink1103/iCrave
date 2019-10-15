@@ -7,98 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A81E256233A181600DCF1FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A81E255233A181600DCF1FB /* AppDelegate.swift */; };
-		0A81E258233A181600DCF1FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A81E257233A181600DCF1FB /* SceneDelegate.swift */; };
-		0A81E25B233A181600DCF1FB /* iCrave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A81E259233A181600DCF1FB /* iCrave.xcdatamodeld */; };
-		0A81E25D233A181600DCF1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A81E25C233A181600DCF1FB /* ContentView.swift */; };
-		0A81E25F233A181A00DCF1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A81E25E233A181A00DCF1FB /* Assets.xcassets */; };
-		0A81E262233A181A00DCF1FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A81E261233A181A00DCF1FB /* Preview Assets.xcassets */; };
-		0A81E265233A181A00DCF1FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A81E263233A181A00DCF1FB /* LaunchScreen.storyboard */; };
-		F06A6D7B4FB7A7267E826781 /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5C6E2225DD26E776057B8D /* Pods_iCrave.framework */; };
+		0A4835C823560DED00016806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C723560DED00016806 /* AppDelegate.swift */; };
+		0A4835CA23560DED00016806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C923560DED00016806 /* SceneDelegate.swift */; };
+		0A4835CC23560DED00016806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835CB23560DED00016806 /* ViewController.swift */; };
+		0A4835CF23560DED00016806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835CD23560DED00016806 /* Main.storyboard */; };
+		0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835D023560DED00016806 /* iCrave.xcdatamodeld */; };
+		0A4835D423560DF000016806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D323560DF000016806 /* Assets.xcassets */; };
+		0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D523560DF000016806 /* LaunchScreen.storyboard */; };
+		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A81E252233A181600DCF1FB /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A81E255233A181600DCF1FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A81E257233A181600DCF1FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A81E25A233A181600DCF1FB /* iCrave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCrave.xcdatamodel; sourceTree = "<group>"; };
-		0A81E25C233A181600DCF1FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0A81E25E233A181A00DCF1FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0A81E261233A181A00DCF1FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0A81E264233A181A00DCF1FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0A81E266233A181A00DCF1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E6FC955D1AD91A0EB1CCC96 /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
-		53124309174FCA7E4375113A /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.release.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
-		9D5C6E2225DD26E776057B8D /* Pods_iCrave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCrave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4835C423560DED00016806 /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A4835C723560DED00016806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A4835C923560DED00016806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0A4835CB23560DED00016806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A4835CE23560DED00016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A4835D123560DED00016806 /* iCrave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCrave.xcdatamodel; sourceTree = "<group>"; };
+		0A4835D323560DF000016806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A4835D623560DF000016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A4835D823560DF000016806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
+		D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.release.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
+		E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCrave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A81E24F233A181600DCF1FB /* Frameworks */ = {
+		0A4835C123560DED00016806 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F06A6D7B4FB7A7267E826781 /* Pods_iCrave.framework in Frameworks */,
+				AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A81E249233A181600DCF1FB = {
+		0A4835BB23560DED00016806 = {
 			isa = PBXGroup;
 			children = (
-				0A81E254233A181600DCF1FB /* iCrave */,
-				0A81E253233A181600DCF1FB /* Products */,
-				11F6D95A5835DB270A99B793 /* Pods */,
-				BD5DF437D629A405951268E9 /* Frameworks */,
+				0A4835C623560DED00016806 /* iCrave */,
+				0A4835C523560DED00016806 /* Products */,
+				A306DC792BFEB1C512C4FB79 /* Pods */,
+				D991FAF0ADB288A815BD8ABB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		0A81E253233A181600DCF1FB /* Products */ = {
+		0A4835C523560DED00016806 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A81E252233A181600DCF1FB /* iCrave.app */,
+				0A4835C423560DED00016806 /* iCrave.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A81E254233A181600DCF1FB /* iCrave */ = {
+		0A4835C623560DED00016806 /* iCrave */ = {
 			isa = PBXGroup;
 			children = (
-				0A81E255233A181600DCF1FB /* AppDelegate.swift */,
-				0A81E257233A181600DCF1FB /* SceneDelegate.swift */,
-				0A81E25C233A181600DCF1FB /* ContentView.swift */,
-				0A81E25E233A181A00DCF1FB /* Assets.xcassets */,
-				0A81E263233A181A00DCF1FB /* LaunchScreen.storyboard */,
-				0A81E266233A181A00DCF1FB /* Info.plist */,
-				0A81E259233A181600DCF1FB /* iCrave.xcdatamodeld */,
-				0A81E260233A181A00DCF1FB /* Preview Content */,
+				0A4835C723560DED00016806 /* AppDelegate.swift */,
+				0A4835C923560DED00016806 /* SceneDelegate.swift */,
+				0A4835CB23560DED00016806 /* ViewController.swift */,
+				0A4835CD23560DED00016806 /* Main.storyboard */,
+				0A4835D323560DF000016806 /* Assets.xcassets */,
+				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
+				0A4835D823560DF000016806 /* Info.plist */,
+				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
 			);
 			path = iCrave;
 			sourceTree = "<group>";
 		};
-		0A81E260233A181A00DCF1FB /* Preview Content */ = {
+		A306DC792BFEB1C512C4FB79 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0A81E261233A181A00DCF1FB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		11F6D95A5835DB270A99B793 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E6FC955D1AD91A0EB1CCC96 /* Pods-iCrave.debug.xcconfig */,
-				53124309174FCA7E4375113A /* Pods-iCrave.release.xcconfig */,
+				9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */,
+				D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BD5DF437D629A405951268E9 /* Frameworks */ = {
+		D991FAF0ADB288A815BD8ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D5C6E2225DD26E776057B8D /* Pods_iCrave.framework */,
+				E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,14 +98,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A81E251233A181600DCF1FB /* iCrave */ = {
+		0A4835C323560DED00016806 /* iCrave */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A81E269233A181A00DCF1FB /* Build configuration list for PBXNativeTarget "iCrave" */;
+			buildConfigurationList = 0A4835DB23560DF000016806 /* Build configuration list for PBXNativeTarget "iCrave" */;
 			buildPhases = (
-				05C1C450154E647590C93978 /* [CP] Check Pods Manifest.lock */,
-				0A81E24E233A181600DCF1FB /* Sources */,
-				0A81E24F233A181600DCF1FB /* Frameworks */,
-				0A81E250233A181600DCF1FB /* Resources */,
+				967EB72B806E5E92F09ED913 /* [CP] Check Pods Manifest.lock */,
+				0A4835C023560DED00016806 /* Sources */,
+				0A4835C123560DED00016806 /* Frameworks */,
+				0A4835C223560DED00016806 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -121,25 +113,25 @@
 			);
 			name = iCrave;
 			productName = iCrave;
-			productReference = 0A81E252233A181600DCF1FB /* iCrave.app */;
+			productReference = 0A4835C423560DED00016806 /* iCrave.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0A81E24A233A181600DCF1FB /* Project object */ = {
+		0A4835BC23560DED00016806 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Kevin Kim";
 				TargetAttributes = {
-					0A81E251233A181600DCF1FB = {
-						CreatedOnToolsVersion = 11.0;
+					0A4835C323560DED00016806 = {
+						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
-			buildConfigurationList = 0A81E24D233A181600DCF1FB /* Build configuration list for PBXProject "iCrave" */;
+			buildConfigurationList = 0A4835BF23560DED00016806 /* Build configuration list for PBXProject "iCrave" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,31 +139,31 @@
 				en,
 				Base,
 			);
-			mainGroup = 0A81E249233A181600DCF1FB;
-			productRefGroup = 0A81E253233A181600DCF1FB /* Products */;
+			mainGroup = 0A4835BB23560DED00016806;
+			productRefGroup = 0A4835C523560DED00016806 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A81E251233A181600DCF1FB /* iCrave */,
+				0A4835C323560DED00016806 /* iCrave */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0A81E250233A181600DCF1FB /* Resources */ = {
+		0A4835C223560DED00016806 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A81E265233A181A00DCF1FB /* LaunchScreen.storyboard in Resources */,
-				0A81E262233A181A00DCF1FB /* Preview Assets.xcassets in Resources */,
-				0A81E25F233A181A00DCF1FB /* Assets.xcassets in Resources */,
+				0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */,
+				0A4835D423560DF000016806 /* Assets.xcassets in Resources */,
+				0A4835CF23560DED00016806 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05C1C450154E647590C93978 /* [CP] Check Pods Manifest.lock */ = {
+		967EB72B806E5E92F09ED913 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,24 +188,32 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A81E24E233A181600DCF1FB /* Sources */ = {
+		0A4835C023560DED00016806 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A81E256233A181600DCF1FB /* AppDelegate.swift in Sources */,
-				0A81E25B233A181600DCF1FB /* iCrave.xcdatamodeld in Sources */,
-				0A81E25D233A181600DCF1FB /* ContentView.swift in Sources */,
-				0A81E258233A181600DCF1FB /* SceneDelegate.swift in Sources */,
+				0A4835CC23560DED00016806 /* ViewController.swift in Sources */,
+				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
+				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
+				0A4835CA23560DED00016806 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A81E263233A181A00DCF1FB /* LaunchScreen.storyboard */ = {
+		0A4835CD23560DED00016806 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0A81E264233A181A00DCF1FB /* Base */,
+				0A4835CE23560DED00016806 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0A4835D523560DF000016806 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A4835D623560DF000016806 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0A81E267233A181A00DCF1FB /* Debug */ = {
+		0A4835D923560DF000016806 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -271,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -281,7 +281,7 @@
 			};
 			name = Debug;
 		};
-		0A81E268233A181A00DCF1FB /* Release */ = {
+		0A4835DA23560DF000016806 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -335,16 +335,15 @@
 			};
 			name = Release;
 		};
-		0A81E26A233A181A00DCF1FB /* Debug */ = {
+		0A4835DC23560DF000016806 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E6FC955D1AD91A0EB1CCC96 /* Pods-iCrave.debug.xcconfig */;
+			baseConfigurationReference = 9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"iCrave/Preview Content\"";
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iCrave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,20 +351,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		0A81E26B233A181A00DCF1FB /* Release */ = {
+		0A4835DD23560DF000016806 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53124309174FCA7E4375113A /* Pods-iCrave.release.xcconfig */;
+			baseConfigurationReference = D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"iCrave/Preview Content\"";
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iCrave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,27 +371,27 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A81E24D233A181600DCF1FB /* Build configuration list for PBXProject "iCrave" */ = {
+		0A4835BF23560DED00016806 /* Build configuration list for PBXProject "iCrave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A81E267233A181A00DCF1FB /* Debug */,
-				0A81E268233A181A00DCF1FB /* Release */,
+				0A4835D923560DF000016806 /* Debug */,
+				0A4835DA23560DF000016806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A81E269233A181A00DCF1FB /* Build configuration list for PBXNativeTarget "iCrave" */ = {
+		0A4835DB23560DF000016806 /* Build configuration list for PBXNativeTarget "iCrave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A81E26A233A181A00DCF1FB /* Debug */,
-				0A81E26B233A181A00DCF1FB /* Release */,
+				0A4835DC23560DF000016806 /* Debug */,
+				0A4835DD23560DF000016806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -401,17 +399,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0A81E259233A181600DCF1FB /* iCrave.xcdatamodeld */ = {
+		0A4835D023560DED00016806 /* iCrave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0A81E25A233A181600DCF1FB /* iCrave.xcdatamodel */,
+				0A4835D123560DED00016806 /* iCrave.xcdatamodel */,
 			);
-			currentVersion = 0A81E25A233A181600DCF1FB /* iCrave.xcdatamodel */;
+			currentVersion = 0A4835D123560DED00016806 /* iCrave.xcdatamodel */;
 			path = iCrave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 0A81E24A233A181600DCF1FB /* Project object */;
+	rootObject = 0A4835BC23560DED00016806 /* Project object */;
 }
