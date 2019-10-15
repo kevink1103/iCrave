@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A4835C823560DED00016806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C723560DED00016806 /* AppDelegate.swift */; };
-		0A4835CA23560DED00016806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C923560DED00016806 /* SceneDelegate.swift */; };
 		0A4835CC23560DED00016806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835CB23560DED00016806 /* ViewController.swift */; };
 		0A4835CF23560DED00016806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835CD23560DED00016806 /* Main.storyboard */; };
 		0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835D023560DED00016806 /* iCrave.xcdatamodeld */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		0A4835C423560DED00016806 /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4835C723560DED00016806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A4835C923560DED00016806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A4835CB23560DED00016806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A4835CE23560DED00016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A4835D123560DED00016806 /* iCrave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCrave.xcdatamodel; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				0A4835C723560DED00016806 /* AppDelegate.swift */,
-				0A4835C923560DED00016806 /* SceneDelegate.swift */,
 				0A4835CB23560DED00016806 /* ViewController.swift */,
 				0A4835CD23560DED00016806 /* Main.storyboard */,
 				0A4835D323560DF000016806 /* Assets.xcassets */,
@@ -83,7 +80,6 @@
 				9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */,
 				D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -195,7 +191,6 @@
 				0A4835CC23560DED00016806 /* ViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
-				0A4835CA23560DED00016806 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,7 +358,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
