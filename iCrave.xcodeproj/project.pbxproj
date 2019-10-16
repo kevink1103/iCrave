@@ -3,28 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A12357813B00DD5795 /* AddRecordViewController.swift */; };
+		0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A32357826700DD5795 /* RecordListTableViewController.swift */; };
+		0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */; };
+		0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */; };
 		0A4835C823560DED00016806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C723560DED00016806 /* AppDelegate.swift */; };
-		0A4835CC23560DED00016806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835CB23560DED00016806 /* ViewController.swift */; };
 		0A4835CF23560DED00016806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835CD23560DED00016806 /* Main.storyboard */; };
 		0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835D023560DED00016806 /* iCrave.xcdatamodeld */; };
 		0A4835D423560DF000016806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D323560DF000016806 /* Assets.xcassets */; };
 		0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D523560DF000016806 /* LaunchScreen.storyboard */; };
+		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1872A12357813B00DD5795 /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
+		0A1872A32357826700DD5795 /* RecordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListTableViewController.swift; sourceTree = "<group>"; };
+		0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
+		0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0A4835C423560DED00016806 /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4835C723560DED00016806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A4835CB23560DED00016806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A4835CE23560DED00016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A4835D123560DED00016806 /* iCrave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCrave.xcdatamodel; sourceTree = "<group>"; };
 		0A4835D323560DF000016806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A4835D623560DF000016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4835D823560DF000016806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
 		D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.release.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
 		E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCrave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +50,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1872A7235782F000DD5795 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A5F7B7323570F34001C4EDC /* HomeViewController.swift */,
+				0A1872A12357813B00DD5795 /* AddRecordViewController.swift */,
+				0A1872A32357826700DD5795 /* RecordListTableViewController.swift */,
+				0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A1FC04E235714070033CD96 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		0A4835BB23560DED00016806 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				0A4835C723560DED00016806 /* AppDelegate.swift */,
-				0A4835CB23560DED00016806 /* ViewController.swift */,
+				0A1FC04E235714070033CD96 /* Components */,
+				0A1872A7235782F000DD5795 /* ViewControllers */,
 				0A4835CD23560DED00016806 /* Main.storyboard */,
-				0A4835D323560DF000016806 /* Assets.xcassets */,
 				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
+				0A4835D323560DF000016806 /* Assets.xcassets */,
 				0A4835D823560DF000016806 /* Info.plist */,
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
 			);
@@ -102,6 +130,7 @@
 				0A4835C023560DED00016806 /* Sources */,
 				0A4835C123560DED00016806 /* Frameworks */,
 				0A4835C223560DED00016806 /* Resources */,
+				AE6155905EAC0A4F79657D61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +210,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE6155905EAC0A4F79657D61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCrave/Pods-iCrave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCrave/Pods-iCrave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iCrave/Pods-iCrave-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,9 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4835CC23560DED00016806 /* ViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
+				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
+				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
+				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,
+				0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */,
+				0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

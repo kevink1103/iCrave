@@ -3,95 +3,253 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		537F33C88BBEFA81A50B56105481165C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		5B5F2ADBF1F31287AC6E588DB1F9FD80 /* Pods-iCrave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 234ADF8A62FF4F53E67196BCDD85DE85 /* Pods-iCrave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A6CC3B6645708BC543DD602C6577760 /* Pods-iCrave-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E407144400183407752B38A55BC7DC /* Pods-iCrave-dummy.m */; };
+		1155EE4D7541D9065486656283FA25F8 /* Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E58DF2BCFCDEC40141C0CB2185678807 /* Player-dummy.m */; };
+		18787234C8B77DCAC75D685F7B606331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9944D1FAA43825D333E64715B876FB37 /* Foundation.framework */; };
+		1C2E597A8EE3A74F77E9FBD935D0FF6B /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63FF85951DC51DC32A9C9A4C9547BBF /* CardGroupSliding.swift */; };
+		2E7D3FF495EFE3E9D9DFDD72E6C0C86E /* Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6FD150653557151EFE9D25E5BAE189 /* Player.framework */; };
+		2FD5BBDD7C372676DA10198BEB8F0F54 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD6DB32050E38EB8B191877F20ABE1 /* CardHighlight.swift */; };
+		30F2BCCDB0C9CFEBCF7EDA9F217B5DE3 /* Pods-iCrave-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 401581D80042BB4512E69CE52FB56347 /* Pods-iCrave-dummy.m */; };
+		371597BF5A37112ECDBD38D03C533F29 /* Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBF4D070C6DBC2A8345EC94E625219D /* Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442DAD91DD58B90E414F8612F24FEA25 /* Pods-iCrave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CED7BCDB0CD488F947F4E33706C150E /* Pods-iCrave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5989A1D1327A48EE4A076E8B11B237D4 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB963CE724D37E07387A5621EB933BE /* CardArticle.swift */; };
+		64BBE44EA76389FD3D50C81CA76BB088 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF7B27521D70074DAEFC46A4BA7784 /* LayoutHelper.swift */; };
+		6B3F5F10EF50174B7B0BD3FB3747196F /* CardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E7780655BA438AD09E68D4AAFD055 /* CardPlayer.swift */; };
+		767B0975BF6ED8667E861FCF737D1DEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9944D1FAA43825D333E64715B876FB37 /* Foundation.framework */; };
+		7B3A1683A8EF88927E10681BD5DB24F9 /* Cards-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C01602A1FA7C9C0EC6F2B88245F1882 /* Cards-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B41ED1BFC2FBDA87DB53DEC63A632AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59021F28D161E5688A55459C69333B93 /* UIKit.framework */; };
+		9B10BB95C3982D110B270B62A2FD7FC7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64B3B4A0685ED9E0D83D52F7A863810 /* Player.swift */; };
+		B4E5F694573EEE947E26E46460256E05 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D631DE465BD868F5247131A1E37298F /* Animator.swift */; };
+		CE5C669B6B1B3A3EB5E5A80D273BA743 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2D8B67565DFF481C4D57C6DBA563D /* Card.swift */; };
+		DC17E0741EB23E089F4B952B2760F3C1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E312387CA35FCA2317B86758DA1CA775 /* DetailViewController.swift */; };
+		DF255447D3B223248F757B8A5CB398FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9944D1FAA43825D333E64715B876FB37 /* Foundation.framework */; };
+		E8FDAD2AB63FF6E2CBBB8FA9A65C99A3 /* Cards-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84901FA3FF2E552DF251AD83F0CE384C /* Cards-dummy.m */; };
+		E97D1B2CD86140E20A9473DDC766519C /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B3FEB0B5BC7455E32F1F86A4E1F32E /* CardGroup.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		82C2CD4BEE447DBD8F0D9C125F900A77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3566CE7721250363BAE931141A0703B1;
+			remoteInfo = Player;
+		};
+		9DE0C643C1DB8A19B1CDC5C93EEA86F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95686D88267B7D426C897EA9E91FC217;
+			remoteInfo = Cards;
+		};
+		DF2CDB431E8AA454D6E0DFA1BEA726E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3566CE7721250363BAE931141A0703B1;
+			remoteInfo = Player;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		234ADF8A62FF4F53E67196BCDD85DE85 /* Pods-iCrave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iCrave-umbrella.h"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		602831A81C539C2938957815BDA91C60 /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
-		90E407144400183407752B38A55BC7DC /* Pods-iCrave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iCrave-dummy.m"; sourceTree = "<group>"; };
+		0304E6B6623C0C12985F2C6D44FD59ED /* Cards-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cards-prefix.pch"; sourceTree = "<group>"; };
+		06FF7B27521D70074DAEFC46A4BA7784 /* LayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutHelper.swift; path = Cards/Sources/LayoutHelper.swift; sourceTree = "<group>"; };
+		1BE924FC9267307FD58CEF51D9819509 /* Cards-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cards-Info.plist"; sourceTree = "<group>"; };
+		1D631DE465BD868F5247131A1E37298F /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Cards/Sources/Animator.swift; sourceTree = "<group>"; };
+		1EF1306429CEDC281F0F48F42F333122 /* Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Player.modulemap; sourceTree = "<group>"; };
+		3C01602A1FA7C9C0EC6F2B88245F1882 /* Cards-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cards-umbrella.h"; sourceTree = "<group>"; };
+		3CED7BCDB0CD488F947F4E33706C150E /* Pods-iCrave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iCrave-umbrella.h"; sourceTree = "<group>"; };
+		401581D80042BB4512E69CE52FB56347 /* Pods-iCrave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iCrave-dummy.m"; sourceTree = "<group>"; };
+		5381107E21CD08BDC104EE86D738C360 /* Player-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Player-Info.plist"; sourceTree = "<group>"; };
+		59021F28D161E5688A55459C69333B93 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Player.framework; path = Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6176753103105253C44FC5F9B92538F5 /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
+		6BBF4D070C6DBC2A8345EC94E625219D /* Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Player-umbrella.h"; sourceTree = "<group>"; };
+		6BC2D735ECAA58170051E4C522E4CF24 /* Player.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Player.xcconfig; sourceTree = "<group>"; };
+		6F73C9CD7EA124D97B89A9312D359E0F /* Pods-iCrave-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iCrave-frameworks.sh"; sourceTree = "<group>"; };
+		7DB2D8B67565DFF481C4D57C6DBA563D /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Card.swift; path = Cards/Sources/Card.swift; sourceTree = "<group>"; };
+		7E3F532CDAFFF5DDD3B5C0B9C122C7C2 /* Cards.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cards.xcconfig; sourceTree = "<group>"; };
+		84901FA3FF2E552DF251AD83F0CE384C /* Cards-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cards-dummy.m"; sourceTree = "<group>"; };
+		89BD6DB32050E38EB8B191877F20ABE1 /* CardHighlight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardHighlight.swift; path = Cards/Sources/CardHighlight.swift; sourceTree = "<group>"; };
+		978B2DDC83172DB24E15C66DF311E40D /* Pods-iCrave-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iCrave-Info.plist"; sourceTree = "<group>"; };
+		9944D1FAA43825D333E64715B876FB37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9CB963CE724D37E07387A5621EB933BE /* CardArticle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardArticle.swift; path = Cards/Sources/CardArticle.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A64B3B4A0685ED9E0D83D52F7A863810 /* Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Sources/Player.swift; sourceTree = "<group>"; };
+		ACC51ECC25B399F4833482713D6FCFA2 /* Pods-iCrave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iCrave.modulemap"; sourceTree = "<group>"; };
+		B90E1800ADB81380045D20AA5E365FF4 /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
 		C6E11F20CC8108DB35446FADBD10AD49 /* Pods_iCrave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iCrave.framework; path = "Pods-iCrave.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D40D1E775106AC6FB8CCCC2767E97768 /* Pods-iCrave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iCrave.modulemap"; sourceTree = "<group>"; };
-		D521F133A660DD250CAA7D2648C2604C /* Pods-iCrave-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iCrave-acknowledgements.plist"; sourceTree = "<group>"; };
-		DEC336191B11B85D05D6201B003F90CD /* Pods-iCrave-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iCrave-Info.plist"; sourceTree = "<group>"; };
-		E3074588B6F32F82BD6BFB894C949016 /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
-		EC29BA1A27C70F5BC96F7D5D3BFDF73B /* Pods-iCrave-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iCrave-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD9E3254C3B970892BC0FAECB63BAD89 /* Pods-iCrave-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iCrave-acknowledgements.plist"; sourceTree = "<group>"; };
+		D538C824589D1511B88E63CFCEAB2D57 /* Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Player-prefix.pch"; sourceTree = "<group>"; };
+		D8B3FEB0B5BC7455E32F1F86A4E1F32E /* CardGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardGroup.swift; path = Cards/Sources/CardGroup.swift; sourceTree = "<group>"; };
+		E312387CA35FCA2317B86758DA1CA775 /* DetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Cards/Sources/DetailViewController.swift; sourceTree = "<group>"; };
+		E58DF2BCFCDEC40141C0CB2185678807 /* Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Player-dummy.m"; sourceTree = "<group>"; };
+		E86E7780655BA438AD09E68D4AAFD055 /* CardPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardPlayer.swift; path = Cards/Sources/CardPlayer.swift; sourceTree = "<group>"; };
+		EB6FD150653557151EFE9D25E5BAE189 /* Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7F06F364614C51E830F26C60172A0B /* Cards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cards.framework; path = Cards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE45AE4E88ABB0662FDDF65AE967ADEF /* Cards.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cards.modulemap; sourceTree = "<group>"; };
+		F226945872E0D8F91416C9C1E576DF79 /* Pods-iCrave-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iCrave-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F63FF85951DC51DC32A9C9A4C9547BBF /* CardGroupSliding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardGroupSliding.swift; path = Cards/Sources/CardGroupSliding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		68E5C4565D4F46385A140B52DBF03B02 /* Frameworks */ = {
+		A94E8914C6F3194AD4DA1E235AD07707 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				537F33C88BBEFA81A50B56105481165C /* Foundation.framework in Frameworks */,
+				18787234C8B77DCAC75D685F7B606331 /* Foundation.framework in Frameworks */,
+				2E7D3FF495EFE3E9D9DFDD72E6C0C86E /* Player.framework in Frameworks */,
+				8B41ED1BFC2FBDA87DB53DEC63A632AE /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B226629A7985A7CD19E8092BA6F691B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				767B0975BF6ED8667E861FCF737D1DEE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC50993474D80823894F57C8EFE60657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF255447D3B223248F757B8A5CB398FB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BBEFA7F786304D20CFB52E25576FC75 /* Pods-iCrave */ = {
+		138D5EE55409A521492401A604CF1C6C /* Pods-iCrave */ = {
 			isa = PBXGroup;
 			children = (
-				D40D1E775106AC6FB8CCCC2767E97768 /* Pods-iCrave.modulemap */,
-				EC29BA1A27C70F5BC96F7D5D3BFDF73B /* Pods-iCrave-acknowledgements.markdown */,
-				D521F133A660DD250CAA7D2648C2604C /* Pods-iCrave-acknowledgements.plist */,
-				90E407144400183407752B38A55BC7DC /* Pods-iCrave-dummy.m */,
-				DEC336191B11B85D05D6201B003F90CD /* Pods-iCrave-Info.plist */,
-				234ADF8A62FF4F53E67196BCDD85DE85 /* Pods-iCrave-umbrella.h */,
-				602831A81C539C2938957815BDA91C60 /* Pods-iCrave.debug.xcconfig */,
-				E3074588B6F32F82BD6BFB894C949016 /* Pods-iCrave.release.xcconfig */,
+				ACC51ECC25B399F4833482713D6FCFA2 /* Pods-iCrave.modulemap */,
+				F226945872E0D8F91416C9C1E576DF79 /* Pods-iCrave-acknowledgements.markdown */,
+				CD9E3254C3B970892BC0FAECB63BAD89 /* Pods-iCrave-acknowledgements.plist */,
+				401581D80042BB4512E69CE52FB56347 /* Pods-iCrave-dummy.m */,
+				6F73C9CD7EA124D97B89A9312D359E0F /* Pods-iCrave-frameworks.sh */,
+				978B2DDC83172DB24E15C66DF311E40D /* Pods-iCrave-Info.plist */,
+				3CED7BCDB0CD488F947F4E33706C150E /* Pods-iCrave-umbrella.h */,
+				6176753103105253C44FC5F9B92538F5 /* Pods-iCrave.debug.xcconfig */,
+				B90E1800ADB81380045D20AA5E365FF4 /* Pods-iCrave.release.xcconfig */,
 			);
 			name = "Pods-iCrave";
 			path = "Target Support Files/Pods-iCrave";
 			sourceTree = "<group>";
 		};
-		774598F9900B8BDF960F6B0027D9A1D4 /* Products */ = {
+		1FAF54982D7FB4879C3C3298E58A8573 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9944D1FAA43825D333E64715B876FB37 /* Foundation.framework */,
+				59021F28D161E5688A55459C69333B93 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4469E5BD20B070E495494CE067A91157 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1306429CEDC281F0F48F42F333122 /* Player.modulemap */,
+				6BC2D735ECAA58170051E4C522E4CF24 /* Player.xcconfig */,
+				E58DF2BCFCDEC40141C0CB2185678807 /* Player-dummy.m */,
+				5381107E21CD08BDC104EE86D738C360 /* Player-Info.plist */,
+				D538C824589D1511B88E63CFCEAB2D57 /* Player-prefix.pch */,
+				6BBF4D070C6DBC2A8345EC94E625219D /* Player-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Player";
+			sourceTree = "<group>";
+		};
+		4F646A5BBD2B25FE53895DFFC18B7468 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE45AE4E88ABB0662FDDF65AE967ADEF /* Cards.modulemap */,
+				7E3F532CDAFFF5DDD3B5C0B9C122C7C2 /* Cards.xcconfig */,
+				84901FA3FF2E552DF251AD83F0CE384C /* Cards-dummy.m */,
+				1BE924FC9267307FD58CEF51D9819509 /* Cards-Info.plist */,
+				0304E6B6623C0C12985F2C6D44FD59ED /* Cards-prefix.pch */,
+				3C01602A1FA7C9C0EC6F2B88245F1882 /* Cards-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cards";
+			sourceTree = "<group>";
+		};
+		649A1B4520557EA4F86E02B3713E08AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC7F06F364614C51E830F26C60172A0B /* Cards.framework */,
+				5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */,
 				C6E11F20CC8108DB35446FADBD10AD49 /* Pods_iCrave.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		707D591EE56AB86E105F58ABD375664B /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				A64B3B4A0685ED9E0D83D52F7A863810 /* Player.swift */,
+				4469E5BD20B070E495494CE067A91157 /* Support Files */,
 			);
-			name = iOS;
+			name = Player;
+			path = Player;
 			sourceTree = "<group>";
 		};
-		CA9E2CD2A5A97152F1C3934B966C6DD8 /* Targets Support Files */ = {
+		86C4FB8F67C5212A9CF67D598BCA1830 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				2BBEFA7F786304D20CFB52E25576FC75 /* Pods-iCrave */,
+				1D631DE465BD868F5247131A1E37298F /* Animator.swift */,
+				7DB2D8B67565DFF481C4D57C6DBA563D /* Card.swift */,
+				9CB963CE724D37E07387A5621EB933BE /* CardArticle.swift */,
+				D8B3FEB0B5BC7455E32F1F86A4E1F32E /* CardGroup.swift */,
+				F63FF85951DC51DC32A9C9A4C9547BBF /* CardGroupSliding.swift */,
+				89BD6DB32050E38EB8B191877F20ABE1 /* CardHighlight.swift */,
+				E86E7780655BA438AD09E68D4AAFD055 /* CardPlayer.swift */,
+				E312387CA35FCA2317B86758DA1CA775 /* DetailViewController.swift */,
+				06FF7B27521D70074DAEFC46A4BA7784 /* LayoutHelper.swift */,
+				4F646A5BBD2B25FE53895DFFC18B7468 /* Support Files */,
 			);
-			name = "Targets Support Files";
+			name = Cards;
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		8FF7A42BD31A87361F0E259B81B8B7CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86C4FB8F67C5212A9CF67D598BCA1830 /* Cards */,
+				707D591EE56AB86E105F58ABD375664B /* Player */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				774598F9900B8BDF960F6B0027D9A1D4 /* Products */,
-				CA9E2CD2A5A97152F1C3934B966C6DD8 /* Targets Support Files */,
+				E49263A2C7CF4DBEA339DA9D1BB6CD5A /* Frameworks */,
+				8FF7A42BD31A87361F0E259B81B8B7CF /* Pods */,
+				649A1B4520557EA4F86E02B3713E08AB /* Products */,
+				D0E3382DC0D9B8B4970FA737D0681605 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D0E3382DC0D9B8B4970FA737D0681605 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				138D5EE55409A521492401A604CF1C6C /* Pods-iCrave */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E49263A2C7CF4DBEA339DA9D1BB6CD5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB6FD150653557151EFE9D25E5BAE189 /* Player.framework */,
+				1FAF54982D7FB4879C3C3298E58A8573 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,29 +257,84 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D0D3B335F8340DA0BB9D91A7D7CF4D2B /* Headers */ = {
+		39277958AB906D35E3AC774B52979F2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B5F2ADBF1F31287AC6E588DB1F9FD80 /* Pods-iCrave-umbrella.h in Headers */,
+				7B3A1683A8EF88927E10681BD5DB24F9 /* Cards-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A6951A536E0BAD54711A53F39908D86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371597BF5A37112ECDBD38D03C533F29 /* Player-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B30CA5184C3643DB42B4DFC4402997B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442DAD91DD58B90E414F8612F24FEA25 /* Pods-iCrave-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		95F4FFD056EF12F1E41BFC6CF38CA7E7 /* Pods-iCrave */ = {
+		3566CE7721250363BAE931141A0703B1 /* Player */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DB9E85500FCF3391447EEB1AFD04E21 /* Build configuration list for PBXNativeTarget "Pods-iCrave" */;
+			buildConfigurationList = 8AB44A9E826DF1C1E7ACD42F3033784E /* Build configuration list for PBXNativeTarget "Player" */;
 			buildPhases = (
-				D0D3B335F8340DA0BB9D91A7D7CF4D2B /* Headers */,
-				7FD04051067AD55CB39BA56F324F0181 /* Sources */,
-				68E5C4565D4F46385A140B52DBF03B02 /* Frameworks */,
-				AA54E0B62ED404B24851E37D7473505B /* Resources */,
+				5A6951A536E0BAD54711A53F39908D86 /* Headers */,
+				962C89715A8C1646F8257C3ED8C48ED9 /* Sources */,
+				FC50993474D80823894F57C8EFE60657 /* Frameworks */,
+				8DD7241B4B6E88212EEC55F46977931A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Player;
+			productName = Player;
+			productReference = 5C08AE3835639A2111ACBCE5382CE742 /* Player.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		95686D88267B7D426C897EA9E91FC217 /* Cards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95BB95BCFB59DAF26248D3078B2A2924 /* Build configuration list for PBXNativeTarget "Cards" */;
+			buildPhases = (
+				39277958AB906D35E3AC774B52979F2D /* Headers */,
+				051CDCAFEBA54C67C02770D380192AD1 /* Sources */,
+				A94E8914C6F3194AD4DA1E235AD07707 /* Frameworks */,
+				345B3B0C9BA517FC2DD682878477C204 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CC598B0AE1BC3047CB6DB066178C177 /* PBXTargetDependency */,
+			);
+			name = Cards;
+			productName = Cards;
+			productReference = EC7F06F364614C51E830F26C60172A0B /* Cards.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		95F4FFD056EF12F1E41BFC6CF38CA7E7 /* Pods-iCrave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A26BC038C46B1D65847579455BC95BBB /* Build configuration list for PBXNativeTarget "Pods-iCrave" */;
+			buildPhases = (
+				B30CA5184C3643DB42B4DFC4402997B2 /* Headers */,
+				2F305B1DA84DEC84C9B64D6EDBF94191 /* Sources */,
+				B226629A7985A7CD19E8092BA6F691B4 /* Frameworks */,
+				74EE0920905F622AA898659248B4A843 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83CA26109F0CA94BA6AE691ECAEF635B /* PBXTargetDependency */,
+				7D79C08616185BCBA2C62023EDC0FB9F /* PBXTargetDependency */,
 			);
 			name = "Pods-iCrave";
 			productName = "Pods-iCrave";
@@ -138,24 +351,40 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 774598F9900B8BDF960F6B0027D9A1D4 /* Products */;
+			productRefGroup = 649A1B4520557EA4F86E02B3713E08AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				95686D88267B7D426C897EA9E91FC217 /* Cards */,
+				3566CE7721250363BAE931141A0703B1 /* Player */,
 				95F4FFD056EF12F1E41BFC6CF38CA7E7 /* Pods-iCrave */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA54E0B62ED404B24851E37D7473505B /* Resources */ = {
+		345B3B0C9BA517FC2DD682878477C204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74EE0920905F622AA898659248B4A843 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD7241B4B6E88212EEC55F46977931A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,18 +394,65 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7FD04051067AD55CB39BA56F324F0181 /* Sources */ = {
+		051CDCAFEBA54C67C02770D380192AD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A6CC3B6645708BC543DD602C6577760 /* Pods-iCrave-dummy.m in Sources */,
+				B4E5F694573EEE947E26E46460256E05 /* Animator.swift in Sources */,
+				CE5C669B6B1B3A3EB5E5A80D273BA743 /* Card.swift in Sources */,
+				5989A1D1327A48EE4A076E8B11B237D4 /* CardArticle.swift in Sources */,
+				E97D1B2CD86140E20A9473DDC766519C /* CardGroup.swift in Sources */,
+				1C2E597A8EE3A74F77E9FBD935D0FF6B /* CardGroupSliding.swift in Sources */,
+				2FD5BBDD7C372676DA10198BEB8F0F54 /* CardHighlight.swift in Sources */,
+				6B3F5F10EF50174B7B0BD3FB3747196F /* CardPlayer.swift in Sources */,
+				E8FDAD2AB63FF6E2CBBB8FA9A65C99A3 /* Cards-dummy.m in Sources */,
+				DC17E0741EB23E089F4B952B2760F3C1 /* DetailViewController.swift in Sources */,
+				64BBE44EA76389FD3D50C81CA76BB088 /* LayoutHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F305B1DA84DEC84C9B64D6EDBF94191 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F2BCCDB0C9CFEBCF7EDA9F217B5DE3 /* Pods-iCrave-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962C89715A8C1646F8257C3ED8C48ED9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1155EE4D7541D9065486656283FA25F8 /* Player-dummy.m in Sources */,
+				9B10BB95C3982D110B270B62A2FD7FC7 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2CC598B0AE1BC3047CB6DB066178C177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Player;
+			target = 3566CE7721250363BAE931141A0703B1 /* Player */;
+			targetProxy = DF2CDB431E8AA454D6E0DFA1BEA726E0 /* PBXContainerItemProxy */;
+		};
+		7D79C08616185BCBA2C62023EDC0FB9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Player;
+			target = 3566CE7721250363BAE931141A0703B1 /* Player */;
+			targetProxy = 82C2CD4BEE447DBD8F0D9C125F900A77 /* PBXContainerItemProxy */;
+		};
+		83CA26109F0CA94BA6AE691ECAEF635B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cards;
+			target = 95686D88267B7D426C897EA9E91FC217 /* Cards */;
+			targetProxy = 9DE0C643C1DB8A19B1CDC5C93EEA86F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		257497152829C177993B5EC99C1D227A /* Release */ = {
+		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +500,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -236,9 +513,9 @@
 			};
 			name = Release;
 		};
-		96055E56F237D808FF21353082966DC7 /* Release */ = {
+		285B06A44D190B2B3DC423C29D852E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3074588B6F32F82BD6BFB894C949016 /* Pods-iCrave.release.xcconfig */;
+			baseConfigurationReference = 6176753103105253C44FC5F9B92538F5 /* Pods-iCrave.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -253,7 +530,117 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-iCrave/Pods-iCrave-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iCrave/Pods-iCrave.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3C2C01F03FA18D5B337E3CB681F08464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E3F532CDAFFF5DDD3B5C0B9C122C7C2 /* Cards.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cards/Cards-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cards/Cards-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cards/Cards.modulemap";
+				PRODUCT_MODULE_NAME = Cards;
+				PRODUCT_NAME = Cards;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4702535067D71339BCAEA3871DDB2D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC2D735ECAA58170051E4C522E4CF24 /* Player.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Player/Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
+				PRODUCT_MODULE_NAME = Player;
+				PRODUCT_NAME = Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		67A3237F861B5414D6E68BAC9ABAE608 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B90E1800ADB81380045D20AA5E365FF4 /* Pods-iCrave.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iCrave/Pods-iCrave-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -275,12 +662,10 @@
 			};
 			name = Release;
 		};
-		C021127020D2388CAFD6E50B83277C40 /* Debug */ = {
+		747E1CA68F20C87345A97CDC5B6D5415 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 602831A81C539C2938957815BDA91C60 /* Pods-iCrave.debug.xcconfig */;
+			baseConfigurationReference = 7E3F532CDAFFF5DDD3B5C0B9C122C7C2 /* Cards.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -290,30 +675,29 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-iCrave/Pods-iCrave-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Cards/Cards-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cards/Cards-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iCrave/Pods-iCrave.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Cards/Cards.modulemap";
+				PRODUCT_MODULE_NAME = Cards;
+				PRODUCT_NAME = Cards;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -364,7 +748,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(FRAMEWORK_SEARCH_PATHS)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,23 +762,76 @@
 			};
 			name = Debug;
 		};
+		F3A49E31E0DED7850246C8EF90CAE440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC2D735ECAA58170051E4C522E4CF24 /* Player.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Player/Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Player/Player-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Player/Player.modulemap";
+				PRODUCT_MODULE_NAME = Player;
+				PRODUCT_NAME = Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2DB9E85500FCF3391447EEB1AFD04E21 /* Build configuration list for PBXNativeTarget "Pods-iCrave" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C021127020D2388CAFD6E50B83277C40 /* Debug */,
-				96055E56F237D808FF21353082966DC7 /* Release */,
+				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
+				1422B121EAEAEA11307496903FA623C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+		8AB44A9E826DF1C1E7ACD42F3033784E /* Build configuration list for PBXNativeTarget "Player" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
-				257497152829C177993B5EC99C1D227A /* Release */,
+				F3A49E31E0DED7850246C8EF90CAE440 /* Debug */,
+				4702535067D71339BCAEA3871DDB2D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95BB95BCFB59DAF26248D3078B2A2924 /* Build configuration list for PBXNativeTarget "Cards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				747E1CA68F20C87345A97CDC5B6D5415 /* Debug */,
+				3C2C01F03FA18D5B337E3CB681F08464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A26BC038C46B1D65847579455BC95BBB /* Build configuration list for PBXNativeTarget "Pods-iCrave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285B06A44D190B2B3DC423C29D852E0A /* Debug */,
+				67A3237F861B5414D6E68BAC9ABAE608 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
