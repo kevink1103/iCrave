@@ -16,7 +16,8 @@ class HomeViewController: UITableViewController {
         "Food": "red",
         "Octopus": "pink",
         "Supermarket": "green",
-        "Shopping": "yellow"
+        "Shopping": "yellow",
+        "Club": "black",
     ]
     var wishlists = [
         ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
@@ -26,7 +27,8 @@ class HomeViewController: UITableViewController {
         ["timestamp": "1", "category": "Food", "amount": "50"],
         ["timestamp": "2", "category": "Octopus", "amount": "100"],
         ["timestamp": "3", "category": "Supermarket", "amount": "300"],
-        ["timestamp": "4", "category": "Shopping", "amount": "1000"]
+        ["timestamp": "4", "category": "Shopping", "amount": "1000"],
+        ["timestamp": "4", "category": "Club", "amount": "3000"]
     ]
     
     @IBOutlet var cardView: CardHighlight!
@@ -34,6 +36,7 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateTextColor())!
         drawRecords()
     }
     
@@ -51,6 +54,8 @@ class HomeViewController: UITableViewController {
         card.itemSubtitle = ""
         card.buttonText = "➕"
         card.shadowColor = .white
+        card.backgroundColor = .white
+        card.textColor = UIColor.white.generateTextColor()
         card.addGestureRecognizer(tap)
         
         xOffset = xOffset + CGFloat(buttonPadding) + card.frame.size.width
@@ -66,6 +71,7 @@ class HomeViewController: UITableViewController {
             card.buttonText = ""
             card.shadowColor = .white
             card.backgroundColor = getUIColor(categories[records[i]["category"]!]!)
+            card.textColor = getUIColor(categories[records[i]["category"]!]!).generateTextColor()
             //button.addTarget(self, action: #selector(btnTouch), for: UIControlEvents.touchUpInside)
             xOffset = xOffset + CGFloat(buttonPadding) + card.frame.size.width
             recordsScroll.addSubview(card)
@@ -87,6 +93,8 @@ class HomeViewController: UITableViewController {
             return .green
         case "yellow":
             return .yellow
+        case "black":
+            return .black
         default:
             return .white
         }
@@ -116,10 +124,4 @@ class HomeViewController: UITableViewController {
     }
     */
 
-}
-
-extension HomeViewController: CardDelegate {
-    func cardDidTapInside(card: Card) {
-        print("whatthefuck")
-    }
 }
