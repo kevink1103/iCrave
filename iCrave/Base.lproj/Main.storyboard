@@ -185,6 +185,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iCrave" largeTitleDisplayMode="always" id="BR6-Be-R1b">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="p1K-jW-rMb">
+                            <connections>
+                                <segue destination="hkd-f7-B86" kind="show" id="meq-mT-bCv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="LISTS" image="folder.fill" catalog="system" style="done" id="HFA-ux-FAC">
                             <connections>
                                 <segue destination="KxD-bd-2sX" kind="show" id="3Ag-kU-9zW"/>
@@ -200,6 +205,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCM-JI-Au1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1515.9420289855075" y="-371.65178571428572"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="RzY-Yu-plB">
+            <objects>
+                <tableViewController id="hkd-f7-B86" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jcy-Sb-TDr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="xpy-lf-hK6">
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpy-lf-hK6" id="r0b-Qp-ant">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hkd-f7-B86" id="NrK-ab-hjL"/>
+                            <outlet property="delegate" destination="hkd-f7-B86" id="Z7I-qn-NHI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="kkZ-Qf-eyO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dq-ri-djg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515.9420289855075" y="-1057.3660714285713"/>
         </scene>
         <!--Wishlists-->
         <scene sceneID="d1l-st-kwv">
@@ -224,7 +258,7 @@
                             <outlet property="delegate" destination="KxD-bd-2sX" id="gtd-1f-dhV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Wishlists" largeTitleDisplayMode="never" id="dsD-bW-8dw"/>
+                    <navigationItem key="navigationItem" title="Wishlists" id="dsD-bW-8dw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ao-hs-kXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,7 +287,7 @@
                             <outlet property="delegate" destination="vAg-MU-5Sl" id="6sw-7x-BlX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Records" largeTitleDisplayMode="never" id="V6W-be-RD2"/>
+                    <navigationItem key="navigationItem" title="Records" id="V6W-be-RD2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsa-Dp-qrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,7 +357,9 @@
                                             <constraint firstAttribute="width" constant="70" id="2ob-U0-H9F"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancel:" destination="jqn-jC-gzY" eventType="touchUpInside" id="upq-tc-ZR3"/>
                                         </connections>
@@ -360,7 +396,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBm-8k-Thg">
                                 <rect key="frame" x="20" y="713" width="374" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="hoa-lD-nBu"/>
                                 </constraints>
@@ -403,7 +439,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4hQ-wR-aL0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Statistics" largeTitleDisplayMode="never" id="TGx-7I-2pm"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="TGx-7I-2pm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3z-q9-kRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -431,6 +467,7 @@
     </scenes>
     <resources>
         <image name="folder.fill" catalog="system" width="64" height="46"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="ip11pro" width="970" height="647"/>
     </resources>
 </document>
