@@ -258,11 +258,66 @@
                             <outlet property="delegate" destination="KxD-bd-2sX" id="gtd-1f-dhV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Wishlists" id="dsD-bW-8dw"/>
+                    <navigationItem key="navigationItem" title="Wishlists" id="dsD-bW-8dw">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="rfg-aH-o9R">
+                            <connections>
+                                <segue destination="ho4-IY-o8B" kind="show" id="96U-Lv-ZsQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ao-hs-kXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2492.753623188406" y="-1047.3214285714284"/>
+        </scene>
+        <!--Add Wishlist-->
+        <scene sceneID="PJt-cf-Wv7">
+            <objects>
+                <tableViewController id="ho4-IY-o8B" customClass="AddWishlistTableViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uBJ-K6-5ed">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="yzg-rd-wKt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="220" id="KBD-nD-XYS">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBD-nD-XYS" id="j06-Gf-hx7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="f3B-Xa-sTp">
+                                        <rect key="frame" x="0.0" y="238" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3B-Xa-sTp" id="dpf-hp-MVB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Kmo-LP-R3a">
+                                        <rect key="frame" x="0.0" y="308" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmo-LP-R3a" id="ARv-Sc-7kB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ho4-IY-o8B" id="diW-MW-eEX"/>
+                            <outlet property="delegate" destination="ho4-IY-o8B" id="FuG-Mh-Hgy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Wishlist" id="PQq-ze-HqI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8t-U9-kux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331.884057971015" y="-1047.3214285714284"/>
         </scene>
         <!--Records-->
         <scene sceneID="ssM-gO-mCo">

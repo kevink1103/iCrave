@@ -5,6 +5,20 @@
 Achieve your wishlist with iCrave!  
 You can set the thing you want to buy in the future and start to save money for it. Keep track of when, how much, and where you spent your money. Then, see if your weekly/monthly spending exceeds your budget. If you spent less, the rest of your budget will be kept as budget to afford your wishlist item.
 
+## Requirements
+
+macOS Catalina
+Xcode 11+
+CocoaPods
+
+## Setup
+
+Download ZIP or use `git`.
+
+```bash
+git clone https://github.com/kevink1103/iCrave.git
+```
+
 ## Home
 
 > Assigned to Kevin

@@ -13,6 +13,7 @@
 		0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A823578A2200DD5795 /* UIColorExtension.swift */; };
 		0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872AA23578FA000DD5795 /* UIImageExtension.swift */; };
 		0A1872AD2358047B00DD5795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */; };
+		0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872AF23580FC900DD5795 /* AddWishlistTableViewController.swift */; };
 		0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */; };
 		0A4835C823560DED00016806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C723560DED00016806 /* AppDelegate.swift */; };
 		0A4835CF23560DED00016806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835CD23560DED00016806 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		0A1872AA23578FA000DD5795 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A1872AE2358076000DD5795 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A1872AF23580FC900DD5795 /* AddWishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishlistTableViewController.swift; sourceTree = "<group>"; };
 		0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0A4835C423560DED00016806 /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4835C723560DED00016806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				0A5F7B7323570F34001C4EDC /* HomeViewController.swift */,
 				0A1872A12357813B00DD5795 /* AddRecordViewController.swift */,
 				0A1872A32357826700DD5795 /* RecordListTableViewController.swift */,
+				0A1872AF23580FC900DD5795 /* AddWishlistTableViewController.swift */,
 				0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -252,6 +255,7 @@
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
+				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
 				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,
 				0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */,
 				0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */,
