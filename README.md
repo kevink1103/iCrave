@@ -7,39 +7,57 @@ You can set the thing you want to buy in the future and start to save money for 
 
 ## Home
 
-Details to follow
+> Assigned to Kevin
+
+Made use of pod `Cards` for wishlist item display.
 
 ## Add Record
+
+> Assigned to Erica
 
 Details to follow
 
 ## Records
 
+> Assigned to Erica
+
 Details to follow
 
 ## Wishlist
+
+> Assigned to Liuliu
 
 Details to follow
 
 ## Statistics
 
+> Assigned to Roger
+
 Details to follow
 
 ## Notification
+
+> Assigned to Priscilla
 
 Details to follow
 
 ## Settings
 
+> Assigned to Erica, Liuliu
+
 Details to follow
 
 ## Siri Integration
+
+> Assigned to Everyone
 
 Details to follow
 
 ## Analytics
 
-Details to follow
+> Assigned to Kevin
+
+The connection to Firebase Analytics is tested. Disabled until the release of the app.
 
 ## Work Division
 
