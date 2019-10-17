@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>67526270285-vvglcqamd3o6qbqqc5hksot2r6h9lld5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.67526270285-vvglcqamd3o6qbqqc5hksot2r6h9lld5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVxJEKZ5jc_prmpC8u9NQcQf2BlS00TtQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>67526270285</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kevinkim.iCrave</string>
+	<key>PROJECT_ID</key>
+	<string>icrave-90396</string>
+	<key>STORAGE_BUCKET</key>
+	<string>icrave-90396.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:67526270285:ios:9d7e23e86c4a8811aaab04</string>
+	<key>DATABASE_URL</key>
+	<string>https://icrave-90396.firebaseio.com</string>
+</dict>
+</plist>

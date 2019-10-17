@@ -12,6 +12,7 @@
 		0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */; };
 		0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A823578A2200DD5795 /* UIColorExtension.swift */; };
 		0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872AA23578FA000DD5795 /* UIImageExtension.swift */; };
+		0A1872AD2358047B00DD5795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */; };
 		0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */; };
 		0A4835C823560DED00016806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835C723560DED00016806 /* AppDelegate.swift */; };
 		0A4835CF23560DED00016806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835CD23560DED00016806 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
 		0A1872A823578A2200DD5795 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		0A1872AA23578FA000DD5795 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0A4835C423560DED00016806 /* iCrave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCrave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4835C723560DED00016806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
 				0A4835D323560DF000016806 /* Assets.xcassets */,
 				0A4835D823560DF000016806 /* Info.plist */,
+				0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */,
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
 			);
 			path = iCrave;
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */,
+				0A1872AD2358047B00DD5795 /* GoogleService-Info.plist in Resources */,
 				0A4835D423560DF000016806 /* Assets.xcassets in Resources */,
 				0A4835CF23560DED00016806 /* Main.storyboard in Resources */,
 			);

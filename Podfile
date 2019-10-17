@@ -7,7 +7,9 @@ target 'iCrave' do
 
   # Pods for iCrave
   pod 'Cards'
+  pod 'Firebase/Analytics'
 
+  # Troubleshoot Cards
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
       config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = [
