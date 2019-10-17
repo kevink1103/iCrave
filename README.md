@@ -7,9 +7,9 @@ You can set the thing you want to buy in the future and start to save money for 
 
 ## Requirements
 
-macOS Catalina
-Xcode 11+
-CocoaPods
+* macOS Catalina  
+* Xcode 11+  
+* CocoaPods  
 
 ## Setup
 
@@ -18,6 +18,14 @@ Download ZIP or use `git`.
 ```bash
 git clone https://github.com/kevink1103/iCrave.git
 ```
+
+Just to make sure,
+
+```bash
+pod install
+```
+
+and open `iCrave.xcworkspace` to start.
 
 ## Home
 
