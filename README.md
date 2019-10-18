@@ -10,6 +10,7 @@ You can set the thing you want to buy in the future and start to save money for 
 * macOS Catalina  
 * Xcode 11+  
 * CocoaPods  
+* iOS 13 Simulator and Physical Device
 
 ## Setup
 
