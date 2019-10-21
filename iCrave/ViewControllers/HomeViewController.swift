@@ -53,9 +53,9 @@ class HomeViewController: UITableViewController {
         card.itemTitle = ""
         card.itemSubtitle = ""
         card.buttonText = "➕"
-        card.shadowColor = .white
-        card.backgroundColor = .white
-        card.textColor = UIColor.white.generateTextColor()
+        card.shadowOpacity = 0
+        card.backgroundColor = .systemBackground
+        card.textColor = UIColor.systemBackground.generateTextColor()
         card.addGestureRecognizer(tap)
         
         xOffset = xOffset + CGFloat(buttonPadding) + card.frame.size.width
@@ -69,7 +69,7 @@ class HomeViewController: UITableViewController {
             card.itemTitle = ""
             card.itemSubtitle = records[i]["amount"]! + " HKD"
             card.buttonText = ""
-            card.shadowColor = .white
+            card.shadowOpacity = 0
             card.backgroundColor = getUIColor(categories[records[i]["category"]!]!)
             card.textColor = getUIColor(categories[records[i]["category"]!]!).generateTextColor()
             //button.addTarget(self, action: #selector(btnTouch), for: UIControlEvents.touchUpInside)
@@ -101,17 +101,11 @@ class HomeViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return CGFloat.leastNonzeroMagnitude
-        }
-        return CGFloat(1)
+        return CGFloat.leastNonzeroMagnitude
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return CGFloat.leastNonzeroMagnitude
-        }
-        return CGFloat(10)
+        return CGFloat.leastNonzeroMagnitude
     }
 
     /*
