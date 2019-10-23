@@ -34,6 +34,12 @@ and open `iCrave.xcworkspace` to start.
 
 Made use of pod `Cards` for wishlist item display.
 
+## Category
+
+> Implemented by Kevin
+
+Extension used for better usability.
+
 ## Add Record
 
 > Assigned to Erica
