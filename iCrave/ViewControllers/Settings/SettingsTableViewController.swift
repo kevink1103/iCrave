@@ -86,6 +86,10 @@ class SettingsTableViewController: UITableViewController {
                 cell.textLabel?.textColor = .systemRed
                 cell.backgroundColor = .secondarySystemBackground
             }
+            // Optimization for select style default
+            let selectedBgView = UIView()
+            selectedBgView.backgroundColor = cell.backgroundColor
+            cell.selectedBackgroundView = selectedBgView
         }
         else if section == 1 {
             cell = tableView.dequeueReusableCell(withIdentifier: "MoneyCell", for: indexPath)

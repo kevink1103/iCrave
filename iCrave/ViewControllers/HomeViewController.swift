@@ -32,8 +32,8 @@ class HomeViewController: UITableViewController {
         ["timestamp": "12", "category": "Charity", "amount": "600"],
     ]
     
-    @IBOutlet var cardView: CardHighlight!
-    @IBOutlet var recordsScroll: UIScrollView!
+    @IBOutlet weak var cardView: CardHighlight!
+    @IBOutlet weak var recordsScroll: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
