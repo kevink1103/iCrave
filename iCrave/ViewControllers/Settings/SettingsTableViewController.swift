@@ -15,6 +15,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
+        tableView.delaysContentTouches = false
         NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: Notification.Name("CategoryRefresh"), object: nil)
     }
     
