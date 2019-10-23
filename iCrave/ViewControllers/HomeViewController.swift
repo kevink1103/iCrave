@@ -12,23 +12,24 @@ import Cards
 class HomeViewController: UITableViewController {
     
     // dummy data
-    var categories = [
-        "Food": "red",
-        "Octopus": "pink",
-        "Supermarket": "green",
-        "Shopping": "yellow",
-        "Club": "black",
-    ]
-    var wishlists = [
-        ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
-        ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
-    ]
-    var records = [
+    var categories = Category.getAll()
+    // var wishlists = [
+    //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
+    //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
+    // ]
+    var records: [[String: String]] = [
         ["timestamp": "1", "category": "Food", "amount": "50"],
         ["timestamp": "2", "category": "Octopus", "amount": "100"],
         ["timestamp": "3", "category": "Supermarket", "amount": "300"],
-        ["timestamp": "4", "category": "Shopping", "amount": "1000"],
-        ["timestamp": "4", "category": "Club", "amount": "3000"]
+        ["timestamp": "4", "category": "School", "amount": "2000"],
+        ["timestamp": "5", "category": "Club", "amount": "3000"],
+        ["timestamp": "6", "category": "Furniture", "amount": "6000"],
+        ["timestamp": "7", "category": "Shopping", "amount": "500"],
+        ["timestamp": "8", "category": "Vacation", "amount": "10000"],
+        ["timestamp": "9", "category": "Hobby", "amount": "4000"],
+        ["timestamp": "10", "category": "Gambling", "amount": "500"],
+        ["timestamp": "11", "category": "Secret", "amount": "100"],
+        ["timestamp": "12", "category": "Charity", "amount": "600"],
     ]
     
     @IBOutlet var cardView: CardHighlight!
@@ -36,8 +37,31 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateTextColor())!
+        
+        // Category.deleteAll()
+        // print(Category.getAll().count)
+        // loadDummyCategories()
+        // print(Category.getAll())
+        // Category.deleteAll()
+        // Category.delete(title: "Supermarket")
+        // print(Category.getAll())
+        // Category.delete(title: "what")
+        // if let ori = Category.getObject(title: "Supermarket") {
+        //     Category.update(category: ori, title: "HAHA", color: ori.color!)
+        // }
+        // print(Category.getAll())
+        // print(Category.getAll().count)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureCardView()
         drawRecords()
+    }
+    
+    func configureCardView() {
+        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateTextColor())!
+        let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))
+        cardView.addGestureRecognizer(wishlistDetailTap)
     }
     
     func drawRecords() {
@@ -47,7 +71,6 @@ class HomeViewController: UITableViewController {
         let width = height + 10
         
         var card = CardHighlight(frame: CGRect(x: xOffset, y: 0, width: width , height: height))
-        let tap = UITapGestureRecognizer(target: self, action: #selector(showAddRecordView(sender:)))
         
         card.title = "Add\nRecord"
         card.itemTitle = ""
@@ -56,13 +79,16 @@ class HomeViewController: UITableViewController {
         card.shadowOpacity = 0
         card.backgroundColor = .systemBackground
         card.textColor = UIColor.systemBackground.generateTextColor()
-        card.addGestureRecognizer(tap)
+        
+        let addRecordTap = UITapGestureRecognizer(target: self, action: #selector(showAddRecordView(sender:)))
+        card.addGestureRecognizer(addRecordTap)
         
         xOffset = xOffset + CGFloat(buttonPadding) + card.frame.size.width
         recordsScroll.addSubview(card)
         
         for i in 0..<records.count {
             card = CardHighlight(frame: CGRect(x: xOffset, y: 0, width: width , height: height))
+            
             card.tag = i
             card.title = records[i]["category"]!
             card.titleSize = 23
@@ -70,9 +96,16 @@ class HomeViewController: UITableViewController {
             card.itemSubtitle = records[i]["amount"]! + " HKD"
             card.buttonText = ""
             card.shadowOpacity = 0
-            card.backgroundColor = getUIColor(categories[records[i]["category"]!]!)
-            card.textColor = getUIColor(categories[records[i]["category"]!]!).generateTextColor()
-            //button.addTarget(self, action: #selector(btnTouch), for: UIControlEvents.touchUpInside)
+            card.backgroundColor = .systemBackground
+            card.textColor = UIColor.systemBackground.generateTextColor()
+            if let category = Category.getObject(title: records[i]["category"]!) {
+                card.backgroundColor = category.color!.getUIColor()
+                card.textColor = category.color!.getUIColor().generateTextColor()
+            }
+            
+            let recentRecordTap = UITapGestureRecognizer(target: self, action: #selector(recentRecordClick(sender:)))
+            card.addGestureRecognizer(recentRecordTap)
+            
             xOffset = xOffset + CGFloat(buttonPadding) + card.frame.size.width
             recordsScroll.addSubview(card)
         }
@@ -83,21 +116,13 @@ class HomeViewController: UITableViewController {
         performSegue(withIdentifier: "AddRecordSegue", sender: self)
     }
     
-    func getUIColor(_ string: String) -> UIColor {
-        switch (string) {
-        case "red":
-            return .red
-        case "pink":
-            return .systemPink
-        case "green":
-            return .green
-        case "yellow":
-            return .yellow
-        case "black":
-            return .black
-        default:
-            return .white
-        }
+    @objc func wishlistDetailView(sender: UIGestureRecognizer) {
+        performSegue(withIdentifier: "WishlistDetailSegue", sender: self)
+    }
+    
+    @objc func recentRecordClick(sender: UIGestureRecognizer) {
+        let tag = sender.view!.tag
+        print(tag)
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -108,14 +133,17 @@ class HomeViewController: UITableViewController {
         return CGFloat.leastNonzeroMagnitude
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "WishlistDetailSegue" {
+            if let vc = segue.destination as? WishlistDetailTableViewController {
+                vc.navTitle = cardView.title
+            }
+        }
     }
-    */
 
 }
