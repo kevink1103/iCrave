@@ -13,6 +13,7 @@ class HomeViewController: UITableViewController {
     
     // dummy data
     var categories = Category.getAll()
+
     // var wishlists = [
     //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
     //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
@@ -51,6 +52,23 @@ class HomeViewController: UITableViewController {
         // }
         // print(Category.getAll())
         // print(Category.getAll().count)
+        let temp = Category(context: CoreDataManager.context)
+        temp.title = "Kevin"
+        temp.color = "white"
+        Record.create(in: temp, timestamp: Date(), amount: 50, currency: "HKD")
+        Record.create(in: temp, timestamp: Date(), amount: 100, currency: "HKD")
+        do {
+            try CoreDataManager.context.save()
+        } catch {
+            print("couldnt save")
+        }
+        print("ALL RECORDS")
+        print(Record.getAll().count)
+        print("INSIDE CATEGORY")
+        print(Record.getAll(in: temp).count)
+        print("DELETE ALL")
+        Record.deleteAll()
+        print(Record.getAll().count)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,7 +131,7 @@ class HomeViewController: UITableViewController {
     }
     
     @objc func showAddRecordView(sender: UIGestureRecognizer) {
-        performSegue(withIdentifier: "AddRecordSegue", sender: self)
+        performSegue(withIdentifier: "AddSpendingSegue", sender: self)
     }
     
     @objc func wishlistDetailView(sender: UIGestureRecognizer) {

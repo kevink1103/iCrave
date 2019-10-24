@@ -22,6 +22,8 @@
 		0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D523560DF000016806 /* LaunchScreen.storyboard */; };
 		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */; };
+		0A91D1652361626900462F69 /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
+		0A91D167236164A600462F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D166236164A600462F69 /* CoreDataManager.swift */; };
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
 		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
@@ -50,6 +52,8 @@
 		0A4835D823560DF000016806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
+		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
+		0A91D166236164A600462F69 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
@@ -163,8 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
+				0A91D166236164A600462F69 /* CoreDataManager.swift */,
 				0AD430F4235F03F2003DAB0C /* CategoryDummy.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
+				0A91D1642361626900462F69 /* RecordExtension.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
+				0A91D167236164A600462F69 /* CoreDataManager.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
 				0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */,
 				0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */,
@@ -318,6 +325,7 @@
 				0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */,
 				0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */,
 				0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */,
+				0A91D1652361626900462F69 /* RecordExtension.swift in Sources */,
 				0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

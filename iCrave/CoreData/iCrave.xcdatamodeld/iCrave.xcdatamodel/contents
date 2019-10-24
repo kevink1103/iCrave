@@ -3,13 +3,13 @@
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="color" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="spending" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spending" inverseName="category" inverseEntity="Spending"/>
+        <relationship name="record" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Record" inverseName="category" inverseEntity="Record"/>
     </entity>
-    <entity name="Spending" representedClassName="Spending" syncable="YES" codeGenerationType="class">
+    <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Decimal" defaultValueString="0"/>
         <attribute name="currency" attributeType="String"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="spending" inverseEntity="Category"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="record" inverseEntity="Category"/>
     </entity>
     <entity name="WishItem" representedClassName="WishItem" syncable="YES" codeGenerationType="class">
         <attribute name="image" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
@@ -18,7 +18,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Spending" positionX="138.83203125" positionY="76.2421875" width="128" height="103"/>
+        <element name="Record" positionX="138.83203125" positionY="76.2421875" width="128" height="103"/>
         <element name="WishItem" positionX="141.6171875" positionY="-77.15625" width="128" height="88"/>
     </elements>
 </model>

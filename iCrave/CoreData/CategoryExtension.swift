@@ -9,18 +9,16 @@
 import UIKit
 import CoreData
 
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
-let context = appDelegate.persistentContainer.viewContext
-
 extension Category {
+    
     public static func create(title: String, color: String) {
-        let category = Category(context: context)
+        let category = Category(context: CoreDataManager.context)
         category.title = title
         category.color = color
         do {
-            try context.save()
+            try CoreDataManager.context.save()
         } catch let error as NSError {
-           print("Error occurred when saving categories: \(error.localizedDescription)")
+           print("Error occurred when saving category \(title): \(error.localizedDescription)")
         }
     }
     
@@ -29,7 +27,7 @@ extension Category {
         let fetchReq: NSFetchRequest<Category> = Category.fetchRequest()
         fetchReq.predicate = NSPredicate(format: "title = %@", title)
         do {
-            let categories = try context.fetch(fetchReq)
+            let categories = try CoreDataManager.context.fetch(fetchReq)
             if categories.count > 0 {
                 category = categories[0]
             }
@@ -45,9 +43,9 @@ extension Category {
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))
         fetchReq.sortDescriptors = [sortDescriptor]
         do {
-            categories = try context.fetch(fetchReq)
+            categories = try CoreDataManager.context.fetch(fetchReq)
         } catch let error as NSError {
-            print("Error occurred when getting categories: \(error.localizedDescription)")
+            print("Error occurred when getting all categories: \(error.localizedDescription)")
         }
         return categories
     }
@@ -56,7 +54,7 @@ extension Category {
         category.title = title
         category.color = color
         do {
-            try context.save()
+            try CoreDataManager.context.save()
         } catch let error as NSError {
             print("Error occurred when updating category \(category.title!): \(error.localizedDescription)")
         }
@@ -64,9 +62,9 @@ extension Category {
     
     public static func delete(title: String) {
         if let category: Category = getObject(title: title) {
-            context.delete(category)
+            CoreDataManager.context.delete(category)
             do {
-                try context.save()
+                try CoreDataManager.context.save()
             } catch let error as NSError {
                 print("Error occurred when deleting category \(category.title!): \(error.localizedDescription)")
             }
@@ -76,9 +74,9 @@ extension Category {
     }
     
     public static func delete(category: Category) {
-        context.delete(category)
+        CoreDataManager.context.delete(category)
         do {
-            try context.save()
+            try CoreDataManager.context.save()
         } catch let error as NSError {
             print("Error occurred when deleting category \(category.title!): \(error.localizedDescription)")
         }
@@ -88,8 +86,8 @@ extension Category {
         let fetchReq: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
         let delReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
         do {
-            try context.execute(delReq)
-            try context.save()
+            try CoreDataManager.context.execute(delReq)
+            try CoreDataManager.context.save()
         } catch let error as NSError {
             print("Error occurred when deleting all categories: \(error.localizedDescription)")
         }
