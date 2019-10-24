@@ -852,7 +852,7 @@
         <!--Statistics-->
         <scene sceneID="f0F-Y8-7Gc">
             <objects>
-                <viewController id="D9x-Ne-QAX" sceneMemberID="viewController">
+                <viewController id="D9x-Ne-QAX" customClass="StatisticsViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fLM-3X-6Wl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -863,7 +863,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3z-q9-kRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2313" y="433"/>
+            <point key="canvasLocation" x="2311.594202898551" y="432.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BbS-DO-tBq">

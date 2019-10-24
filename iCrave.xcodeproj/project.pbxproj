@@ -23,7 +23,8 @@
 		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */; };
 		0A91D1652361626900462F69 /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
-		0A91D167236164A600462F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D166236164A600462F69 /* CoreDataManager.swift */; };
+		0A91D16923618E4200462F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D16823618E4200462F69 /* CoreDataManager.swift */; };
+		0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */; };
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
 		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
@@ -53,7 +54,8 @@
 		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
-		0A91D166236164A600462F69 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0A91D16823618E4200462F69 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5F7B7323570F34001C4EDC /* HomeViewController.swift */,
+				0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */,
 				0A91D1632360951100462F69 /* Record */,
 				0A91D162236094FE00462F69 /* Wishlist */,
 				0A91D161236094DB00462F69 /* Settings */,
@@ -167,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
-				0A91D166236164A600462F69 /* CoreDataManager.swift */,
+				0A91D16823618E4200462F69 /* CoreDataManager.swift */,
 				0AD430F4235F03F2003DAB0C /* CategoryDummy.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
 				0A91D1642361626900462F69 /* RecordExtension.swift */,
@@ -311,7 +314,7 @@
 				0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
-				0A91D167236164A600462F69 /* CoreDataManager.swift in Sources */,
+				0A91D16923618E4200462F69 /* CoreDataManager.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
 				0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */,
 				0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */,
@@ -319,6 +322,7 @@
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* CategoryDummy.swift in Sources */,
+				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
 				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,
 				0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */,
