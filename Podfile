@@ -7,6 +7,7 @@ target 'iCrave' do
 
   # Pods for iCrave
   pod 'Cards'
+  pod 'Macaw'
   pod 'Firebase/Analytics'
 
   # Troubleshoot Cards
