@@ -15,11 +15,7 @@ extension Category {
         let category = Category(context: CoreDataManager.context)
         category.title = title
         category.color = color
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-           print("Error occurred when saving category \(title): \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
     
     public static func getObject(title: String) -> Category? {
@@ -53,21 +49,13 @@ extension Category {
     public static func update(category: Category, title: String, color: String) {
         category.title = title
         category.color = color
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-            print("Error occurred when updating category \(category.title!): \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
     
     public static func delete(title: String) {
         if let category: Category = getObject(title: title) {
             CoreDataManager.context.delete(category)
-            do {
-                try CoreDataManager.context.save()
-            } catch let error as NSError {
-                print("Error occurred when deleting category \(category.title!): \(error.localizedDescription)")
-            }
+            CoreDataManager.appDelegate.saveContext()
         } else {
             print("Category \(title) does not exist")
         }
@@ -75,11 +63,7 @@ extension Category {
     
     public static func delete(category: Category) {
         CoreDataManager.context.delete(category)
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-            print("Error occurred when deleting category \(category.title!): \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
 
     public static func deleteAll() {
@@ -87,7 +71,7 @@ extension Category {
         let delReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
         do {
             try CoreDataManager.context.execute(delReq)
-            try CoreDataManager.context.save()
+            CoreDataManager.appDelegate.saveContext()
         } catch let error as NSError {
             print("Error occurred when deleting all categories: \(error.localizedDescription)")
         }

@@ -28,7 +28,7 @@
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
 		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
-		0AD430F5235F03F2003DAB0C /* CategoryDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F4235F03F2003DAB0C /* CategoryDummy.swift */; };
+		0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F4235F03F2003DAB0C /* Dummy.swift */; };
 		0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */; };
 		0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */; };
 		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
@@ -59,7 +59,7 @@
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
-		0AD430F4235F03F2003DAB0C /* CategoryDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDummy.swift; sourceTree = "<group>"; };
+		0AD430F4235F03F2003DAB0C /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
 				0A91D16823618E4200462F69 /* CoreDataManager.swift */,
-				0AD430F4235F03F2003DAB0C /* CategoryDummy.swift */,
+				0AD430F4235F03F2003DAB0C /* Dummy.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
 				0A91D1642361626900462F69 /* RecordExtension.swift */,
 			);
@@ -321,7 +321,7 @@
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
-				0AD430F5235F03F2003DAB0C /* CategoryDummy.swift in Sources */,
+				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
 				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
 				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,

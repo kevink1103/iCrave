@@ -13,25 +13,11 @@ class HomeViewController: UITableViewController {
     
     // dummy data
     var categories = Category.getAll()
-
+    var records = Record.getAll()
     // var wishlists = [
     //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
     //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
     // ]
-    var records: [[String: String]] = [
-        ["timestamp": "1", "category": "Food", "amount": "50"],
-        ["timestamp": "2", "category": "Octopus", "amount": "100"],
-        ["timestamp": "3", "category": "Supermarket", "amount": "300"],
-        ["timestamp": "4", "category": "School", "amount": "2000"],
-        ["timestamp": "5", "category": "Club", "amount": "3000"],
-        ["timestamp": "6", "category": "Furniture", "amount": "6000"],
-        ["timestamp": "7", "category": "Shopping", "amount": "500"],
-        ["timestamp": "8", "category": "Vacation", "amount": "10000"],
-        ["timestamp": "9", "category": "Hobby", "amount": "4000"],
-        ["timestamp": "10", "category": "Gambling", "amount": "500"],
-        ["timestamp": "11", "category": "Secret", "amount": "100"],
-        ["timestamp": "12", "category": "Charity", "amount": "600"],
-    ]
     
     @IBOutlet var cardView: CardHighlight!
     @IBOutlet var recordsScroll: UIScrollView!
@@ -39,36 +25,8 @@ class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Category.deleteAll()
-        // print(Category.getAll().count)
-        // loadDummyCategories()
-        // print(Category.getAll())
-        // Category.deleteAll()
-        // Category.delete(title: "Supermarket")
-        // print(Category.getAll())
-        // Category.delete(title: "what")
-        // if let ori = Category.getObject(title: "Supermarket") {
-        //     Category.update(category: ori, title: "HAHA", color: ori.color!)
-        // }
-        // print(Category.getAll())
-        // print(Category.getAll().count)
-        let temp = Category(context: CoreDataManager.context)
-        temp.title = "Kevin"
-        temp.color = "white"
-        Record.create(in: temp, timestamp: Date(), amount: 50, currency: "HKD")
-        Record.create(in: temp, timestamp: Date(), amount: 100, currency: "HKD")
-        do {
-            try CoreDataManager.context.save()
-        } catch {
-            print("couldnt save")
-        }
-        print("ALL RECORDS")
-        print(Record.getAll().count)
-        print("INSIDE CATEGORY")
-        print(Record.getAll(in: temp).count)
-        print("DELETE ALL")
-        Record.deleteAll()
-        print(Record.getAll().count)
+        loadDummyCategories()
+        loadDummyRecords()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,15 +66,18 @@ class HomeViewController: UITableViewController {
             card = CardHighlight(frame: CGRect(x: xOffset, y: 0, width: width , height: height))
             
             card.tag = i
-            card.title = records[i]["category"]!
+            card.title = records[i].category!.title!
             card.titleSize = 23
             card.itemTitle = ""
-            card.itemSubtitle = records[i]["amount"]! + " HKD"
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .currency
+            let amount = numberFormatter.string(from: records[i].amount!)!
+            card.itemSubtitle = "\(String(describing: amount)) \(records[i].currency!)"
             card.buttonText = ""
             card.shadowOpacity = 0
             card.backgroundColor = .systemBackground
             card.textColor = UIColor.systemBackground.generateTextColor()
-            if let category = Category.getObject(title: records[i]["category"]!) {
+            if let category = records[i].category {
                 card.backgroundColor = category.color!.getUIColor()
                 card.textColor = category.color!.getUIColor().generateTextColor()
             }

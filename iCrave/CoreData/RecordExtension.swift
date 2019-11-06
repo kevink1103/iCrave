@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-// UNTESTED!!!
-
 extension Record {
     
     public static func create(in category: Category, timestamp: Date, amount: Decimal, currency: String) {
@@ -19,11 +17,7 @@ extension Record {
         record.amount = amount as NSDecimalNumber
         record.currency = currency
         category.addToRecord(record)
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-           print("Error occurred when saving record: \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
     
     public static func getAll() -> [Record] {
@@ -51,20 +45,12 @@ extension Record {
         record.timestamp = timestamp
         record.amount = amount as NSDecimalNumber
         record.currency = currency
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-            print("Error occurred when updating record: \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
     
     public static func delete(in category: Category, record: Record) {
         category.removeFromRecord(record)
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-            print("Error occurred when deleting record: \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
     
     public static func deleteAll() {
@@ -72,7 +58,7 @@ extension Record {
         let delReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
         do {
             try CoreDataManager.context.execute(delReq)
-            try CoreDataManager.context.save()
+            CoreDataManager.appDelegate.saveContext()
         } catch let error as NSError {
             print("Error occurred when deleting all records: \(error.localizedDescription)")
         }
@@ -82,10 +68,6 @@ extension Record {
         if let categoryRecords = category.record {
             category.removeFromRecord(categoryRecords)
         }
-        do {
-            try CoreDataManager.context.save()
-        } catch let error as NSError {
-            print("Error occurred when deleting all records in \(category.title!): \(error.localizedDescription)")
-        }
+        CoreDataManager.appDelegate.saveContext()
     }
 }
