@@ -33,25 +33,31 @@ func loadDummyCategories() {
 
 func loadDummyRecords() {
     Record.deleteAll()
-    let records = [
-        "Food": 500,
-        "Octopus": 200,
-        "Supermarket": 300,
-        "School": 2000,
-        "Club": 3000,
-        "Furniture": 6000,
-        "Shopping": 500,
-        "Vacation": 10000,
-        "Hobby": 4000,
-        "Gambling": 500,
-        "Secret": 100,
-        "Charity": 600
+    
+    let records: [String:[Any]] = [
+        "Food": ["2019-1-2", 500, "HKD"],
+        "Octopus": ["2019-1-3", 200, "HKD"],
+        "Supermarket": ["2019-1-4", 300, "HKD"],
+        "School": ["2019-1-5", 2000, "HKD"],
+        "Club": ["2019-1-6", 3000, "HKD"],
+        "Furniture": ["2019-1-7", 6000, "HKD"],
+        "Shopping": ["2019-1-8", 500, "HKD"],
+        "Vacation": ["2019-1-9", 10000, "HKD"],
+        "Hobby": ["2019-1-10", 4000, "HKD"],
+        "Gambling": ["2019-1-11", 500, "HKD"],
+        "Secret": ["2019-1-12", 100, "HKD"],
+        "Charity": ["2019-1-13", 600, "HKD"]
     ]
-    let currency = "HKD"
     
     for record in records {
         if let category = Category.getObject(title: record.key) {
-            Record.create(in: category, timestamp: Date(), amount: Decimal(record.value), currency: currency)
+            Record.create(in: category, timestamp: dateMaker(record.value[0] as! String), amount: Decimal(record.value[1] as! Int), currency: record.value[2] as! String)
         }
     }
+}
+
+func dateMaker(_ string: String) -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter.date(from: string)!
 }

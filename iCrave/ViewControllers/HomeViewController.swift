@@ -70,7 +70,7 @@ class HomeViewController: UITableViewController {
             card.titleSize = 23
             card.itemTitle = ""
             let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .currency
+            numberFormatter.numberStyle = .decimal
             let amount = numberFormatter.string(from: records[i].amount!)!
             card.itemSubtitle = "\(String(describing: amount)) \(records[i].currency!)"
             card.buttonText = ""
