@@ -24,9 +24,6 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadDummyCategories()
-        loadDummyRecords()
     }
     
     override func viewWillAppear(_ animated: Bool) {
