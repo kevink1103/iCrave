@@ -45,9 +45,9 @@
 		0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F4235F03F2003DAB0C /* Dummy.swift */; };
 		0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */; };
 		0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */; };
-		0AF464D7237BE71E003B32D1 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464D6237BE71E003B32D1 /* SharedDataManager.swift */; };
-		0AF464D8237BE722003B32D1 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464D6237BE71E003B32D1 /* SharedDataManager.swift */; };
-		0AF464D9237BE723003B32D1 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464D6237BE71E003B32D1 /* SharedDataManager.swift */; };
+		0AF464DC237C346F003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
+		0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
+		0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
 		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,8 +122,8 @@
 		0AD430F4235F03F2003DAB0C /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
-		0AF464D6237BE71E003B32D1 /* SharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		0AF464DA237BF57D003B32D1 /* SiriRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriRecord.entitlements; sourceTree = "<group>"; };
+		0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
 		9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
 		D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.release.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
 		E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCrave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,11 +274,11 @@
 			isa = PBXGroup;
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
+				0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */,
 				0A91D16823618E4200462F69 /* CoreDataManager.swift */,
-				0AF464D6237BE71E003B32D1 /* SharedDataManager.swift */,
-				0AD430F4235F03F2003DAB0C /* Dummy.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
 				0A91D1642361626900462F69 /* RecordExtension.swift */,
+				0AD430F4235F03F2003DAB0C /* Dummy.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -477,7 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF464D7237BE71E003B32D1 /* SharedDataManager.swift in Sources */,
 				0A597155237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
@@ -489,6 +488,7 @@
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
+				0AF464DC237C346F003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
 				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
@@ -507,7 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF464D8237BE722003B32D1 /* SharedDataManager.swift in Sources */,
+				0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
 				0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0A59715C237BE2EB009B0747 /* iCrave.xcdatamodeld in Sources */,
 				0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */,
@@ -519,9 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF464D9237BE723003B32D1 /* SharedDataManager.swift in Sources */,
 				0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0A59715D237BE2ED009B0747 /* iCrave.xcdatamodeld in Sources */,
+				0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
 				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */,
 			);

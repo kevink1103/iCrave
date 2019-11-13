@@ -24,11 +24,11 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SharedDataManager.sharedManager.saveCategory(categories: categories)
-        print(SharedDataManager.sharedManager.getAllCategory())
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        categories = Category.getAll()
+        records = Record.getAll()
         configureCardView()
         drawRecords()
     }
