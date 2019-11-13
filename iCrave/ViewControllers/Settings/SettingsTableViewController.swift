@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var categories: [Category] = []
 
@@ -87,20 +88,16 @@ class SettingsTableViewController: UITableViewController {
                 cell.textLabel?.textColor = .systemRed
                 cell.backgroundColor = .secondarySystemBackground
             }
-            // Optimization for select style default
-            let selectedBgView = UIView()
-            selectedBgView.backgroundColor = cell.backgroundColor
-            cell.selectedBackgroundView = selectedBgView
         }
         else if section == 1 {
             cell = tableView.dequeueReusableCell(withIdentifier: "MoneyCell", for: indexPath)
             switch (row) {
             case 0:
                 cell.textLabel?.text = "Monthly Budget"
-                cell.detailTextLabel?.text = "5000"
+                cell.detailTextLabel?.text = SharedUserDefaults.shared.getBudget()
             case 1:
                 cell.textLabel?.text = "Currency"
-                cell.detailTextLabel?.text = "HKD"
+                cell.detailTextLabel?.text = SharedUserDefaults.shared.getCurrency()
             default:
                 cell.textLabel?.text = ""
             }
@@ -124,6 +121,10 @@ class SettingsTableViewController: UITableViewController {
                 cell.textLabel?.text = ""
             }
         }
+        // Optimization for select style default
+        let selectedBgView = UIView()
+        selectedBgView.backgroundColor = cell.backgroundColor
+        cell.selectedBackgroundView = selectedBgView
         
         return cell
     }
@@ -142,7 +143,47 @@ class SettingsTableViewController: UITableViewController {
                 performSegue(withIdentifier: "AddCategory", sender: self)
             }
         }
-        
+        else if indexPath.section == 1 {
+            switch (indexPath.row) {
+            case 0:
+                let alert = UIAlertController(title: "Monthly Budget", message: "Set your monthly budget.", preferredStyle: .alert)
+                alert.addTextField { (textField) in
+                    textField.placeholder = "Amount"
+                    textField.keyboardType = .decimalPad
+                }
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Set", style: .default) { (alertAction) in
+                    let textField = alert.textFields![0] as UITextField
+                    if let amount = Decimal(string: textField.text!) {
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.numberStyle = .decimal
+                        let stringAmount = numberFormatter.string(from: amount as NSDecimalNumber)!
+                        SharedUserDefaults.shared.setBudget(budget: stringAmount)
+                        self.tableView.reloadData()
+                    }
+                }
+                alert.addAction(cancel)
+                alert.addAction(action)
+                present(alert, animated:true, completion: nil)
+            case 1:
+                let initCurrency = SharedUserDefaults.shared.getCurrency()
+                let initIndex = NSLocale.isoCurrencyCodes.firstIndex(of: initCurrency) ?? 0
+                
+                let currencyPicker = ActionSheetStringPicker(title: "Currency", rows: NSLocale.isoCurrencyCodes, initialSelection: initIndex, doneBlock: { picker, index, value in
+                    let currency = value as! String
+                    SharedUserDefaults.shared.setCurrency(currency: currency)
+                    self.tableView.reloadData()
+                }, cancel: { ActionStringCancelBlock in return }, origin: self.view)
+                
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .center
+                currencyPicker?.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                
+                currencyPicker?.show()
+            default:
+                print("Hi")
+            }
+        }
     }
 
     // Override to support conditional editing of the table view.
@@ -162,6 +203,18 @@ class SettingsTableViewController: UITableViewController {
             categories.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return NSLocale.isoCurrencyCodes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return NSLocale.isoCurrencyCodes[row]
     }
 
     // MARK: - Navigation

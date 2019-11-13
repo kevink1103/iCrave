@@ -12,8 +12,7 @@ import Cards
 class HomeViewController: UITableViewController {
     
     // dummy data
-    var categories = Category.getAll()
-    var records = Record.getAll()
+    var records = Record.getAll()[...5]
     // var wishlists = [
     //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
     //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
@@ -27,8 +26,11 @@ class HomeViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        categories = Category.getAll()
-        records = Record.getAll()
+        updateView()
+    }
+    
+    func updateView() {
+        records = Record.getAll()[...5]
         configureCardView()
         drawRecords()
     }
@@ -100,7 +102,20 @@ class HomeViewController: UITableViewController {
     
     @objc func recentRecordClick(sender: UIGestureRecognizer) {
         let tag = sender.view!.tag
-        print(tag)
+        let record = records[tag]
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let amount = numberFormatter.string(from: record.amount!)!
+        
+        let alert = UIAlertController(title: "Quick Add", message: "Spent \(amount) \(record.currency!)\nfor \(record.category!.title!)", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .default)
+        let action = UIAlertAction(title: "Add", style: .default) { (alertAction) in
+            Record.create(in: record.category!, timestamp: Date(), amount: record.amount! as Decimal, currency: record.currency!)
+            self.updateView()
+        }
+        alert.addAction(cancel)
+        alert.addAction(action)
+        present(alert, animated:true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -14,7 +14,8 @@ class RecordIntentHandler : NSObject, RecordIntentHandling {
     
     func handle(intent: RecordIntent, completion: @escaping (RecordIntentResponse) -> Void) {
         let category = categoryGetObject(title: intent.category!)!
-        recordCreate(in: category, timestamp: Date(), amount: intent.amount!.decimalValue, currency: "HKD")
+        let currency = SharedUserDefaults.shared.getCurrency()
+        recordCreate(in: category, timestamp: Date(), amount: intent.amount!.decimalValue, currency: currency)
         completion(RecordIntentResponse.success(result: "Successfully"))
     }
     
