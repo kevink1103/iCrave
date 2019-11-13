@@ -10,6 +10,7 @@ import Foundation
 import Intents
 
 class RecordIntentHandler : NSObject, RecordIntentHandling {
+    
     func handle(intent: RecordIntent, completion: @escaping (RecordIntentResponse) -> Void) {
         print(intent.amount!)
         print(intent.category!)
@@ -33,7 +34,13 @@ class RecordIntentHandler : NSObject, RecordIntentHandling {
     func resolveCategory(for intent: RecordIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
         if let category = intent.category {
             if category.count > 0 && category != "category" {
-                completion(INStringResolutionResult.success(with: category))
+                let categories = SharedDataManager.sharedManager.getAllCategory()
+                if categories.contains(category) {
+                    completion(INStringResolutionResult.success(with: category))
+                }
+                else {
+                    completion(INStringResolutionResult.needsValue())
+                }
             }
             else {
                 completion(INStringResolutionResult.needsValue())
