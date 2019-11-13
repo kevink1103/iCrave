@@ -20,6 +20,18 @@
 		0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4835D023560DED00016806 /* iCrave.xcdatamodeld */; };
 		0A4835D423560DF000016806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D323560DF000016806 /* Assets.xcassets */; };
 		0A4835D723560DF000016806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4835D523560DF000016806 /* LaunchScreen.storyboard */; };
+		0A597132237BA64B009B0747 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A597131237BA64B009B0747 /* IntentHandler.swift */; };
+		0A59713A237BA64B009B0747 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A597139237BA64B009B0747 /* IntentsUI.framework */; };
+		0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59713C237BA64B009B0747 /* IntentViewController.swift */; };
+		0A597140237BA64B009B0747 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A59713E237BA64B009B0747 /* MainInterface.storyboard */; };
+		0A597144237BA64B009B0747 /* SiriRecordUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A597138237BA64B009B0747 /* SiriRecordUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A597147237BA64B009B0747 /* SiriRecord.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A59712F237BA64B009B0747 /* SiriRecord.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A597155237BB045009B0747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0A597154237BB045009B0747 /* Intents.intentdefinition */; };
+		0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0A597154237BB045009B0747 /* Intents.intentdefinition */; };
+		0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0A597154237BB045009B0747 /* Intents.intentdefinition */; };
+		0A597159237BB104009B0747 /* RecordIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A597158237BB104009B0747 /* RecordIntentHandler.swift */; };
+		0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A597158237BB104009B0747 /* RecordIntentHandler.swift */; };
+		0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A597158237BB104009B0747 /* RecordIntentHandler.swift */; };
 		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */; };
 		0A91D1652361626900462F69 /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
@@ -33,6 +45,38 @@
 		0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */; };
 		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A597142237BA64B009B0747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4835BC23560DED00016806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A597137237BA64B009B0747;
+			remoteInfo = SiriRecordUI;
+		};
+		0A597145237BA64B009B0747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4835BC23560DED00016806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A59712E237BA64B009B0747;
+			remoteInfo = SiriRecord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A59714E237BA64B009B0747 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A597147237BA64B009B0747 /* SiriRecord.appex in Embed App Extensions */,
+				0A597144237BA64B009B0747 /* SiriRecordUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A1872A12357813B00DD5795 /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +95,17 @@
 		0A4835D323560DF000016806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A4835D623560DF000016806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4835D823560DF000016806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A59712A237BA626009B0747 /* iCrave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCrave.entitlements; sourceTree = "<group>"; };
+		0A59712F237BA64B009B0747 /* SiriRecord.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriRecord.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A597131237BA64B009B0747 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		0A597133237BA64B009B0747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A597138237BA64B009B0747 /* SiriRecordUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriRecordUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A597139237BA64B009B0747 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		0A59713C237BA64B009B0747 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		0A59713F237BA64B009B0747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0A597141237BA64B009B0747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A597154237BB045009B0747 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		0A597158237BB104009B0747 /* RecordIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordIntentHandler.swift; sourceTree = "<group>"; };
 		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
@@ -73,6 +128,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A59712C237BA64B009B0747 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A597135237BA64B009B0747 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A59713A237BA64B009B0747 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +177,8 @@
 			children = (
 				0A1872AE2358076000DD5795 /* README.md */,
 				0A4835C623560DED00016806 /* iCrave */,
+				0A597130237BA64B009B0747 /* SiriRecord */,
+				0A59713B237BA64B009B0747 /* SiriRecordUI */,
 				0A4835C523560DED00016806 /* Products */,
 				A306DC792BFEB1C512C4FB79 /* Pods */,
 				D991FAF0ADB288A815BD8ABB /* Frameworks */,
@@ -117,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				0A4835C423560DED00016806 /* iCrave.app */,
+				0A59712F237BA64B009B0747 /* SiriRecord.appex */,
+				0A597138237BA64B009B0747 /* SiriRecordUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +198,8 @@
 		0A4835C623560DED00016806 /* iCrave */ = {
 			isa = PBXGroup;
 			children = (
+				0A59712A237BA626009B0747 /* iCrave.entitlements */,
+				0A597154237BB045009B0747 /* Intents.intentdefinition */,
 				0A4835C723560DED00016806 /* AppDelegate.swift */,
 				0AD430EF235EF444003DAB0C /* CoreData */,
 				0A1872A7235782F000DD5795 /* ViewControllers */,
@@ -135,6 +211,26 @@
 				0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */,
 			);
 			path = iCrave;
+			sourceTree = "<group>";
+		};
+		0A597130237BA64B009B0747 /* SiriRecord */ = {
+			isa = PBXGroup;
+			children = (
+				0A597131237BA64B009B0747 /* IntentHandler.swift */,
+				0A597158237BB104009B0747 /* RecordIntentHandler.swift */,
+				0A597133237BA64B009B0747 /* Info.plist */,
+			);
+			path = SiriRecord;
+			sourceTree = "<group>";
+		};
+		0A59713B237BA64B009B0747 /* SiriRecordUI */ = {
+			isa = PBXGroup;
+			children = (
+				0A59713C237BA64B009B0747 /* IntentViewController.swift */,
+				0A59713E237BA64B009B0747 /* MainInterface.storyboard */,
+				0A597141237BA64B009B0747 /* Info.plist */,
+			);
+			path = SiriRecordUI;
 			sourceTree = "<group>";
 		};
 		0A91D161236094DB00462F69 /* Settings */ = {
@@ -191,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */,
+				0A597139237BA64B009B0747 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,15 +304,52 @@
 				0A4835C123560DED00016806 /* Frameworks */,
 				0A4835C223560DED00016806 /* Resources */,
 				AE6155905EAC0A4F79657D61 /* [CP] Embed Pods Frameworks */,
+				0A59714E237BA64B009B0747 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0A597143237BA64B009B0747 /* PBXTargetDependency */,
+				0A597146237BA64B009B0747 /* PBXTargetDependency */,
 			);
 			name = iCrave;
 			productName = iCrave;
 			productReference = 0A4835C423560DED00016806 /* iCrave.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0A59712E237BA64B009B0747 /* SiriRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A59714B237BA64B009B0747 /* Build configuration list for PBXNativeTarget "SiriRecord" */;
+			buildPhases = (
+				0A59712B237BA64B009B0747 /* Sources */,
+				0A59712C237BA64B009B0747 /* Frameworks */,
+				0A59712D237BA64B009B0747 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriRecord;
+			productName = SiriRecord;
+			productReference = 0A59712F237BA64B009B0747 /* SiriRecord.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		0A597137237BA64B009B0747 /* SiriRecordUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A597148237BA64B009B0747 /* Build configuration list for PBXNativeTarget "SiriRecordUI" */;
+			buildPhases = (
+				0A597134237BA64B009B0747 /* Sources */,
+				0A597135237BA64B009B0747 /* Frameworks */,
+				0A597136237BA64B009B0747 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriRecordUI;
+			productName = SiriRecordUI;
+			productReference = 0A597138237BA64B009B0747 /* SiriRecordUI.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -223,12 +357,18 @@
 		0A4835BC23560DED00016806 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Kevin Kim";
 				TargetAttributes = {
 					0A4835C323560DED00016806 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					0A59712E237BA64B009B0747 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					0A597137237BA64B009B0747 = {
+						CreatedOnToolsVersion = 11.2;
 					};
 				};
 			};
@@ -246,6 +386,8 @@
 			projectRoot = "";
 			targets = (
 				0A4835C323560DED00016806 /* iCrave */,
+				0A59712E237BA64B009B0747 /* SiriRecord */,
+				0A597137237BA64B009B0747 /* SiriRecordUI */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +401,21 @@
 				0A1872AD2358047B00DD5795 /* GoogleService-Info.plist in Resources */,
 				0A4835D423560DF000016806 /* Assets.xcassets in Resources */,
 				0A4835CF23560DED00016806 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A59712D237BA64B009B0747 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A597136237BA64B009B0747 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A597140237BA64B009B0747 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A597155237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
@@ -329,12 +487,46 @@
 				0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */,
 				0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */,
 				0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */,
+				0A597159237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0A91D1652361626900462F69 /* RecordExtension.swift in Sources */,
 				0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A59712B237BA64B009B0747 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
+				0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */,
+				0A597132237BA64B009B0747 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A597134237BA64B009B0747 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
+				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,
+				0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A597143237BA64B009B0747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A597137237BA64B009B0747 /* SiriRecordUI */;
+			targetProxy = 0A597142237BA64B009B0747 /* PBXContainerItemProxy */;
+		};
+		0A597146237BA64B009B0747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A59712E237BA64B009B0747 /* SiriRecord */;
+			targetProxy = 0A597145237BA64B009B0747 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0A4835CD23560DED00016806 /* Main.storyboard */ = {
@@ -351,6 +543,14 @@
 				0A4835D623560DF000016806 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0A59713E237BA64B009B0747 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A59713F237BA64B009B0747 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -474,10 +674,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iCrave/iCrave.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
+				INTENTS_CODEGEN_LANGUAGE = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,10 +697,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iCrave/iCrave.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DH6DZ9MJN6;
 				INFOPLIST_FILE = iCrave/Info.plist;
+				INTENTS_CODEGEN_LANGUAGE = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,6 +713,86 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0A597149237BA64B009B0747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6DZ9MJN6;
+				INFOPLIST_FILE = SiriRecordUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave.SiriRecordUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A59714A237BA64B009B0747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6DZ9MJN6;
+				INFOPLIST_FILE = SiriRecordUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave.SiriRecordUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0A59714C237BA64B009B0747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6DZ9MJN6;
+				INFOPLIST_FILE = SiriRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave.SiriRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A59714D237BA64B009B0747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6DZ9MJN6;
+				INFOPLIST_FILE = SiriRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinkim.iCrave.SiriRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -527,6 +813,24 @@
 			buildConfigurations = (
 				0A4835DC23560DF000016806 /* Debug */,
 				0A4835DD23560DF000016806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A597148237BA64B009B0747 /* Build configuration list for PBXNativeTarget "SiriRecordUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A597149237BA64B009B0747 /* Debug */,
+				0A59714A237BA64B009B0747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A59714B237BA64B009B0747 /* Build configuration list for PBXNativeTarget "SiriRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A59714C237BA64B009B0747 /* Debug */,
+				0A59714D237BA64B009B0747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

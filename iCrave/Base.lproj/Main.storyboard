@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3cy-Jf-7us">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3cy-Jf-7us">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -769,6 +769,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="1aF-97-bvH"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="jqn-jC-gzY" id="x71-nc-wEi"/>
+                                            <outlet property="delegate" destination="jqn-jC-gzY" id="dfq-O0-kCu"/>
+                                        </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-Bd-3JF">
                                         <rect key="frame" x="326" y="8" width="80" height="35"/>
@@ -829,6 +833,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addPressed:" destination="jqn-jC-gzY" eventType="touchUpInside" id="94O-vg-bzo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -844,6 +851,13 @@
                         <viewLayoutGuide key="safeArea" id="znx-Ja-gwn"/>
                     </view>
                     <navigationItem key="navigationItem" id="vy0-gw-RiR"/>
+                    <connections>
+                        <outlet property="addButton" destination="OBm-8k-Thg" id="QwT-4a-fDI"/>
+                        <outlet property="amountField" destination="xMf-5H-f6j" id="hlx-vP-7LK"/>
+                        <outlet property="categoryPicker" destination="OZG-Gq-DCz" id="xh2-Hq-qjP"/>
+                        <outlet property="datePicker" destination="42n-Br-QPJ" id="Bo3-C5-upX"/>
+                        <outlet property="scrollView" destination="SkJ-6R-Ko0" id="IG4-Pg-hVG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1D-W7-ibP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
