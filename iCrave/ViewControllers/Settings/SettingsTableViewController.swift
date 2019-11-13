@@ -80,7 +80,7 @@ class SettingsTableViewController: UITableViewController {
             if row < categories.count {
                 let category = categories[row]
                 cell.textLabel?.text = category.title!
-                cell.textLabel?.textColor = category.color!.getUIColor().generateTextColor()
+                cell.textLabel?.textColor = category.color!.getUIColor().generateStaticTextColor()
                 cell.backgroundColor = category.color!.getUIColor()
             } else {
                 cell.textLabel?.text = "Add Category"

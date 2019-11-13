@@ -26,7 +26,14 @@ extension UIColor
         return false
     }
     
-    func generateTextColor() -> UIColor {
+    func generateAdaptiveTextColor() -> UIColor {
+        if self.isBright {
+            return UIColor(named: "DarkText")!
+        }
+        return UIColor(named: "LightText")!
+    }
+    
+    func generateStaticTextColor() -> UIColor {
         if self.isBright {
             return .black
         }

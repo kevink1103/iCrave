@@ -32,7 +32,7 @@ class HomeViewController: UITableViewController {
     }
     
     func configureCardView() {
-        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateTextColor())!
+        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateStaticTextColor())!
         let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))
         cardView.addGestureRecognizer(wishlistDetailTap)
     }
@@ -51,7 +51,7 @@ class HomeViewController: UITableViewController {
         card.buttonText = "➕"
         card.shadowOpacity = 0
         card.backgroundColor = .systemBackground
-        card.textColor = UIColor.systemBackground.generateTextColor()
+        card.textColor = UIColor.systemBackground.generateAdaptiveTextColor()
         
         let addRecordTap = UITapGestureRecognizer(target: self, action: #selector(showAddRecordView(sender:)))
         card.addGestureRecognizer(addRecordTap)
@@ -73,10 +73,10 @@ class HomeViewController: UITableViewController {
             card.buttonText = ""
             card.shadowOpacity = 0
             card.backgroundColor = .systemBackground
-            card.textColor = UIColor.systemBackground.generateTextColor()
+            card.textColor = UIColor.systemBackground.generateStaticTextColor()
             if let category = records[i].category {
                 card.backgroundColor = category.color!.getUIColor()
-                card.textColor = category.color!.getUIColor().generateTextColor()
+                card.textColor = category.color!.getUIColor().generateStaticTextColor()
             }
             
             let recentRecordTap = UITapGestureRecognizer(target: self, action: #selector(recentRecordClick(sender:)))
