@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,27 +12,46 @@
             <objects>
                 <viewController id="ObA-dk-sSI" customClass="IntentViewController" customModule="SiriRecordUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Successful!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-kU-VAl">
-                                <rect key="frame" x="16" y="65" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-dy-lry">
+                                <rect key="frame" x="16" y="15" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="3xj-B8-MKP"/>
+                                    <constraint firstAttribute="height" constant="21" id="fZ5-n7-Wo4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bg-6G-82f">
+                                <rect key="frame" x="164" y="15" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="5gN-RO-6ba"/>
+                                    <constraint firstAttribute="height" constant="21" id="RjQ-2M-Uyr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="TFC-kU-VAl" firstAttribute="top" secondItem="4PN-XC-lEE" secondAttribute="top" constant="21" id="2mA-yx-X7N"/>
-                            <constraint firstItem="TFC-kU-VAl" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="Is1-Bi-vvE"/>
-                            <constraint firstItem="TFC-kU-VAl" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="UIR-ht-lUo"/>
-                            <constraint firstItem="TFC-kU-VAl" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="Zms-6V-87w"/>
+                            <constraint firstAttribute="trailing" secondItem="7bg-6G-82f" secondAttribute="trailing" constant="16" id="Kl7-bA-EZz"/>
+                            <constraint firstItem="Mxb-dy-lry" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="16" id="a2b-ie-cbW"/>
+                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="Mxb-dy-lry" secondAttribute="bottom" constant="14" id="aR0-JZ-xzq"/>
+                            <constraint firstItem="7bg-6G-82f" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="15" id="eov-gN-mid"/>
+                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="7bg-6G-82f" secondAttribute="bottom" constant="14" id="jvF-Jd-cCY"/>
+                            <constraint firstItem="Mxb-dy-lry" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="15" id="oBp-NV-5YK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4PN-XC-lEE"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="150"/>
+                    <size key="freeformSize" width="320" height="50"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="7bg-6G-82f" id="7Qw-jN-k1N"/>
+                        <outlet property="categoryLabel" destination="Mxb-dy-lry" id="dhY-Jk-w7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -51,6 +51,14 @@
 		0AF464E7237C3F6C003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
 		0AF464E8237C60D7003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
 		0AF464E9237C60D8003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
+		0AF464EA237C6FD7003B32D1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A823578A2200DD5795 /* UIColorExtension.swift */; };
+		0AF464EB237C6FD8003B32D1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A823578A2200DD5795 /* UIColorExtension.swift */; };
+		0AF464EC237C6FFC003B32D1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
+		0AF464ED237C6FFD003B32D1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
+		0AF464EE237C7000003B32D1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872AA23578FA000DD5795 /* UIImageExtension.swift */; };
+		0AF464EF237C7000003B32D1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872AA23578FA000DD5795 /* UIImageExtension.swift */; };
+		0AF464F0237C7004003B32D1 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */; };
+		0AF464F1237C7005003B32D1 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31E42B23576BB6006103C2 /* UIButtonExtension.swift */; };
 		AD2EEE1BB8AD9B233AD22FCA /* Pods_iCrave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7792123956E0BB01ED841F5 /* Pods_iCrave.framework */; };
 /* End PBXBuildFile section */
 
@@ -514,8 +522,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
+				0AF464F0237C7004003B32D1 /* UIButtonExtension.swift in Sources */,
+				0AF464EA237C6FD7003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E8237C60D7003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
+				0AF464EC237C6FFC003B32D1 /* StringExtension.swift in Sources */,
+				0AF464EE237C7000003B32D1 /* UIImageExtension.swift in Sources */,
 				0A59715C237BE2EB009B0747 /* iCrave.xcdatamodeld in Sources */,
 				0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A597132237BA64B009B0747 /* IntentHandler.swift in Sources */,
@@ -527,8 +539,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
+				0AF464F1237C7005003B32D1 /* UIButtonExtension.swift in Sources */,
+				0AF464EB237C6FD8003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E9237C60D8003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715D237BE2ED009B0747 /* iCrave.xcdatamodeld in Sources */,
+				0AF464ED237C6FFD003B32D1 /* StringExtension.swift in Sources */,
+				0AF464EF237C7000003B32D1 /* UIImageExtension.swift in Sources */,
 				0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
 				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
+import CoreData
 import IntentsUI
 
 // As an example, this extension's Info.plist has been configured to handle interactions for INSendMessageIntent.
@@ -17,6 +18,9 @@ import IntentsUI
 
 class IntentViewController: UIViewController, INUIHostedViewControlling {
     
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,11 +31,29 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     // Prepare your view controller for the interaction to handle.
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         // Do configuration here, including preparing views and calculating a desired size for presentation.
-        completion(true, parameters, self.desiredSize)
+        guard let intent = interaction.intent as? RecordIntent else {
+            completion(false, Set(), .zero)
+            return
+        }
+        
+        var desiredSize = self.view.frame.size
+        desiredSize.height = 50
+        
+        let category = intent.category!
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let stringAmount = numberFormatter.string(from: intent.amount!)!
+        let currency = SharedUserDefaults.shared.getCurrency()
+        
+        categoryLabel.text = category
+        amountLabel.text = "\(stringAmount) \(currency)"
+        
+        completion(true, parameters, desiredSize)
     }
     
-    var desiredSize: CGSize {
-        return self.extensionContext!.hostedViewMaximumAllowedSize
-    }
+    // var desiredSize: CGSize {
+    //     // return self.extensionContext!.hostedViewMinimumAllowedSize
+    //     return CGSize.zero
+    // }
     
 }
