@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 func loadDummyCategories() {
     Category.deleteAll()

@@ -61,7 +61,7 @@ class HomeViewController: UITableViewController {
         card.buttonText = "➕"
         card.shadowOpacity = 0
         card.backgroundColor = .systemBackground
-        card.textColor = UIColor.systemBackground.generateAdaptiveTextColor()
+        card.textColor = UIColor(named: "DarkText")!
         
         let addRecordTap = UITapGestureRecognizer(target: self, action: #selector(showAddRecordView(sender:)))
         card.addGestureRecognizer(addRecordTap)

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 class SharedCoreData {
@@ -42,13 +41,12 @@ class SharedCoreData {
     }()
     
     lazy var context: NSManagedObjectContext = {
-        return persistentContainer.managedObjectContext
+        return persistentContainer.defaultContext
     }()
 
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.managedObjectContext
         if context.hasChanges {
             do {
                 try context.save()

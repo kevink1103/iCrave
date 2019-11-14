@@ -37,12 +37,13 @@ class RecordIntentHandler : NSObject, RecordIntentHandling {
         if let category = intent.category {
             if category.count > 0 && category != "category" {
                 let categories = Category.getAll().map({ (category: Category) in return category.title! })
-                if categories.contains(category) {
-                    completion(INStringResolutionResult.success(with: category))
+                for categoryTitle in categories {
+                    if category.lowercased() == categoryTitle.lowercased() {
+                        completion(INStringResolutionResult.success(with: categoryTitle))
+                        return
+                    }
                 }
-                else {
-                    completion(INStringResolutionResult.needsValue())
-                }
+                completion(INStringResolutionResult.needsValue())
             }
             else {
                 completion(INStringResolutionResult.needsValue())

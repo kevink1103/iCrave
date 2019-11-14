@@ -146,6 +146,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         else if indexPath.section == 1 {
             switch (indexPath.row) {
             case 0:
+                // Set Budget
                 let alert = UIAlertController(title: "Monthly Budget", message: "Set your monthly budget.", preferredStyle: .alert)
                 alert.addTextField { (textField) in
                     textField.placeholder = "Amount"
@@ -166,6 +167,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 alert.addAction(action)
                 present(alert, animated:true, completion: nil)
             case 1:
+                // Set Currency
                 let initCurrency = SharedUserDefaults.shared.getCurrency()
                 let initIndex = NSLocale.isoCurrencyCodes.firstIndex(of: initCurrency) ?? 0
                 
@@ -177,7 +179,9 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = .center
-                currencyPicker?.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                currencyPicker?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                currencyPicker?.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                currencyPicker?.pickerBackgroundColor = .systemBackground
                 
                 currencyPicker?.show()
             default:

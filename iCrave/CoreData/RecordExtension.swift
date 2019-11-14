@@ -6,7 +6,6 @@
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
 extension Record {
