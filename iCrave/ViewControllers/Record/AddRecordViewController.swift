@@ -11,6 +11,8 @@ import IntentsUI
 
 class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let categories: [Category] = Category.getAll()
+    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var amountField: UITextField!
@@ -27,6 +29,18 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         // Siri Button
         addSiriButton(to: view)
+        
+        // Date Pikcer Limit
+        datePicker.maximumDate = Date()
+        
+        // Amount Placeholder
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count > 0 {
+            amountField.placeholder = currency
+        }
+        else {
+            amountField.placeholder = "Currency not set"
+        }
     }
     
     func addSiriButton(to view: UIView) {
@@ -52,11 +66,20 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return categories.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Gamja"
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 30
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont(name: "Helvetica Neue", size: 25)
+        label.text =  categories[row].title!
+        label.textAlignment = .center
+        return label
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -64,6 +87,27 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     @IBAction func addPressed(_ sender: Any) {
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count == 0 {
+            let alert = UIAlertController(title: "No Currency", message: "Set currency in Settings.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(ok)
+            present(alert, animated:true, completion: nil)
+        }
+        
+        if let amountText = amountField.text, amountText.count > 0, let amount = Decimal(string: amountText) {
+            let category = categories[categoryPicker.selectedRow(inComponent: 0)]
+            Record.create(in: category, timestamp: Date(), amount: amount, currency: currency)
+            self.dismiss(animated: true, completion: {
+                NotificationCenter.default.post(name: Notification.Name("HomeRefresh"), object: nil)
+            })
+        }
+        else {
+            let alert = UIAlertController(title: "Amount Error", message: "Please verify amount input.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(ok)
+            present(alert, animated:true, completion: nil)
+        }
     }
     
     @IBAction func cancel(_ sender: UIButton) {

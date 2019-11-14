@@ -729,51 +729,41 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This date..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-EZ-cFQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-EZ-cFQ">
                                         <rect key="frame" x="0.0" y="106" width="414" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="42n-Br-QPJ">
-                                        <rect key="frame" x="0.0" y="138" width="414" height="162"/>
+                                        <rect key="frame" x="0.0" y="138" width="414" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="162" id="QrI-d3-c04"/>
+                                            <constraint firstAttribute="height" constant="150" id="QrI-d3-c04"/>
                                         </constraints>
                                     </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I spent..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEs-2u-CJK">
-                                        <rect key="frame" x="0.0" y="308" width="414" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I spent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEs-2u-CJK">
+                                        <rect key="frame" x="0.0" y="296" width="414" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="5000 HKD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-5H-f6j">
-                                        <rect key="frame" x="0.0" y="340" width="414" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-5H-f6j">
+                                        <rect key="frame" x="0.0" y="328" width="414" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="E6o-8b-ecF"/>
+                                            <constraint firstAttribute="height" constant="45" id="E6o-8b-ecF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <outlet property="delegate" destination="jqn-jC-gzY" id="aB3-RG-fea"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For this..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-V1-tmr">
-                                        <rect key="frame" x="0.0" y="398" width="414" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For this" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-V1-tmr">
+                                        <rect key="frame" x="0.0" y="381" width="414" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZG-Gq-DCz">
-                                        <rect key="frame" x="0.0" y="430" width="414" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="1aF-97-bvH"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="jqn-jC-gzY" id="x71-nc-wEi"/>
-                                            <outlet property="delegate" destination="jqn-jC-gzY" id="dfq-O0-kCu"/>
-                                        </connections>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-Bd-3JF">
                                         <rect key="frame" x="326" y="8" width="80" height="35"/>
                                         <constraints>
@@ -788,6 +778,16 @@
                                             <action selector="cancel:" destination="jqn-jC-gzY" eventType="touchUpInside" id="upq-tc-ZR3"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZG-Gq-DCz">
+                                        <rect key="frame" x="0.0" y="413" width="414" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="1aF-97-bvH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="jqn-jC-gzY" id="x71-nc-wEi"/>
+                                            <outlet property="delegate" destination="jqn-jC-gzY" id="dfq-O0-kCu"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KJo-Hx-O54" firstAttribute="trailing" secondItem="hPg-EZ-cFQ" secondAttribute="trailing" id="4UY-g9-558"/>
@@ -795,7 +795,7 @@
                                     <constraint firstItem="xMf-5H-f6j" firstAttribute="top" secondItem="DEs-2u-CJK" secondAttribute="bottom" constant="8" id="8Bl-nQ-pDz"/>
                                     <constraint firstItem="DEs-2u-CJK" firstAttribute="top" secondItem="42n-Br-QPJ" secondAttribute="bottom" constant="8" id="AVt-pn-7sc"/>
                                     <constraint firstItem="OZG-Gq-DCz" firstAttribute="top" secondItem="a6I-V1-tmr" secondAttribute="bottom" constant="8" id="ENp-8S-4hu"/>
-                                    <constraint firstAttribute="bottom" secondItem="OZG-Gq-DCz" secondAttribute="bottom" constant="150" id="GNd-8V-bbi"/>
+                                    <constraint firstAttribute="bottom" secondItem="OZG-Gq-DCz" secondAttribute="bottom" constant="200" id="GNd-8V-bbi"/>
                                     <constraint firstItem="KJo-Hx-O54" firstAttribute="top" secondItem="Njt-Bd-3JF" secondAttribute="bottom" constant="5" id="Gzv-OE-XEa"/>
                                     <constraint firstItem="xMf-5H-f6j" firstAttribute="leading" secondItem="a6I-V1-tmr" secondAttribute="leading" id="NHK-Pf-o6A"/>
                                     <constraint firstItem="KJo-Hx-O54" firstAttribute="leading" secondItem="SkJ-6R-Ko0" secondAttribute="leading" id="S4A-Pk-ClO"/>
@@ -861,7 +861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1D-W7-ibP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="432.58928571428572"/>
+            <point key="canvasLocation" x="1298.5507246376812" y="432.58928571428572"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="f0F-Y8-7Gc">
