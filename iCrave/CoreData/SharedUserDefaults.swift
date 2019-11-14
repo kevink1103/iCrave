@@ -9,6 +9,8 @@
 import Foundation
 
 class SharedUserDefaults {
+    // MARK: - Shared UserDefaults stack
+    
     static let shared = SharedUserDefaults()
     static let sharedSuiteName = "group.com.kevinkim.iCrave"
 

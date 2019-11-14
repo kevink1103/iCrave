@@ -16,5 +16,13 @@ class NSCustomPersistentContainer: NSPersistentContainer {
         storeURL = storeURL?.appendingPathComponent("iCrave.sqlite")
         return storeURL!
     }
-
+    
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        let coordinator = self.persistentStoreCoordinator
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        managedObjectContext.mergePolicy = NSMergePolicy(merge: NSMergePolicyType.mergeByPropertyObjectTrumpMergePolicyType);
+        return managedObjectContext
+    }()
+    
 }

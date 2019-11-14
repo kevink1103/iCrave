@@ -37,8 +37,14 @@
 		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */; };
 		0A91D1652361626900462F69 /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
-		0A91D16923618E4200462F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D16823618E4200462F69 /* CoreDataManager.swift */; };
 		0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */; };
+		0AA0AC5A237CFF9F000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
+		0AA0AC5B237D01CA000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
+		0AA0AC5C237D01CB000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
+		0AA0AC5D237D01D8000FA3EA /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
+		0AA0AC5E237D01D9000FA3EA /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
+		0AA0AC5F237D01DC000FA3EA /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
+		0AA0AC60237D01DC000FA3EA /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
 		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
@@ -125,8 +131,8 @@
 		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
-		0A91D16823618E4200462F69 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCoreData.swift; sourceTree = "<group>"; };
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
@@ -287,8 +293,8 @@
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
 				0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */,
+				0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */,
 				0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */,
-				0A91D16823618E4200462F69 /* CoreDataManager.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
 				0A91D1642361626900462F69 /* RecordExtension.swift */,
 				0AD430F4235F03F2003DAB0C /* Dummy.swift */,
@@ -495,7 +501,6 @@
 				0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */,
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
-				0A91D16923618E4200462F69 /* CoreDataManager.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
 				0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */,
 				0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */,
@@ -514,6 +519,7 @@
 				0A597159237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0A91D1652361626900462F69 /* RecordExtension.swift in Sources */,
 				0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */,
+				0AA0AC5A237CFF9F000FA3EA /* SharedCoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,12 +529,15 @@
 			files = (
 				0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
 				0AF464F0237C7004003B32D1 /* UIButtonExtension.swift in Sources */,
+				0AA0AC5B237D01CA000FA3EA /* SharedCoreData.swift in Sources */,
 				0AF464EA237C6FD7003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E8237C60D7003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0AF464EC237C6FFC003B32D1 /* StringExtension.swift in Sources */,
 				0AF464EE237C7000003B32D1 /* UIImageExtension.swift in Sources */,
 				0A59715C237BE2EB009B0747 /* iCrave.xcdatamodeld in Sources */,
+				0AA0AC5F237D01DC000FA3EA /* RecordExtension.swift in Sources */,
+				0AA0AC5D237D01D8000FA3EA /* CategoryExtension.swift in Sources */,
 				0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A597132237BA64B009B0747 /* IntentHandler.swift in Sources */,
 			);
@@ -540,12 +549,15 @@
 			files = (
 				0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0AF464F1237C7005003B32D1 /* UIButtonExtension.swift in Sources */,
+				0AA0AC5C237D01CB000FA3EA /* SharedCoreData.swift in Sources */,
 				0AF464EB237C6FD8003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E9237C60D8003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715D237BE2ED009B0747 /* iCrave.xcdatamodeld in Sources */,
 				0AF464ED237C6FFD003B32D1 /* StringExtension.swift in Sources */,
 				0AF464EF237C7000003B32D1 /* UIImageExtension.swift in Sources */,
 				0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
+				0AA0AC60237D01DC000FA3EA /* RecordExtension.swift in Sources */,
+				0AA0AC5E237D01D9000FA3EA /* CategoryExtension.swift in Sources */,
 				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */,
 			);

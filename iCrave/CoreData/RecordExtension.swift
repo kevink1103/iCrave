@@ -12,12 +12,12 @@ import CoreData
 extension Record {
     
     public static func create(in category: Category, timestamp: Date, amount: Decimal, currency: String) {
-        let record = Record(context: CoreDataManager.context)
+        let record = Record(context: SharedCoreData.shared.context)
         record.timestamp = timestamp
         record.amount = amount as NSDecimalNumber
         record.currency = currency
         category.addToRecord(record)
-        CoreDataManager.appDelegate.saveContext()
+        SharedCoreData.shared.saveContext()
     }
     
     public static func getAll() -> [Record] {
@@ -26,7 +26,7 @@ extension Record {
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
         fetchReq.sortDescriptors = [sortDescriptor]
         do {
-            records = try CoreDataManager.context.fetch(fetchReq)
+            records = try SharedCoreData.shared.context.fetch(fetchReq)
         } catch let error as NSError {
             print("Error occurred when getting all records: \(error.localizedDescription)")
         }
@@ -45,20 +45,20 @@ extension Record {
         record.timestamp = timestamp
         record.amount = amount as NSDecimalNumber
         record.currency = currency
-        CoreDataManager.appDelegate.saveContext()
+        SharedCoreData.shared.saveContext()
     }
     
     public static func delete(in category: Category, record: Record) {
         category.removeFromRecord(record)
-        CoreDataManager.appDelegate.saveContext()
+        SharedCoreData.shared.saveContext()
     }
     
     public static func deleteAll() {
         let fetchReq: NSFetchRequest<NSFetchRequestResult> = Record.fetchRequest()
         let delReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
         do {
-            try CoreDataManager.context.execute(delReq)
-            CoreDataManager.appDelegate.saveContext()
+            try SharedCoreData.shared.context.execute(delReq)
+            SharedCoreData.shared.saveContext()
         } catch let error as NSError {
             print("Error occurred when deleting all records: \(error.localizedDescription)")
         }
@@ -68,6 +68,6 @@ extension Record {
         if let categoryRecords = category.record {
             category.removeFromRecord(categoryRecords)
         }
-        CoreDataManager.appDelegate.saveContext()
+        SharedCoreData.shared.saveContext()
     }
 }
