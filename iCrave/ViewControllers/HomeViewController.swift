@@ -12,7 +12,7 @@ import Cards
 class HomeViewController: UITableViewController {
     
     // dummy data
-    var records = Record.getAll()
+    var records = Record.getRecents()
     // var wishlists = [
     //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
     //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
@@ -36,7 +36,7 @@ class HomeViewController: UITableViewController {
     }
     
     func updateView() {
-        records = Record.getAll()
+        records = Record.getRecents()
         configureCardView()
         drawRecords()
     }

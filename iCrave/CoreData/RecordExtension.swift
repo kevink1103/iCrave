@@ -41,6 +41,20 @@ extension Record {
         return records
     }
     
+    public static func getRecents() -> [Record] {
+        var records: [Record] = []
+        let fetchReq: NSFetchRequest<Record> = Record.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+        fetchReq.sortDescriptors = [sortDescriptor]
+        fetchReq.fetchLimit = 5
+        do {
+            records = try SharedCoreData.shared.context.fetch(fetchReq)
+        } catch let error as NSError {
+            print("Error occurred when getting all records: \(error.localizedDescription)")
+        }
+        return records
+    }
+    
     public static func update(record: Record, timestamp: Date, amount: Decimal, currency: String) {
         record.timestamp = timestamp
         record.amount = amount as NSDecimalNumber

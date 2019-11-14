@@ -51,9 +51,9 @@
 		0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F4235F03F2003DAB0C /* Dummy.swift */; };
 		0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */; };
 		0AD430FB235F5C17003DAB0C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */; };
-		0AF464DC237C346F003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
-		0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
-		0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */; };
+		0AF464DC237C346F003B32D1 /* SharedPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* SharedPersistentContainer.swift */; };
+		0AF464DD237C3609003B32D1 /* SharedPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* SharedPersistentContainer.swift */; };
+		0AF464E2237C3759003B32D1 /* SharedPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464DB237C346F003B32D1 /* SharedPersistentContainer.swift */; };
 		0AF464E7237C3F6C003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
 		0AF464E8237C60D7003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
 		0AF464E9237C60D8003B32D1 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */; };
@@ -140,7 +140,7 @@
 		0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		0AD430FA235F5C17003DAB0C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		0AF464DA237BF57D003B32D1 /* SiriRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriRecord.entitlements; sourceTree = "<group>"; };
-		0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
+		0AF464DB237C346F003B32D1 /* SharedPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPersistentContainer.swift; sourceTree = "<group>"; };
 		0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
 		9F6CA64D8925F7C5A2268CAA /* Pods-iCrave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.debug.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.debug.xcconfig"; sourceTree = "<group>"; };
 		D9AEA11EBDD5BF2F15C9BE9E /* Pods-iCrave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCrave.release.xcconfig"; path = "Target Support Files/Pods-iCrave/Pods-iCrave.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4835D023560DED00016806 /* iCrave.xcdatamodeld */,
-				0AF464DB237C346F003B32D1 /* NSCustomPersistentContainer.swift */,
+				0AF464DB237C346F003B32D1 /* SharedPersistentContainer.swift */,
 				0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */,
 				0AF464E6237C3F6C003B32D1 /* SharedUserDefaults.swift */,
 				0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */,
@@ -507,7 +507,7 @@
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
-				0AF464DC237C346F003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
+				0AF464DC237C346F003B32D1 /* SharedPersistentContainer.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
 				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
@@ -527,7 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF464DD237C3609003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
+				0AF464DD237C3609003B32D1 /* SharedPersistentContainer.swift in Sources */,
 				0AF464F0237C7004003B32D1 /* UIButtonExtension.swift in Sources */,
 				0AA0AC5B237D01CA000FA3EA /* SharedCoreData.swift in Sources */,
 				0AF464EA237C6FD7003B32D1 /* UIColorExtension.swift in Sources */,
@@ -555,7 +555,7 @@
 				0A59715D237BE2ED009B0747 /* iCrave.xcdatamodeld in Sources */,
 				0AF464ED237C6FFD003B32D1 /* StringExtension.swift in Sources */,
 				0AF464EF237C7000003B32D1 /* UIImageExtension.swift in Sources */,
-				0AF464E2237C3759003B32D1 /* NSCustomPersistentContainer.swift in Sources */,
+				0AF464E2237C3759003B32D1 /* SharedPersistentContainer.swift in Sources */,
 				0AA0AC60237D01DC000FA3EA /* RecordExtension.swift in Sources */,
 				0AA0AC5E237D01D9000FA3EA /* CategoryExtension.swift in Sources */,
 				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,

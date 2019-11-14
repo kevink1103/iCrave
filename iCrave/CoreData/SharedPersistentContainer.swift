@@ -1,5 +1,5 @@
 //
-//  NSCustomPersistentContainer.swift
+//  SharedPersistentContainer.swift
 //  iCrave
 //
 //  Created by Kevin Kim on 13/11/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NSCustomPersistentContainer: NSPersistentContainer {
+class SharedPersistentContainer: NSPersistentContainer {
     
     override open class func defaultDirectoryURL() -> URL {
         var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.kevinkim.iCrave")
