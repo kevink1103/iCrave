@@ -6,7 +6,6 @@
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
-import CoreData
 import IntentsUI
 
 // As an example, this extension's Info.plist has been configured to handle interactions for INSendMessageIntent.
@@ -40,13 +39,15 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         desiredSize.height = 50
         
         let category = intent.category!
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let stringAmount = numberFormatter.string(from: intent.amount!)!
+        let amount = decimalToString(intent.amount!.decimalValue)
         let currency = SharedUserDefaults.shared.getCurrency()
         
         categoryLabel.text = category
-        amountLabel.text = "\(stringAmount) \(currency)"
+        amountLabel.text = "\(amount) \(currency)"
+        // if let bgColor = Category.getObject(title: category)!.color {
+        //     print(bgColor)
+        //     view.backgroundColor = bgColor.getUIColor()
+        // }
         
         completion(true, parameters, desiredSize)
     }

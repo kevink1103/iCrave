@@ -72,10 +72,7 @@ class HomeViewController: UITableViewController {
             card.title = records[i].category!.title!
             card.titleSize = 23
             card.itemTitle = ""
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            let amount = numberFormatter.string(from: records[i].amount!)!
-            card.itemSubtitle = "\(String(describing: amount)) \(records[i].currency!)"
+            card.itemSubtitle = "\(decimalToString(records[i].amount!)) \(records[i].currency!)"
             card.buttonText = ""
             card.shadowOpacity = 0
             card.backgroundColor = .systemBackground
@@ -105,11 +102,8 @@ class HomeViewController: UITableViewController {
     @objc func recentRecordClick(sender: UIGestureRecognizer) {
         let tag = sender.view!.tag
         let record = records[tag]
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let amount = numberFormatter.string(from: record.amount!)!
         
-        let alert = UIAlertController(title: "Quick Add", message: "Spent \(amount) \(record.currency!)\nfor \(record.category!.title!)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Quick Add", message: "Spent \(decimalToString(record.amount!)) \(record.currency!)\nfor \(record.category!.title!)", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .default)
         let action = UIAlertAction(title: "Add", style: .default) { (alertAction) in
             Record.create(in: record.category!, timestamp: Date(), amount: record.amount! as Decimal, currency: record.currency!)

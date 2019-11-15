@@ -70,7 +70,7 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 30
+        return 35
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -79,6 +79,8 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         label.font = UIFont(name: "Helvetica Neue", size: 25)
         label.text =  categories[row].title!
         label.textAlignment = .center
+        label.backgroundColor = categories[row].color!.getUIColor()
+        label.textColor = categories[row].color!.getUIColor().generateStaticTextColor()
         return label
     }
     

@@ -45,6 +45,9 @@
 		0AA0AC5E237D01D9000FA3EA /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
 		0AA0AC5F237D01DC000FA3EA /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
 		0AA0AC60237D01DC000FA3EA /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
+		0AA0AC62237E753F000FA3EA /* DecimalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */; };
+		0AA0AC63237E753F000FA3EA /* DecimalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */; };
+		0AA0AC64237E753F000FA3EA /* DecimalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */; };
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
 		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
@@ -133,6 +136,7 @@
 		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
 		0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCoreData.swift; sourceTree = "<group>"; };
+		0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalHelper.swift; sourceTree = "<group>"; };
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		0A1FC04E235714070033CD96 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */,
 				0AD430C4235DEE9A003DAB0C /* StringExtension.swift */,
 				0A1872A823578A2200DD5795 /* UIColorExtension.swift */,
 				0A1872AA23578FA000DD5795 /* UIImageExtension.swift */,
@@ -508,6 +513,7 @@
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
 				0AF464DC237C346F003B32D1 /* SharedPersistentContainer.swift in Sources */,
+				0AA0AC62237E753F000FA3EA /* DecimalHelper.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
 				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
@@ -530,6 +536,7 @@
 				0AF464DD237C3609003B32D1 /* SharedPersistentContainer.swift in Sources */,
 				0AF464F0237C7004003B32D1 /* UIButtonExtension.swift in Sources */,
 				0AA0AC5B237D01CA000FA3EA /* SharedCoreData.swift in Sources */,
+				0AA0AC63237E753F000FA3EA /* DecimalHelper.swift in Sources */,
 				0AF464EA237C6FD7003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E8237C60D7003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715A237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
@@ -550,6 +557,7 @@
 				0A59715B237BB104009B0747 /* RecordIntentHandler.swift in Sources */,
 				0AF464F1237C7005003B32D1 /* UIButtonExtension.swift in Sources */,
 				0AA0AC5C237D01CB000FA3EA /* SharedCoreData.swift in Sources */,
+				0AA0AC64237E753F000FA3EA /* DecimalHelper.swift in Sources */,
 				0AF464EB237C6FD8003B32D1 /* UIColorExtension.swift in Sources */,
 				0AF464E9237C60D8003B32D1 /* SharedUserDefaults.swift in Sources */,
 				0A59715D237BE2ED009B0747 /* iCrave.xcdatamodeld in Sources */,

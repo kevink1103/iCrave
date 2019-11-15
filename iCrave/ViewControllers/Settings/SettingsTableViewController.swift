@@ -147,25 +147,26 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             switch (indexPath.row) {
             case 0:
                 // Set Budget
-                let alert = UIAlertController(title: "Monthly Budget", message: "Set your monthly budget.", preferredStyle: .alert)
-                alert.addTextField { (textField) in
+                let budgetAlert = UIAlertController(title: "Monthly Budget", message: "Set your monthly budget.", preferredStyle: .alert)
+                budgetAlert.addTextField { (textField) in
                     textField.placeholder = "Amount"
                     textField.keyboardType = .decimalPad
                 }
                 let cancel = UIAlertAction(title: "Cancel", style: .default)
                 let action = UIAlertAction(title: "Set", style: .default) { (alertAction) in
-                    let textField = alert.textFields![0] as UITextField
-                    if let amount = Decimal(string: textField.text!) {
-                        let numberFormatter = NumberFormatter()
-                        numberFormatter.numberStyle = .decimal
-                        let stringAmount = numberFormatter.string(from: amount as NSDecimalNumber)!
+                    let textField = budgetAlert.textFields![0] as UITextField
+                    if let amount = stringToDecimal(textField.text!) {
+                        let stringAmount = decimalToString(amount as NSDecimalNumber)
                         SharedUserDefaults.shared.setBudget(budget: stringAmount)
                         self.tableView.reloadData()
                     }
                 }
-                alert.addAction(cancel)
-                alert.addAction(action)
-                present(alert, animated:true, completion: nil)
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
             case 1:
                 // Set Currency
                 let initCurrency = SharedUserDefaults.shared.getCurrency()
@@ -182,6 +183,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 currencyPicker?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.paragraphStyle: paragraphStyle]
                 currencyPicker?.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25), NSAttributedString.Key.paragraphStyle: paragraphStyle]
                 currencyPicker?.pickerBackgroundColor = .systemBackground
+                currencyPicker?.toolbarBackgroundColor = .systemBackground
+                currencyPicker?.toolbarButtonsColor = .systemOrange
                 
                 currencyPicker?.show()
             default:
