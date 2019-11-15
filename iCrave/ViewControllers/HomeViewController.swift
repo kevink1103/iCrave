@@ -92,11 +92,11 @@ class HomeViewController: UITableViewController {
     }
     
     @objc func showAddRecordView(sender: UIGestureRecognizer) {
-        performSegue(withIdentifier: "AddSpendingSegue", sender: self)
+        performSegue(withIdentifier: "AddRecordSegue", sender: self)
     }
     
     @objc func wishlistDetailView(sender: UIGestureRecognizer) {
-        performSegue(withIdentifier: "WishlistDetailSegue", sender: self)
+        performSegue(withIdentifier: "WishItemDetailSegueHome", sender: self)
     }
     
     @objc func recentRecordClick(sender: UIGestureRecognizer) {
@@ -128,7 +128,7 @@ class HomeViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "WishlistDetailSegue" {
+        if segue.identifier == "WishItemDetailSegueHome" {
             if let vc = segue.destination as? WishlistDetailTableViewController {
                 vc.navTitle = cardView.title
             }

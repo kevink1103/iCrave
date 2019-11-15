@@ -162,7 +162,7 @@
                     <connections>
                         <outlet property="cardView" destination="S2T-H3-Ppg" id="33J-6U-fpY"/>
                         <outlet property="recordsScroll" destination="md3-dx-Co7" id="Qlg-5L-UNz"/>
-                        <segue destination="jqn-jC-gzY" kind="showDetail" identifier="AddSpendingSegue" id="Zcr-rf-MYl"/>
+                        <segue destination="jqn-jC-gzY" kind="showDetail" identifier="AddRecordSegue" id="Zcr-rf-MYl"/>
                         <segue destination="Jrc-ss-fyY" kind="show" identifier="WishItemDetailSegueHome" id="C02-uC-ZHF"/>
                     </connections>
                 </tableViewController>
@@ -984,6 +984,6 @@
         <image name="ip11pro" width="970" height="647"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C02-uC-ZHF"/>
+        <segue reference="7n7-Jk-m1f"/>
     </inferredMetricsTieBreakers>
 </document>
