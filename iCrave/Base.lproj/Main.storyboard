@@ -163,7 +163,7 @@
                         <outlet property="cardView" destination="S2T-H3-Ppg" id="33J-6U-fpY"/>
                         <outlet property="recordsScroll" destination="md3-dx-Co7" id="Qlg-5L-UNz"/>
                         <segue destination="jqn-jC-gzY" kind="showDetail" identifier="AddSpendingSegue" id="Zcr-rf-MYl"/>
-                        <segue destination="Jrc-ss-fyY" kind="show" identifier="WishlistDetailSegue" id="C02-uC-ZHF"/>
+                        <segue destination="Jrc-ss-fyY" kind="show" identifier="WishItemDetailSegueHome" id="C02-uC-ZHF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCM-JI-Au1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -576,13 +576,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="230" id="bh5-xY-5f6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishItemCell" rowHeight="230" id="bh5-xY-5f6">
                                 <rect key="frame" x="0.0" y="28" width="414" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bh5-xY-5f6" id="b01-LB-Eyo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Jrc-ss-fyY" kind="show" identifier="WishItemDetailSegueList" id="7n7-Jk-m1f"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -638,32 +641,106 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uBJ-K6-5ed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="yzg-rd-wKt">
+                            <tableViewSection headerTitle="PRODUCT NAME" id="yzg-rd-wKt">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="230" id="KBD-nD-XYS">
-                                        <rect key="frame" x="0.0" y="18" width="414" height="230"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KBD-nD-XYS">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBD-nD-XYS" id="j06-Gf-hx7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="f3B-Xa-sTp">
-                                        <rect key="frame" x="0.0" y="248" width="414" height="70"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="PRICE" id="Dus-3R-KbL">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="5j6-61-tgA">
+                                        <rect key="frame" x="0.0" y="171.33333206176758" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f3B-Xa-sTp" id="dpf-hp-MVB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5j6-61-tgA" id="9ca-Wz-1tf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Kmo-LP-R3a">
-                                        <rect key="frame" x="0.0" y="318" width="414" height="70"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="CURRENTLY SAVING" id="HMC-0W-8XR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="H7E-Lt-u2r">
+                                        <rect key="frame" x="0.0" y="287.33333206176758" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmo-LP-R3a" id="ARv-Sc-7kB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H7E-Lt-u2r" id="oJW-2U-DgO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="PRODUCT IMAGE" id="FUp-qo-28G">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="yc0-Wa-dpB">
+                                        <rect key="frame" x="0.0" y="403.33333206176758" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yc0-Wa-dpB" id="aoS-91-hZZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="GDq-yy-ZOX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="515-LM-gPi">
+                                        <rect key="frame" x="0.0" y="503.66666603088379" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="515-LM-gPi" id="teb-aQ-riN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcF-Py-wqt" customClass="CardHighlight" customModule="Cards">
+                                                    <rect key="frame" x="20" y="10" width="374" height="230"/>
+                                                    <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="230" id="cJE-JC-fxL"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="iPhone 11 Pro"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="ip11pro"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="62.5%"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemTitle" value="5,000 HKD"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemSubtitle" value="out of 8,000 HKD"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="itemTitleSize">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="titleSize">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="itemSubtitleSize">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cardRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TcF-Py-wqt" firstAttribute="centerY" secondItem="teb-aQ-riN" secondAttribute="centerY" id="9rO-0h-KYa"/>
+                                                <constraint firstItem="TcF-Py-wqt" firstAttribute="leading" secondItem="teb-aQ-riN" secondAttribute="leadingMargin" id="JI5-sK-dI7"/>
+                                                <constraint firstItem="TcF-Py-wqt" firstAttribute="trailing" secondItem="teb-aQ-riN" secondAttribute="trailingMargin" id="jsV-rM-NnT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -674,11 +751,13 @@
                             <outlet property="delegate" destination="ho4-IY-o8B" id="FuG-Mh-Hgy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Wishlist" id="PQq-ze-HqI"/>
+                    <navigationItem key="navigationItem" title="Add Wishlist" id="PQq-ze-HqI">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="N6F-5K-Vwu"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8t-U9-kux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="-1748"/>
+            <point key="canvasLocation" x="2492.753623188406" y="-1748.4375"/>
         </scene>
         <!--Records-->
         <scene sceneID="ssM-gO-mCo">
@@ -707,7 +786,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsa-Dp-qrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="-323"/>
+            <point key="canvasLocation" x="1435" y="-372"/>
         </scene>
         <!--Add Record View Controller-->
         <scene sceneID="2sc-XE-yeN">
@@ -861,7 +940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1D-W7-ibP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="432.58928571428572"/>
+            <point key="canvasLocation" x="661" y="368"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="f0F-Y8-7Gc">
@@ -877,7 +956,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3z-q9-kRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311.594202898551" y="432.58928571428572"/>
+            <point key="canvasLocation" x="1435" y="368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BbS-DO-tBq">
@@ -904,4 +983,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="ip11pro" width="970" height="647"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="C02-uC-ZHF"/>
+    </inferredMetricsTieBreakers>
 </document>

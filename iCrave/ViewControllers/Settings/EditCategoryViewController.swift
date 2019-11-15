@@ -67,10 +67,26 @@ class EditCategoryViewController: UIViewController, UITextFieldDelegate, UIColle
     @IBAction func updatePressed(_ sender: UIButton) {
         if let title = titleField.text {
             if title.count > 0  && color.count > 0 {
+                if category!.title != title {
+                    // Same name exists
+                    if Category.getObject(title: title) != nil {
+                        let alert = UIAlertController(title: "Category Exists", message: "This category already exists.", preferredStyle: .alert)
+                        let ok = UIAlertAction(title: "OK", style: .cancel)
+                        alert.addAction(ok)
+                        present(alert, animated:true, completion: nil)
+                        return
+                    }
+                }
                 Category.update(category: category!, title: title, color: color)
                 self.dismiss(animated: true, completion: {
                     NotificationCenter.default.post(name: Notification.Name("CategoryRefresh"), object: nil)
                 })
+            }
+            else {
+                let alert = UIAlertController(title: "Check Inputs", message: "Please check title and color.", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(ok)
+                present(alert, animated:true, completion: nil)
             }
         }
     }
