@@ -52,8 +52,9 @@
 		0AA0AC67237E897A000FA3EA /* WishItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC65237E8979000FA3EA /* WishItemExtension.swift */; };
 		0AA0AC68237E897A000FA3EA /* WishItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC65237E8979000FA3EA /* WishItemExtension.swift */; };
 		0AA0AC6A237EC840000FA3EA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC69237EC840000FA3EA /* ImagePicker.swift */; };
+		0AA0AC6D237EE36B000FA3EA /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC6C237EE36B000FA3EA /* WishlistTableViewCell.swift */; };
+		0AA0AC6F237F025C000FA3EA /* EditWishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC6E237F025C000FA3EA /* EditWishlistTableViewController.swift */; };
 		0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C4235DEE9A003DAB0C /* StringExtension.swift */; };
-		0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */; };
 		0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */; };
 		0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F4235F03F2003DAB0C /* Dummy.swift */; };
 		0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */; };
@@ -144,8 +145,9 @@
 		0AA0AC65237E8979000FA3EA /* WishItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishItemExtension.swift; sourceTree = "<group>"; };
 		0AA0AC69237EC840000FA3EA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AA0AC6B237EDF61000FA3EA /* SiriRecordUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriRecordUI.entitlements; sourceTree = "<group>"; };
+		0AA0AC6C237EE36B000FA3EA /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
+		0AA0AC6E237F025C000FA3EA /* EditWishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWishlistTableViewController.swift; sourceTree = "<group>"; };
 		0AD430C4235DEE9A003DAB0C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailTableViewController.swift; sourceTree = "<group>"; };
 		0AD430F0235EF47B003DAB0C /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
 		0AD430F4235F03F2003DAB0C /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		0AD430F6235F3ED1003DAB0C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,8 @@
 		0A1872A7235782F000DD5795 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
+				0A4835CD23560DED00016806 /* Main.storyboard */,
 				0A5F7B7323570F34001C4EDC /* HomeViewController.swift */,
 				0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */,
 				0A91D1632360951100462F69 /* Record */,
@@ -236,17 +240,15 @@
 		0A4835C623560DED00016806 /* iCrave */ = {
 			isa = PBXGroup;
 			children = (
+				0A4835D823560DF000016806 /* Info.plist */,
+				0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */,
 				0A59712A237BA626009B0747 /* iCrave.entitlements */,
 				0A597154237BB045009B0747 /* Intents.intentdefinition */,
+				0A4835D323560DF000016806 /* Assets.xcassets */,
 				0A4835C723560DED00016806 /* AppDelegate.swift */,
 				0AD430EF235EF444003DAB0C /* CoreData */,
 				0A1872A7235782F000DD5795 /* ViewControllers */,
 				0A1FC04E235714070033CD96 /* Extensions */,
-				0A4835CD23560DED00016806 /* Main.storyboard */,
-				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
-				0A4835D323560DF000016806 /* Assets.xcassets */,
-				0A4835D823560DF000016806 /* Info.plist */,
-				0A1872AC2358047B00DD5795 /* GoogleService-Info.plist */,
 			);
 			path = iCrave;
 			sourceTree = "<group>";
@@ -287,8 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				0A1872AF23580FC900DD5795 /* AddWishlistTableViewController.swift */,
+				0AA0AC6E237F025C000FA3EA /* EditWishlistTableViewController.swift */,
+				0AA0AC6C237EE36B000FA3EA /* WishlistTableViewCell.swift */,
 				0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */,
-				0AD430C6235E0161003DAB0C /* WishlistDetailTableViewController.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -519,7 +522,6 @@
 				0A4835D223560DED00016806 /* iCrave.xcdatamodeld in Sources */,
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
-				0AD430C7235E0161003DAB0C /* WishlistDetailTableViewController.swift in Sources */,
 				0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */,
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
@@ -528,9 +530,11 @@
 				0AA0AC62237E753F000FA3EA /* DecimalHelper.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
 				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
+				0AA0AC6F237F025C000FA3EA /* EditWishlistTableViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
 				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,
 				0AD430F7235F3ED1003DAB0C /* SettingsTableViewController.swift in Sources */,
+				0AA0AC6D237EE36B000FA3EA /* WishlistTableViewCell.swift in Sources */,
 				0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */,
 				0AD430C5235DEE9A003DAB0C /* StringExtension.swift in Sources */,
 				0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */,

@@ -1,16 +1,17 @@
 //
-//  AddWishlistTableViewController.swift
+//  EditWishlistTableViewController.swift
 //  iCrave
 //
-//  Created by Kevin Kim on 17/10/2019.
+//  Created by Kevin Kim on 15/11/2019.
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
 import UIKit
 import Cards
 
-class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate, ImagePickerDelegate {
-    
+class EditWishlistTableViewController: UITableViewController, ImagePickerDelegate {
+
+    var wishItem: WishItem? = nil
     var imagePicker: ImagePicker!
 
     @IBOutlet var productName: UITextField!
@@ -38,10 +39,6 @@ class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate
             priceField.placeholder = "Currency not set"
         }
         
-        if WishItem.checkAnySavingOn() {
-            savingSwitch.isOn = false
-        }
-        
         // Empty Card
         previewCard.title = "Title"
         previewCard.itemTitle = "0 \(currency)"
@@ -51,6 +48,19 @@ class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate
         
         // Image Picker
         imagePicker = ImagePicker(presentationController: self, delegate: self)
+        
+        // Load Object
+        if let item = wishItem {
+            productName.text = item.name!
+            priceField.text = decimalToString(item.price!)
+            savingSwitch.isOn = item.saving
+            if let imageData = item.image {
+                previewCard.backgroundImage = UIImage(data: imageData)
+                previewCard.textColor = previewCard.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
+                previewCard.setNeedsDisplay()
+            }
+            updatePreviewCard()
+        }
     }
     
     func updatePreviewCard() {

@@ -32,6 +32,21 @@ extension WishItem {
         return false
     }
     
+    public static func getSavingItem() -> WishItem? {
+        var item: WishItem? = nil
+        let fetchReq: NSFetchRequest<WishItem> = WishItem.fetchRequest()
+        fetchReq.predicate = NSPredicate(format: "saving = %@", NSNumber(value: true))
+        do {
+            let items = try SharedCoreData.shared.context.fetch(fetchReq)
+            if items.count > 0 {
+                item = items[0]
+            }
+        } catch let error as NSError {
+            print("Error occurred when getting saving wishitem: \(error.localizedDescription)")
+        }
+        return item
+    }
+    
     public static func getAll() -> [WishItem] {
         var items: [WishItem] = []
         let fetchReq: NSFetchRequest<WishItem> = WishItem.fetchRequest()
@@ -40,9 +55,14 @@ extension WishItem {
         do {
             items = try SharedCoreData.shared.context.fetch(fetchReq)
         } catch let error as NSError {
-            print("Error occurred when getting all categories: \(error.localizedDescription)")
+            print("Error occurred when getting all wishitems: \(error.localizedDescription)")
         }
         return items
+    }
+    
+    public static func delete(wishItem: WishItem) {
+        SharedCoreData.shared.context.delete(wishItem)
+        SharedCoreData.shared.saveContext()
     }
     
     public static func deleteAll() {
@@ -52,7 +72,7 @@ extension WishItem {
             try SharedCoreData.shared.context.execute(delReq)
             SharedCoreData.shared.saveContext()
         } catch let error as NSError {
-            print("Error occurred when deleting all categories: \(error.localizedDescription)")
+            print("Error occurred when deleting all wishitems: \(error.localizedDescription)")
         }
     }
     

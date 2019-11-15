@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 import Cards
 
 class HomeViewController: UITableViewController {
     
-    // dummy data
+    var wishItem = WishItem.getSavingItem()
     var records = Record.getRecents()
-    // var wishlists = [
-    //     ["timestamp": "1", "name": "iPhone 11 Pro", "price": "6000"],
-    //     ["timestamp": "2", "name": "Fujifilm X-T3", "price": "10000"]
-    // ]
     
     @IBOutlet var cardView: CardHighlight!
     @IBOutlet var recordsScroll: UIScrollView!
@@ -32,13 +29,39 @@ class HomeViewController: UITableViewController {
     }
     
     func updateView() {
+        wishItem = WishItem.getSavingItem()
         records = Record.getRecents()
-        configureCardView()
+        drawCardView()
         drawRecords()
     }
     
-    func configureCardView() {
-        cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
+    func drawCardView() {
+        if let item = wishItem {
+            cardView.title = item.name!
+            cardView.itemTitle = "0 \(item.currency!)"
+            cardView.itemSubtitle = "out of \(decimalToString(item.price!)) \(item.currency!)"
+            cardView.buttonText = "0%"
+            cardView.backgroundColor = .white
+            cardView.backgroundImage = nil
+            if let imageData = item.image {
+                cardView.backgroundImage = UIImage(data: imageData)
+                cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
+            }
+            cardView.tintColor = .systemOrange
+            cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
+        }
+        else {
+            cardView.title = "No Wish Item"
+            cardView.itemTitle = "Please add"
+            cardView.itemSubtitle = "a new wish item"
+            cardView.buttonText = "0%"
+            cardView.backgroundColor = .white
+            cardView.backgroundImage = nil
+            cardView.tintColor = .gray
+            cardView.textColor = .black
+        }
+        cardView.setNeedsDisplay()
+        
         let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))
         cardView.addGestureRecognizer(wishlistDetailTap)
     }
@@ -96,7 +119,7 @@ class HomeViewController: UITableViewController {
     }
     
     @objc func wishlistDetailView(sender: UIGestureRecognizer) {
-        performSegue(withIdentifier: "WishItemDetailSegueHome", sender: self)
+        performSegue(withIdentifier: "Wishlist", sender: sender)
     }
     
     @objc func recentRecordClick(sender: UIGestureRecognizer) {
@@ -128,11 +151,6 @@ class HomeViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "WishItemDetailSegueHome" {
-            if let vc = segue.destination as? WishlistDetailTableViewController {
-                vc.navTitle = cardView.title
-            }
-        }
     }
 
 }
