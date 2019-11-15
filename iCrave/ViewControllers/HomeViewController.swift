@@ -38,7 +38,7 @@ class HomeViewController: UITableViewController {
     }
     
     func configureCardView() {
-        cardView.textColor = (cardView.backgroundImage?.averageColor?.generateStaticTextColor())!
+        cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
         let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))
         cardView.addGestureRecognizer(wishlistDetailTap)
     }

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load dummies
         loadDummyCategories()
         loadDummyRecords()
+        WishItem.deleteAll()
         // FirebaseApp.configure() // Firebase Integration
         return true
     }

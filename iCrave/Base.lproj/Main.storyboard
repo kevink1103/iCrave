@@ -71,16 +71,14 @@
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2T-H3-Ppg" customClass="CardHighlight" customModule="Cards">
                                                     <rect key="frame" x="20" y="11" width="374" height="230"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="230" id="J8d-Wo-DJR"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="iPhone 11 Pro"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="ip11pro"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="62.5%"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemTitle" value="5,000 HKD"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemSubtitle" value="out of 8,000 HKD"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="No Wish Item"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="0%"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="itemTitleSize">
                                                             <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
@@ -102,6 +100,8 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                             <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemTitle" value=" Please add"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="itemSubtitle" value=" a new wish item"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATISTICS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PES-Mf-7pi">
@@ -245,7 +245,7 @@
                                             <outlet property="delegate" destination="FvS-gm-xb3" id="UiS-ke-nxT"/>
                                         </connections>
                                     </collectionView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KN-Dl-9gj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KN-Dl-9gj">
                                         <rect key="frame" x="42" y="138" width="330" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Xxi-5q-Vnh"/>
@@ -399,7 +399,7 @@
                                             <outlet property="delegate" destination="dDA-kt-I1x" id="3VJ-3e-J1p"/>
                                         </connections>
                                     </collectionView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOa-Fk-edj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOa-Fk-edj">
                                         <rect key="frame" x="42" y="138" width="330" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="V1b-K2-Ef6"/>
@@ -567,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="1435" y="-1169"/>
         </scene>
-        <!--Wishlists-->
+        <!--Wishlist-->
         <scene sceneID="d1l-st-kwv">
             <objects>
                 <tableViewController id="KxD-bd-2sX" customClass="WishlistTableViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
@@ -593,7 +593,7 @@
                             <outlet property="delegate" destination="KxD-bd-2sX" id="gtd-1f-dhV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Wishlists" id="dsD-bW-8dw">
+                    <navigationItem key="navigationItem" title="Wishlist" id="dsD-bW-8dw">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="rfg-aH-o9R">
                             <connections>
                                 <segue destination="ho4-IY-o8B" kind="show" id="96U-Lv-ZsQ"/>
@@ -634,11 +634,11 @@
             </objects>
             <point key="canvasLocation" x="3299" y="-1075"/>
         </scene>
-        <!--Add Wishlist-->
+        <!--Add to Wishlist-->
         <scene sceneID="PJt-cf-Wv7">
             <objects>
                 <tableViewController id="ho4-IY-o8B" customClass="AddWishlistTableViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uBJ-K6-5ed">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uBJ-K6-5ed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -651,6 +651,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBD-nD-XYS" id="j06-Gf-hx7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xt6-Fg-ICR">
+                                                    <rect key="frame" x="20" y="5" width="374" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="CIh-dT-cad"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ho4-IY-o8B" id="HyU-4e-Oq9"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xt6-Fg-ICR" firstAttribute="trailing" secondItem="j06-Gf-hx7" secondAttribute="trailingMargin" id="23p-f0-hJE"/>
+                                                <constraint firstItem="Xt6-Fg-ICR" firstAttribute="leading" secondItem="j06-Gf-hx7" secondAttribute="leadingMargin" id="emX-D6-Zg5"/>
+                                                <constraint firstItem="Xt6-Fg-ICR" firstAttribute="centerY" secondItem="j06-Gf-hx7" secondAttribute="centerY" id="kev-Ue-zD4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -663,11 +681,29 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5j6-61-tgA" id="9ca-Wz-1tf">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-bF-dsU">
+                                                    <rect key="frame" x="20" y="5" width="374" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="5je-tc-swN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ho4-IY-o8B" id="yxo-AX-bhl"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fKu-bF-dsU" firstAttribute="leading" secondItem="9ca-Wz-1tf" secondAttribute="leadingMargin" id="Tc4-ST-3vt"/>
+                                                <constraint firstItem="fKu-bF-dsU" firstAttribute="trailing" secondItem="9ca-Wz-1tf" secondAttribute="trailingMargin" id="s3V-Xt-C65"/>
+                                                <constraint firstItem="fKu-bF-dsU" firstAttribute="centerY" secondItem="9ca-Wz-1tf" secondAttribute="centerY" id="sQb-as-yNu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="CURRENTLY SAVING" id="HMC-0W-8XR">
+                            <tableViewSection headerTitle="CURRENTLY SAVING FOR THIS" id="HMC-0W-8XR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="H7E-Lt-u2r">
                                         <rect key="frame" x="0.0" y="287.33333206176758" width="414" height="60"/>
@@ -675,6 +711,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H7E-Lt-u2r" id="oJW-2U-DgO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xx2-4j-L3s">
+                                                    <rect key="frame" x="183.66666666666666" y="15" width="49" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="8rv-Mq-fs5"/>
+                                                    </constraints>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xx2-4j-L3s" firstAttribute="top" secondItem="oJW-2U-DgO" secondAttribute="topMargin" constant="4" id="A3f-xE-j9O"/>
+                                                <constraint firstItem="Xx2-4j-L3s" firstAttribute="centerY" secondItem="oJW-2U-DgO" secondAttribute="centerY" id="Pup-k3-wAa"/>
+                                                <constraint firstItem="Xx2-4j-L3s" firstAttribute="centerX" secondItem="oJW-2U-DgO" secondAttribute="centerX" id="TLX-bQ-4rY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -687,14 +736,31 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yc0-Wa-dpB" id="aoS-91-hZZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTa-Lp-BS2">
+                                                    <rect key="frame" x="20" y="5" width="374" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Upload Image"/>
+                                                    <connections>
+                                                        <action selector="uploadImage:" destination="ho4-IY-o8B" eventType="touchUpInside" id="T22-6q-Nbf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VTa-Lp-BS2" firstAttribute="centerY" secondItem="aoS-91-hZZ" secondAttribute="centerY" id="Nk7-60-8iQ"/>
+                                                <constraint firstItem="VTa-Lp-BS2" firstAttribute="trailing" secondItem="aoS-91-hZZ" secondAttribute="trailingMargin" id="OwF-wb-Syg"/>
+                                                <constraint firstItem="VTa-Lp-BS2" firstAttribute="leading" secondItem="aoS-91-hZZ" secondAttribute="leadingMargin" id="d3e-hI-SoX"/>
+                                                <constraint firstItem="VTa-Lp-BS2" firstAttribute="top" secondItem="aoS-91-hZZ" secondAttribute="topMargin" constant="-6" id="pIZ-06-zqj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="" id="GDq-yy-ZOX">
+                            <tableViewSection headerTitle="PREVIEW" id="GDq-yy-ZOX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="515-LM-gPi">
-                                        <rect key="frame" x="0.0" y="503.66666603088379" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="519.33333206176758" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="515-LM-gPi" id="teb-aQ-riN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -702,14 +768,14 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcF-Py-wqt" customClass="CardHighlight" customModule="Cards">
                                                     <rect key="frame" x="20" y="10" width="374" height="230"/>
-                                                    <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="230" id="cJE-JC-fxL"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="iPhone 11 Pro"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="ip11pro"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="62.5%"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="0%"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="itemTitle" value="5,000 HKD"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="itemSubtitle" value="out of 8,000 HKD"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="itemTitleSize">
@@ -751,9 +817,19 @@
                             <outlet property="delegate" destination="ho4-IY-o8B" id="FuG-Mh-Hgy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Wishlist" id="PQq-ze-HqI">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="N6F-5K-Vwu"/>
+                    <navigationItem key="navigationItem" title="Add to Wishlist" id="PQq-ze-HqI">
+                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="N6F-5K-Vwu">
+                            <connections>
+                                <action selector="addPressed:" destination="ho4-IY-o8B" id="av8-BJ-P4L"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="previewCard" destination="TcF-Py-wqt" id="nmN-mV-mIs"/>
+                        <outlet property="priceField" destination="fKu-bF-dsU" id="nBf-Bw-biC"/>
+                        <outlet property="productName" destination="Xt6-Fg-ICR" id="NOA-nv-8CO"/>
+                        <outlet property="savingSwitch" destination="Xx2-4j-L3s" id="Fxp-ZD-Q4R"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8t-U9-kux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

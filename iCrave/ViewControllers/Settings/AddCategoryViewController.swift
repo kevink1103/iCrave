@@ -61,6 +61,7 @@ class AddCategoryViewController: UIViewController, UITextFieldDelegate, UICollec
                 if Category.getObject(title: title) != nil {
                     let alert = UIAlertController(title: "Category Exists", message: "This category already exists.", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "OK", style: .cancel)
+                    ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
                     alert.addAction(ok)
                     present(alert, animated:true, completion: nil)
                     return
@@ -73,6 +74,7 @@ class AddCategoryViewController: UIViewController, UITextFieldDelegate, UICollec
             else {
                 let alert = UIAlertController(title: "Check Inputs", message: "Please check title and color.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .cancel)
+                ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
                 alert.addAction(ok)
                 present(alert, animated:true, completion: nil)
             }

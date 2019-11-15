@@ -93,6 +93,7 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         if currency.count == 0 {
             let alert = UIAlertController(title: "No Currency", message: "Set currency in Settings.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .cancel)
+            ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
             alert.addAction(ok)
             present(alert, animated:true, completion: nil)
         }
@@ -105,8 +106,9 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
             })
         }
         else {
-            let alert = UIAlertController(title: "Amount Error", message: "Please verify amount input.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Amount Error", message: "Please check amount input.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .cancel)
+            ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
             alert.addAction(ok)
             present(alert, animated:true, completion: nil)
         }
