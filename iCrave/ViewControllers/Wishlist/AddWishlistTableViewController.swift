@@ -43,10 +43,12 @@ class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate
         }
         
         // Empty Card
-        previewCard.title = "Title"
-        previewCard.itemTitle = "0 \(currency)"
-        previewCard.itemSubtitle = "out of 0 \(currency)"
+        // 50 spaces added for flexible constraints - Cards bug
+        previewCard.title = "Title                                                  "
+        previewCard.itemTitle = "0 \(currency)                                                  "
+        previewCard.itemSubtitle = "out of 0 \(currency)                                                  "
         previewCard.backgroundImage = nil
+        previewCard.backgroundColor = .white
         previewCard.tintColor = .gray
         
         // Image Picker

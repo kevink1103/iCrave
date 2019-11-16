@@ -20,6 +20,7 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: Notification.Name("HomeRefresh"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -51,9 +52,10 @@ class HomeViewController: UITableViewController {
             cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
         }
         else {
-            cardView.title = "No Wish Item"
-            cardView.itemTitle = "Please add"
-            cardView.itemSubtitle = "a new wish item"
+            // 50 spaces added for flexible constraints - Cards bug
+            cardView.title = "No Wish Item                                             "
+            cardView.itemTitle = "Please add                                             "
+            cardView.itemSubtitle = "a new wish item                                             "
             cardView.buttonText = "0%"
             cardView.backgroundColor = .white
             cardView.backgroundImage = nil
