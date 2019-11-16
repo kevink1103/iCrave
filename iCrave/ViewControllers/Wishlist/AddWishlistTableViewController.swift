@@ -43,13 +43,16 @@ class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate
         }
         
         // Empty Card
-        // 50 spaces added for flexible constraints - Cards bug
-        previewCard.title = "Title                                                  "
-        previewCard.itemTitle = "0 \(currency)                                                  "
-        previewCard.itemSubtitle = "out of 0 \(currency)                                                  "
+        previewCard.title = "Title"
+        previewCard.itemTitle = "0 \(currency)"
+        previewCard.itemSubtitle = "out of 0 \(currency)"
         previewCard.backgroundImage = nil
         previewCard.backgroundColor = .white
         previewCard.tintColor = .gray
+        // 50 spaces added for flexible constraints - Cards bug
+        previewCard.title += "                                             "
+        previewCard.itemTitle += "                                             "
+        previewCard.itemSubtitle += "                                             "
         
         // Image Picker
         imagePicker = ImagePicker(presentationController: self, delegate: self)
@@ -73,6 +76,10 @@ class AddWishlistTableViewController: UITableViewController, UITextFieldDelegate
                 }
             }
         }
+        // 50 spaces added for flexible constraints - Cards bug
+        previewCard.title += "                                             "
+        previewCard.itemTitle += "                                             "
+        previewCard.itemSubtitle += "                                             "
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

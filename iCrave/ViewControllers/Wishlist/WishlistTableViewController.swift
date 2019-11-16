@@ -46,10 +46,9 @@ class WishlistTableViewController: UITableViewController {
 
         // Configure the cell...
         let item = wishlist[indexPath.row]
-        // 50 spaces added for flexible constraints - Cards bug
-        cell.cardView.title = "Title                                                  "
-        cell.cardView.itemTitle = "0 \(item.currency!)                                                  "
-        cell.cardView.itemSubtitle = "out of 0 \(item.currency!)                                                  "
+        cell.cardView.title = "Title"
+        cell.cardView.itemTitle = "0 \(item.currency!)"
+        cell.cardView.itemSubtitle = "out of 0 \(item.currency!)"
         // Load Object
         cell.cardView.title = item.name!
         cell.cardView.itemTitle = "0 \(item.currency!)"
@@ -69,6 +68,11 @@ class WishlistTableViewController: UITableViewController {
         
         let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))
         cell.cardView.addGestureRecognizer(wishlistDetailTap)
+        
+        // 50 spaces added for flexible constraints - Cards bug
+        cell.cardView.title += "                                             "
+        cell.cardView.itemTitle += "                                             "
+        cell.cardView.itemSubtitle += "                                             "
 
         return cell
     }

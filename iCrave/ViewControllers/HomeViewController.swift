@@ -52,16 +52,19 @@ class HomeViewController: UITableViewController {
             cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
         }
         else {
-            // 50 spaces added for flexible constraints - Cards bug
-            cardView.title = "No Wish Item                                             "
-            cardView.itemTitle = "Please add                                             "
-            cardView.itemSubtitle = "a new wish item                                             "
+            cardView.title = "No Wish Item"
+            cardView.itemTitle = "Please add"
+            cardView.itemSubtitle = "a new wish item"
             cardView.buttonText = "0%"
             cardView.backgroundColor = .white
             cardView.backgroundImage = nil
             cardView.tintColor = .gray
             cardView.textColor = .black
         }
+        // 50 spaces added for flexible constraints - Cards bug
+        cardView.title += "                                             "
+        cardView.itemTitle += "                                             "
+        cardView.itemSubtitle += "                                             "
         cardView.setNeedsDisplay()
         
         let wishlistDetailTap = UITapGestureRecognizer(target: self, action: #selector(wishlistDetailView(sender:)))

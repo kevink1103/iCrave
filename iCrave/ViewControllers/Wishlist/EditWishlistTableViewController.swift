@@ -40,13 +40,16 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
         }
         
         // Empty Card
-        // 50 spaces added for flexible constraints - Cards bug
-        previewCard.title = "Title                                                  "
-        previewCard.itemTitle = "0 \(currency)                                                  "
-        previewCard.itemSubtitle = "out of 0 \(currency)                                                  "
+        previewCard.title = "Title"
+        previewCard.itemTitle = "0 \(currency)"
+        previewCard.itemSubtitle = "out of 0 \(currency)"
         previewCard.backgroundImage = nil
         previewCard.backgroundColor = .white
         previewCard.tintColor = .gray
+        // 50 spaces added for flexible constraints - Cards bug
+        previewCard.title += "                                             "
+        previewCard.itemTitle += "                                             "
+        previewCard.itemSubtitle += "                                             "
         
         // Image Picker
         imagePicker = ImagePicker(presentationController: self, delegate: self)
@@ -54,7 +57,7 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
         // Load Object
         if let item = wishItem {
             productName.text = item.name!
-            priceField.text = decimalToString(item.price!)
+            priceField.text = item.price!.stringValue
             savingSwitch.isOn = item.saving
             if let imageData = item.image {
                 previewCard.backgroundImage = UIImage(data: imageData)
@@ -83,6 +86,10 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
                 }
             }
         }
+        // 50 spaces added for flexible constraints - Cards bug
+        previewCard.title += "                                             "
+        previewCard.itemTitle += "                                             "
+        previewCard.itemSubtitle += "                                             "
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -135,9 +142,7 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
                             present(alert, animated:true, completion: nil)
                             return
                         }
-                        print("beforeSave")
                         WishItem.update(wishItem: wishItem!, name: name, price: priceDecimal, currency: currency, saving: savingSwitch.isOn, image: imageData)
-                        print("updated")
                         navigationController?.popViewController(animated: true)
                         return
                     }
