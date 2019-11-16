@@ -1,17 +1,17 @@
 //
-//  AddRecordViewController.swift
+//  EditRecordViewController.swift
 //  iCrave
 //
-//  Created by Kevin Kim on 17/10/2019.
+//  Created by Kevin Kim on 16/11/2019.
 //  Copyright © 2019 Kevin Kim. All rights reserved.
 //
 
 import UIKit
-import IntentsUI
 
-class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditRecordViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let categories: [Category] = Category.getAll()
+    var record: Record? = nil
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var datePicker: UIDatePicker!
@@ -27,9 +27,6 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        // Siri Button
-        addSiriButton(to: view)
-        
         // Date Pikcer Limit
         datePicker.maximumDate = Date()
         
@@ -41,24 +38,14 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         else {
             amountField.placeholder = "Currency not set"
         }
-    }
-    
-    func addSiriButton(to view: UIView) {
-        let button = INUIAddVoiceShortcutButton(style: .automaticOutline)
         
-        let intent = RecordIntent()
-        intent.suggestedInvocationPhrase = "I just spent money"
-        intent.category = ""
-        intent.amount = 0
-        
-        button.shortcut = INShortcut(intent: intent )
-        button.delegate = self
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(button)
-        view.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
-        addButton.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 10).isActive = true
+        // Load Object
+        if let recordObject = record {
+            datePicker.date = recordObject.timestamp!
+            amountField.text = recordObject.amount!.stringValue
+            let index = categories.firstIndex(of: recordObject.category!)!
+            categoryPicker.selectRow(index, inComponent: 0, animated: true)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -88,7 +75,7 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         textField.resignFirstResponder()
     }
     
-    @IBAction func addPressed(_ sender: Any) {
+    @IBAction func updatePressed(_ sender: Any) {
         let currency = SharedUserDefaults.shared.getCurrency()
         if currency.count == 0 {
             let alert = UIAlertController(title: "No Currency", message: "Set currency in Settings.", preferredStyle: .alert)
@@ -100,9 +87,11 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         if let amountText = amountField.text, amountText.count > 0, let amount = Decimal(string: amountText) {
             let category = categories[categoryPicker.selectedRow(inComponent: 0)]
-            Record.create(in: category, timestamp: datePicker.date, amount: amount, currency: currency)
+            Record.update(record: record!, timestamp: datePicker.date, amount: amount, currency: currency)
+            record!.category!.removeFromRecord(record!)
+            category.addToRecord(record!)
             self.dismiss(animated: true, completion: {
-                NotificationCenter.default.post(name: Notification.Name("HomeRefresh"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name("RecordRefresh"), object: nil)
             })
         }
         else {
@@ -128,38 +117,4 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     */
 
-}
-
-extension AddRecordViewController: INUIAddVoiceShortcutButtonDelegate {
-    func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
-        addVoiceShortcutViewController.delegate = self
-        addVoiceShortcutViewController.modalPresentationStyle = .formSheet
-        present(addVoiceShortcutViewController, animated: true, completion: nil)
-    }
-    func present(_ editVoiceShortcutViewController: INUIEditVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
-        editVoiceShortcutViewController.delegate = self
-        editVoiceShortcutViewController.modalPresentationStyle = .formSheet
-        present(editVoiceShortcutViewController, animated: true, completion: nil)
-    }
-}
-
-extension AddRecordViewController: INUIAddVoiceShortcutViewControllerDelegate {
-    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension AddRecordViewController: INUIEditVoiceShortcutViewControllerDelegate {
-    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
 }

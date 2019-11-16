@@ -15,10 +15,13 @@ class RecordListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: Notification.Name("RecordRefresh"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         dailyRecords = groupRecordsByday()
+        tableView.reloadData()
     }
     
     func groupRecordsByday() -> [(key: Date, value: [Record])] {
@@ -87,8 +90,9 @@ class RecordListTableViewController: UITableViewController {
     */
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let record = self.dailyRecords[indexPath.section].value[indexPath.row]
+        
         let deleteAction = UIContextualAction(style: .destructive, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            let record = self.dailyRecords[indexPath.section].value[indexPath.row]
             let category = record.category!
             
             Record.delete(in: category, record: record)
@@ -102,7 +106,7 @@ class RecordListTableViewController: UITableViewController {
         })
         let editAction = UIContextualAction(style: .normal, title:  "Edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             // let item = self.records[indexPath.row]
-            // self.performSegue(withIdentifier: "EditWishItem", sender: item)
+            self.performSegue(withIdentifier: "EditRecordSegue", sender: record)
             // success(true)
         })
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
@@ -123,14 +127,17 @@ class RecordListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "EditRecordSegue" {
+            if let destinationVC = segue.destination as? EditRecordViewController {
+                destinationVC.record = sender as? Record
+            }
+        }
     }
-    */
 
 }
