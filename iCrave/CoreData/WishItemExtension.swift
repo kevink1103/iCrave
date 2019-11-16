@@ -48,16 +48,27 @@ extension WishItem {
     }
     
     public static func getAll() -> [WishItem] {
-        var items: [WishItem] = []
+        var wishlist: [WishItem] = []
         let fetchReq: NSFetchRequest<WishItem> = WishItem.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
         fetchReq.sortDescriptors = [sortDescriptor]
         do {
-            items = try SharedCoreData.shared.context.fetch(fetchReq)
+            wishlist = try SharedCoreData.shared.context.fetch(fetchReq)
         } catch let error as NSError {
             print("Error occurred when getting all wishitems: \(error.localizedDescription)")
         }
-        return items
+        return wishlist
+    }
+    
+    public static func update(wishItem: WishItem, name: String, price: Decimal, currency: String, saving: Bool, image: Data?) {
+        wishItem.name = name
+        wishItem.price = price as NSDecimalNumber
+        wishItem.currency = currency
+        wishItem.saving = saving
+        wishItem.image = image
+        wishItem.achieved = false
+        wishItem.timestamp = Date()
+        SharedCoreData.shared.saveContext()
     }
     
     public static func delete(wishItem: WishItem) {

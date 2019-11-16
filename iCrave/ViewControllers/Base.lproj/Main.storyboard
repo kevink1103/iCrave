@@ -1252,7 +1252,7 @@
                     <navigationItem key="navigationItem" title="Edit Item" id="xcd-0g-INF">
                         <barButtonItem key="rightBarButtonItem" title="Update" style="done" id="qoi-Xr-8SS">
                             <connections>
-                                <action selector="addPressed:" destination="SCu-vL-ted" id="Q8V-80-j4b"/>
+                                <action selector="updatePressed:" destination="SCu-vL-ted" id="F6i-o2-9x5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

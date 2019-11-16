@@ -9,7 +9,7 @@
 import UIKit
 import Cards
 
-class EditWishlistTableViewController: UITableViewController, ImagePickerDelegate {
+class EditWishlistTableViewController: UITableViewController, UITextFieldDelegate, ImagePickerDelegate {
 
     var wishItem: WishItem? = nil
     var imagePicker: ImagePicker!
@@ -107,7 +107,7 @@ class EditWishlistTableViewController: UITableViewController, ImagePickerDelegat
         imagePicker.present(from: sender)
     }
     
-    @IBAction func addPressed(_ sender: Any) {
+    @IBAction func updatePressed(_ sender: Any) {
         if let name = productName.text, let price = priceField.text {
             if name.count > 0 && price.count > 0 {
                 if let priceDecimal = stringToDecimal(price) {
@@ -125,7 +125,7 @@ class EditWishlistTableViewController: UITableViewController, ImagePickerDelegat
                                 print("image not supported")
                             }
                         }
-                        if savingSwitch.isOn && WishItem.checkAnySavingOn() {
+                        if savingSwitch.isOn && !wishItem!.saving && WishItem.checkAnySavingOn() {
                             let alert = UIAlertController(title: "Already Saving", message: "You already have a wish item currently saving for.", preferredStyle: .alert)
                             let ok = UIAlertAction(title: "OK", style: .cancel)
                             ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
@@ -133,7 +133,9 @@ class EditWishlistTableViewController: UITableViewController, ImagePickerDelegat
                             present(alert, animated:true, completion: nil)
                             return
                         }
-                        WishItem.create(name: name, price: priceDecimal, currency: currency, saving: savingSwitch.isOn, image: imageData)
+                        print("beforeSave")
+                        WishItem.update(wishItem: wishItem!, name: name, price: priceDecimal, currency: currency, saving: savingSwitch.isOn, image: imageData)
+                        print("updated")
                         navigationController?.popViewController(animated: true)
                         return
                     }
