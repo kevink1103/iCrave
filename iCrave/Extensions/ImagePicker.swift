@@ -20,9 +20,7 @@ class ImagePicker: NSObject, UINavigationControllerDelegate {
 
     public init(presentationController: UIViewController, delegate: ImagePickerDelegate) {
         self.pickerController = UIImagePickerController()
-
         super.init()
-
         self.presentationController = presentationController
         self.delegate = delegate
     
@@ -46,10 +44,6 @@ class ImagePicker: NSObject, UINavigationControllerDelegate {
 
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        if let action = self.action(for: .camera, title: "Take Photo") {
-            action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
-            alertController.addAction(action)
-        }
         if let action = self.action(for: .savedPhotosAlbum, title: "Camera Roll") {
             action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
             alertController.addAction(action)
@@ -62,20 +56,13 @@ class ImagePicker: NSObject, UINavigationControllerDelegate {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
         alertController.addAction(cancel)
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            alertController.popoverPresentationController?.sourceView = sourceView
-            alertController.popoverPresentationController?.sourceRect = sourceView.bounds
-            alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
-        }
 
         self.presentationController?.present(alertController, animated: true)
     }
     
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
-        controller.dismiss(animated: true, completion: nil)
-        
         self.delegate?.didSelect(image: image)
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
