@@ -12,26 +12,26 @@
             <objects>
                 <viewController id="ObA-dk-sSI" customClass="IntentViewController" customModule="SiriRecordUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-dy-lry">
-                                <rect key="frame" x="16" y="15" width="140" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="3xj-B8-MKP"/>
-                                    <constraint firstAttribute="height" constant="21" id="fZ5-n7-Wo4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bg-6G-82f">
-                                <rect key="frame" x="164" y="15" width="140" height="21"/>
+                                <rect key="frame" x="164" y="20" width="140" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="5gN-RO-6ba"/>
                                     <constraint firstAttribute="height" constant="21" id="RjQ-2M-Uyr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-dy-lry">
+                                <rect key="frame" x="16" y="20" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="3xj-B8-MKP"/>
+                                    <constraint firstAttribute="height" constant="21" id="fZ5-n7-Wo4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -40,15 +40,15 @@
                             <constraint firstItem="7bg-6G-82f" firstAttribute="leading" secondItem="Mxb-dy-lry" secondAttribute="trailing" constant="8" id="HJZ-tR-dhu"/>
                             <constraint firstAttribute="trailing" secondItem="7bg-6G-82f" secondAttribute="trailing" constant="16" id="Kl7-bA-EZz"/>
                             <constraint firstItem="Mxb-dy-lry" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="16" id="a2b-ie-cbW"/>
-                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="Mxb-dy-lry" secondAttribute="bottom" constant="14" id="aR0-JZ-xzq"/>
-                            <constraint firstItem="7bg-6G-82f" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="15" id="eov-gN-mid"/>
-                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="7bg-6G-82f" secondAttribute="bottom" constant="14" id="jvF-Jd-cCY"/>
-                            <constraint firstItem="Mxb-dy-lry" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="15" id="oBp-NV-5YK"/>
+                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="Mxb-dy-lry" secondAttribute="bottom" constant="9" id="aR0-JZ-xzq"/>
+                            <constraint firstItem="7bg-6G-82f" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="20" id="eov-gN-mid"/>
+                            <constraint firstItem="4PN-XC-lEE" firstAttribute="bottom" secondItem="7bg-6G-82f" secondAttribute="bottom" constant="9" id="jvF-Jd-cCY"/>
+                            <constraint firstItem="Mxb-dy-lry" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" constant="20" id="oBp-NV-5YK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4PN-XC-lEE"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="50"/>
+                    <size key="freeformSize" width="320" height="60"/>
                     <connections>
                         <outlet property="amountLabel" destination="7bg-6G-82f" id="7Qw-jN-k1N"/>
                         <outlet property="categoryLabel" destination="Mxb-dy-lry" id="dhY-Jk-w7h"/>

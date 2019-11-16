@@ -104,18 +104,19 @@ class WishlistTableViewController: UITableViewController {
     */
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let item = self.wishlist[indexPath.row]
+        
         let deleteAction = UIContextualAction(style: .destructive, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            WishItem.delete(wishItem: self.wishlist[indexPath.row])
+            WishItem.delete(wishItem: item)
             self.wishlist.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             success(true)
         })
-        let shareAction = UIContextualAction(style: .normal, title:  "Edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            let item = self.wishlist[indexPath.row]
+        let editAction = UIContextualAction(style: .normal, title:  "Edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             self.performSegue(withIdentifier: "EditWishItem", sender: item)
             success(true)
         })
-        return UISwipeActionsConfiguration(actions:[deleteAction,shareAction])
+        return UISwipeActionsConfiguration(actions:[deleteAction, editAction])
     }
 
     /*

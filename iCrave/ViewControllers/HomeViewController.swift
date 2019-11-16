@@ -98,7 +98,7 @@ class HomeViewController: UITableViewController {
             
             card.tag = i
             card.title = records[i].category!.title!
-            card.titleSize = 23
+            card.titleSize = 18
             card.itemTitle = ""
             card.itemSubtitle = "\(decimalToString(records[i].amount!)) \(records[i].currency!)"
             card.buttonText = ""

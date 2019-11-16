@@ -63,6 +63,7 @@ extension Record {
     
     public static func delete(in category: Category, record: Record) {
         category.removeFromRecord(record)
+        SharedCoreData.shared.context.delete(record)
         SharedCoreData.shared.saveContext()
     }
     
