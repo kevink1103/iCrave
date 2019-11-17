@@ -48,8 +48,8 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         let intent = RecordIntent()
         intent.suggestedInvocationPhrase = "I just spent money"
-        intent.category = ""
         intent.amount = 0
+        intent.category = nil
         
         button.shortcut = INShortcut(intent: intent )
         button.delegate = self

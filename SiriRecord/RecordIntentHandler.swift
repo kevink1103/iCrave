@@ -16,7 +16,12 @@ class RecordIntentHandler : NSObject, RecordIntentHandling {
         let category = Category.getObject(title: intent.category!)!
         let currency = SharedUserDefaults.shared.getCurrency()
         Record.create(in: category, timestamp: Date(), amount: intent.amount!.decimalValue, currency: currency)
-        completion(RecordIntentResponse.success(result: "Successfully"))
+        completion(RecordIntentResponse.success(result: "successfully"))
+    }
+    
+    func provideCategoryOptions(for intent: RecordIntent, with completion: @escaping ([String]?, Error?) -> Void) {
+        let categories = Category.getAll().map({ (category: Category) in return category.title! })
+        completion(categories, nil)
     }
     
     func resolveAmount(for intent: RecordIntent, with completion: @escaping (RecordAmountResolutionResult) -> Void) {
@@ -35,7 +40,7 @@ class RecordIntentHandler : NSObject, RecordIntentHandling {
     
     func resolveCategory(for intent: RecordIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
         if let category = intent.category {
-            if category.count > 0 && category != "category" {
+            if category.count > 0 && category != "Category" {
                 let categories = Category.getAll().map({ (category: Category) in return category.title! })
                 for categoryTitle in categories {
                     if category.lowercased() == categoryTitle.lowercased() {
