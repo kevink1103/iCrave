@@ -20,7 +20,9 @@ class ImagePicker: NSObject, UINavigationControllerDelegate {
 
     public init(presentationController: UIViewController, delegate: ImagePickerDelegate) {
         self.pickerController = UIImagePickerController()
+        
         super.init()
+        
         self.presentationController = presentationController
         self.delegate = delegate
     
@@ -56,7 +58,7 @@ class ImagePicker: NSObject, UINavigationControllerDelegate {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
         alertController.addAction(cancel)
-
+        
         self.presentationController?.present(alertController, animated: true)
     }
     

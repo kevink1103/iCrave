@@ -8,7 +8,7 @@ target 'iCrave' do
   # Pods for iCrave
   pod 'Cards'
   pod 'ActionSheetPicker-3.0'
-  pod 'Macaw'
+  pod 'Charts'
   pod 'Firebase/Analytics'
 
   # Troubleshoot Cards

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A049753238A2E3F00FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
+		0A049754238A2E4700FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
+		0A049755238A2E4800FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
 		0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A12357813B00DD5795 /* AddRecordViewController.swift */; };
 		0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A32357826700DD5795 /* RecordListTableViewController.swift */; };
 		0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */; };
@@ -110,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAnalyzer.swift; sourceTree = "<group>"; };
 		0A1872A12357813B00DD5795 /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
 		0A1872A32357826700DD5795 /* RecordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListTableViewController.swift; sourceTree = "<group>"; };
 		0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		0A1FC04E235714070033CD96 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */,
 				0AA0AC69237EC840000FA3EA /* ImagePicker.swift */,
 				0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */,
 				0AD430C4235DEE9A003DAB0C /* StringExtension.swift */,
@@ -526,6 +531,7 @@
 				0A31E42C23576BB6006103C2 /* UIButtonExtension.swift in Sources */,
 				0A4835C823560DED00016806 /* AppDelegate.swift in Sources */,
 				0AD430F1235EF47B003DAB0C /* CategoryExtension.swift in Sources */,
+				0A049753238A2E3F00FB9F60 /* DataAnalyzer.swift in Sources */,
 				0A1872A923578A2200DD5795 /* UIColorExtension.swift in Sources */,
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
@@ -566,6 +572,7 @@
 				0A59715C237BE2EB009B0747 /* iCrave.xcdatamodeld in Sources */,
 				0AA0AC5F237D01DC000FA3EA /* RecordExtension.swift in Sources */,
 				0AA0AC5D237D01D8000FA3EA /* CategoryExtension.swift in Sources */,
+				0A049754238A2E4700FB9F60 /* DataAnalyzer.swift in Sources */,
 				0A597156237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A597132237BA64B009B0747 /* IntentHandler.swift in Sources */,
 			);
@@ -588,6 +595,7 @@
 				0AF464E2237C3759003B32D1 /* SharedPersistentContainer.swift in Sources */,
 				0AA0AC60237D01DC000FA3EA /* RecordExtension.swift in Sources */,
 				0AA0AC5E237D01D9000FA3EA /* CategoryExtension.swift in Sources */,
+				0A049755238A2E4800FB9F60 /* DataAnalyzer.swift in Sources */,
 				0A597157237BB045009B0747 /* Intents.intentdefinition in Sources */,
 				0A59713D237BA64B009B0747 /* IntentViewController.swift in Sources */,
 			);

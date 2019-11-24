@@ -2,6 +2,9 @@ PODS:
   - ActionSheetPicker-3.0 (2.3.0)
   - Cards (1.4.0):
     - Player (= 0.13.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - Firebase/Analytics (6.10.0):
     - Firebase/Core
   - Firebase/Core (6.10.0):
@@ -62,26 +65,24 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
-  - Macaw (0.9.5):
-    - SWXMLHash
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Player (0.13.0)
-  - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Cards
+  - Charts
   - Firebase/Analytics
-  - Macaw
 
 SPEC REPOS:
   trunk:
     - ActionSheetPicker-3.0
     - Cards
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -92,14 +93,13 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - Macaw
     - nanopb
     - Player
-    - SWXMLHash
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
   FirebaseCore: 064c2dd92a8ca5974bbdcb080df9921e46bd34cd
@@ -110,11 +110,9 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
-  Macaw: 10bf9e327cb75f24e3225d5229a80ed544df85f0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
-  SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 625f5b27489a5f679ef536f92b02d5dacd10e109
+PODFILE CHECKSUM: 7baee09c0097258d7e188155382639612f93bf5e
 
 COCOAPODS: 1.8.4

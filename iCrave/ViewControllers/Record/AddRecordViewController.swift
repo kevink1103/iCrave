@@ -47,7 +47,7 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         let button = INUIAddVoiceShortcutButton(style: .automaticOutline)
         
         let intent = RecordIntent()
-        intent.suggestedInvocationPhrase = "I just spent money"
+        intent.suggestedInvocationPhrase = "Record Spending"
         intent.amount = 0
         intent.category = nil
         

@@ -137,6 +137,8 @@ class HomeViewController: UITableViewController {
             Record.create(in: record.category!, timestamp: Date(), amount: record.amount! as Decimal, currency: record.currency!)
             self.updateView()
         }
+        cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+        action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
         alert.addAction(cancel)
         alert.addAction(action)
         present(alert, animated:true, completion: nil)
