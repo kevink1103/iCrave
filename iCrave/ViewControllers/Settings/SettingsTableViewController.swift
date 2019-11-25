@@ -95,13 +95,20 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             switch (row) {
             case 0:
                 cell.textLabel?.text = "Monthly Budget"
-                let decimalBudget = stringToDecimal(SharedUserDefaults.shared.getBudget())!
-                cell.detailTextLabel?.text = decimalToString(decimalBudget)
+                cell.detailTextLabel?.text = "Tap to set"
+                if let decimalBudget = stringToDecimal(SharedUserDefaults.shared.getBudget()) {
+                    cell.detailTextLabel?.text = decimalToString(decimalBudget)
+                }
             case 1:
                 cell.textLabel?.text = "Currency"
-                cell.detailTextLabel?.text = SharedUserDefaults.shared.getCurrency()
+                cell.detailTextLabel?.text = "Tap to set"
+                let currency = SharedUserDefaults.shared.getCurrency()
+                if currency.count > 0 {
+                    cell.detailTextLabel?.text = currency
+                }
             case 2:
                 cell.textLabel?.text = "Start Date"
+                cell.detailTextLabel?.text = "Tap to set"
                 if let date = SharedUserDefaults.shared.getStartDate() {
                     let formatter: DateFormatter = DateFormatter()
                     formatter.dateFormat = "dd MMM yyyy"

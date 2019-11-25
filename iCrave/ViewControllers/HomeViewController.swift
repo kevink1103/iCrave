@@ -28,6 +28,14 @@ class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if SharedUserDefaults.shared.getBudget().count == 0 || SharedUserDefaults.shared.getCurrency().count == 0 || SharedUserDefaults.shared.getStartDate() == nil {
+            let alert = UIAlertController(title: "Settings Needed", message: "Set monthly budget, currency, and start date in Settings.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+            alert.addAction(ok)
+            present(alert, animated:true, completion: nil)
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: Notification.Name("HomeRefresh"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -151,23 +159,57 @@ class HomeViewController: UITableViewController {
     }
     
     func drawBars() {
-        let currency = SharedUserDefaults.shared.getCurrency()
-        if currency.count == 0 { return }
-        guard let todayBudget = DataAnalyzer.dailyBudget(formonth: Date()) else { return }
-        let todaySum = DataAnalyzer.todayTotalSpending() ?? 0
-        dailyBudgetLabel.text = "Daily Budget: \(decimalToString(todayBudget)) \(currency)"
-        let dailyBudgetProgress = ((todayBudget-todaySum) / todayBudget)
+        // Default Appearance
         dailyBudgetBar.gradientColors = [.systemOrange, .systemOrange, .systemOrange]
-        dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
-        if dailyBudgetProgress <= 0 {
-            dailyBudgetBar.progress = 0.0
-        }
+        monthlyBudgetBar.gradientColors = [.systemOrange, .systemOrange, .systemOrange]
+        savingStatusBar.gradientColors = [.systemOrange, .systemOrange, .systemOrange]
         dailyBudgetBar.gradientLayer.cornerRadius = 10
         dailyBudgetBar.layer.cornerRadius = 10
-        print(todaySum)
-        print(todayBudget)
-        print(dailyBudgetProgress)
+        monthlyBudgetBar.gradientLayer.cornerRadius = 10
+        monthlyBudgetBar.layer.cornerRadius = 10
+        savingStatusBar.gradientLayer.cornerRadius = 10
+        savingStatusBar.layer.cornerRadius = 10
+        dailyBudgetBar.progress = 0.0
+        monthlyBudgetBar.progress = 0.0
+        savingStatusBar.progress = 0.0
         
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count == 0 { return }
+        
+        // Daily Budget
+        guard let todayBudget = DataAnalyzer.dailyBudget(formonth: Date()) else { return }
+        let todaySum = DataAnalyzer.todayTotalSpending() ?? 0
+        let dailyLeft = todayBudget - todaySum
+        let dailyBudgetProgress = dailyLeft / todayBudget
+        
+        dailyBudgetLabel.text = "Daily Budget: \(decimalToString(dailyLeft)) / \(decimalToString(todayBudget)) \(currency)"
+        if dailyBudgetProgress > 0 {
+            dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
+        }
+        
+        // Monthly Budget
+        let storedBudget = SharedUserDefaults.shared.getBudget()
+        if storedBudget.count == 0 { return }
+        guard let monthBudget = stringToDecimal(storedBudget) else { return }
+        guard let monthSum = DataAnalyzer.monthTotalSpending() else { return }
+        let monthLeft = monthBudget - monthSum
+        let monthBudgetProgress = monthLeft / monthBudget
+        
+        monthlyBudgetLabel.text = "Monthly Budget: \(decimalToString(monthLeft)) / \(decimalToString(monthBudget)) \(currency)"
+        if monthBudgetProgress > 0 {
+            monthlyBudgetBar.progress = Float(truncating: monthBudgetProgress as NSNumber)
+        }
+        
+        // Saving Status
+        if let item = wishItem {
+            if let totalSaving = DataAnalyzer.currentTotalSaving() {
+                let savingProgress = totalSaving / (item.price! as Decimal)
+                savingStatusLabel.text = "Saving Status: \(decimalToString(totalSaving)) / \(decimalToString((item.price! as Decimal))) \(currency)"
+                if savingProgress > 0 {
+                    savingStatusBar.progress = Float(truncating: savingProgress as NSNumber)
+                }
+            }
+        }
     }
     
     @objc func showAddRecordView(sender: UIGestureRecognizer) {
