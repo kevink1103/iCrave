@@ -46,6 +46,21 @@ class HomeViewController: UITableViewController {
                 cardView.itemTitle = "\(decimalToString(totalSaving)) \(item.currency!)"
                 let progress = (totalSaving / (item.price! as Decimal)) * 100 // in percentage
                 cardView.buttonText = "\(decimalToString(progress))%"
+                
+                if progress >= 100 {
+                    let budgetAlert = UIAlertController(title: "Congratulations!", message: "You have done saving for\n\(item.name!)!", preferredStyle: .alert)
+                    let cancel = UIAlertAction(title: "Cancel", style: .default)
+                    let action = UIAlertAction(title: "Achieved", style: .default) { (alertAction) in
+                        WishItem.update(wishItem: item, name: item.name!, price: item.price! as Decimal, currency: item.currency!, saving: false, image: item.image, achieved: true)
+                        self.updateView()
+                    }
+                    cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                    action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                    
+                    budgetAlert.addAction(cancel)
+                    budgetAlert.addAction(action)
+                    present(budgetAlert, animated:true, completion: nil)
+                }
             }
             cardView.backgroundColor = .white
             cardView.backgroundImage = nil

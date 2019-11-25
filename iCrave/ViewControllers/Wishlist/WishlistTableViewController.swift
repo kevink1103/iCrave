@@ -46,23 +46,32 @@ class WishlistTableViewController: UITableViewController {
 
         // Configure the cell...
         let item = wishlist[indexPath.row]
-        cell.cardView.title = "Title"
-        cell.cardView.itemTitle = "0 \(item.currency!)"
-        cell.cardView.itemSubtitle = "out of 0 \(item.currency!)"
+        
         // Load Object
         cell.cardView.title = item.name!
         cell.cardView.itemTitle = "0 \(item.currency!)"
         cell.cardView.itemSubtitle = "out of \(decimalToString(item.price!)) \(item.currency!)"
+        cell.cardView.buttonText = "0%"
         cell.cardView.backgroundColor = .white
         cell.cardView.backgroundImage = nil
         cell.cardView.tintColor = .gray
         cell.cardView.textColor = .black
+        
         if let imageData = item.image {
             cell.cardView.backgroundImage = UIImage(data: imageData)
             cell.cardView.textColor = cell.cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
         }
         if item.saving {
+            if let totalSaving = DataAnalyzer.currentTotalSaving() {
+                cell.cardView.itemTitle = "\(decimalToString(totalSaving)) \(item.currency!)"
+                let progress = (totalSaving / (item.price! as Decimal)) * 100 // in percentage
+                cell.cardView.buttonText = "\(decimalToString(progress))%"
+            }
             cell.cardView.tintColor = .systemOrange
+        }
+        if item.achieved {
+            cell.cardView.itemTitle = "\(decimalToString(item.price!)) \(item.currency!)"
+            cell.cardView.buttonText = "100%"
         }
         cell.cardView.setNeedsDisplay()
         

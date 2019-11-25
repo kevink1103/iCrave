@@ -55,12 +55,12 @@ class DataAnalyzer {
         let wishlist = WishItem.getAll()
         let records = Record.getAll()
         
-        // let savingItemPrice = wishlist.filter({ $0.saving == true })[0].price! as Decimal
         let achievedItems = wishlist.filter({ $0.achieved == true }).map({ $0.price! as Decimal }).reduce(0, +)
         
         let currency = SharedUserDefaults.shared.getCurrency()
         if currency.count <= 0 { return nil }
         let recordsSum = records.filter({ $0.currency! == currency }).map({ $0.amount! as Decimal }).reduce(0, +)
+        //  && (Calendar.current.dateComponents([.year, .month, .day], from: $0.timestamp!) != Calendar.current.dateComponents([.year, .month, .day], from: Date()))
         
         // Calculate for savings
         guard let startDate = SharedUserDefaults.shared.getStartDate() else { return nil }
@@ -98,6 +98,7 @@ class DataAnalyzer {
             totalBudget += budget * Decimal(days)
             totalDays += days
         }
+        // today's budget is already included and regarded as current saving
         // print(totalDays)
         var roundedTotal: Decimal = Decimal()
         NSDecimalRound(&roundedTotal, &totalBudget, 2, .plain)

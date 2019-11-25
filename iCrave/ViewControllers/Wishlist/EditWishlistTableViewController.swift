@@ -64,6 +64,12 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
                 previewCard.textColor = previewCard.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
                 previewCard.setNeedsDisplay()
             }
+            if item.achieved {
+                productName.isEnabled = false
+                priceField.isEnabled = false
+                savingSwitch.isOn = false
+                savingSwitch.isEnabled = false
+            }
             updatePreviewCard()
         }
     }
@@ -142,7 +148,7 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
                             present(alert, animated:true, completion: nil)
                             return
                         }
-                        WishItem.update(wishItem: wishItem!, name: name, price: priceDecimal, currency: currency, saving: savingSwitch.isOn, image: imageData)
+                        WishItem.update(wishItem: wishItem!, name: name, price: priceDecimal, currency: currency, saving: savingSwitch.isOn, image: imageData, achieved: wishItem!.achieved)
                         navigationController?.popViewController(animated: true)
                         return
                     }

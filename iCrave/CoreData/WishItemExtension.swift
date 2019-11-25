@@ -60,13 +60,13 @@ extension WishItem {
         return wishlist
     }
     
-    public static func update(wishItem: WishItem, name: String, price: Decimal, currency: String, saving: Bool, image: Data?) {
+    public static func update(wishItem: WishItem, name: String, price: Decimal, currency: String, saving: Bool, image: Data?, achieved: Bool) {
         wishItem.name = name
         wishItem.price = price as NSDecimalNumber
         wishItem.currency = currency
         wishItem.saving = saving
         wishItem.image = image
-        wishItem.achieved = false
+        wishItem.achieved = achieved
         wishItem.timestamp = Date()
         SharedCoreData.shared.saveContext()
     }
