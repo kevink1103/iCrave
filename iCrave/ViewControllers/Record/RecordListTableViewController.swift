@@ -20,21 +20,8 @@ class RecordListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        dailyRecords = groupRecordsByday()
+        dailyRecords = DataAnalyzer.groupRecordsByDay()
         tableView.reloadData()
-    }
-    
-    func groupRecordsByday() -> [(key: Date, value: [Record])] {
-        let format: [Date: [Record]] = [:]
-        let records = Record.getAll().reduce(into: format) { store, record in
-            let components = Calendar.current.dateComponents([.year, .month, .day], from: record.timestamp!)
-            let date = Calendar.current.date(from: components)!
-            let existing = store[date] ?? []
-            store[date] = existing + [record]
-        }
-        return records.sorted(by: {
-            return $0.key > $1.key
-        })
     }
 
     // MARK: - Table view data source
@@ -66,7 +53,7 @@ class RecordListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd (eee)"
+        formatter.dateFormat = "eee, dd MMM yyyy"
         let dayString = formatter.string(from: dailyRecords[section].key)
         return dayString
     }

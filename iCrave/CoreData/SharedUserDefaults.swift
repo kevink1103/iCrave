@@ -33,4 +33,13 @@ class SharedUserDefaults {
     func getCurrency() -> String {
         return userDefaults?.value(forKey: "currency") as? String ?? ""
     }
+    
+    func setStartDate(date: Date) {
+        userDefaults?.set(date, forKey: "date")
+        userDefaults?.synchronize()
+    }
+    
+    func getStartDate() -> Date? {
+        return userDefaults?.value(forKey: "date") as? Date
+    }
 }

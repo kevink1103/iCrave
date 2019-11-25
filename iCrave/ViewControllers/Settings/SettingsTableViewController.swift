@@ -37,7 +37,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         case 0:
             return categories.count + 1
         case 1:
-            return 2
+            return 3
         case 2:
             return 3
         default:
@@ -63,7 +63,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         case 0:
             return "Add a new category to keep your spending."
         case 1:
-            return "Set up your monthly budget and currency."
+            return "Set up your monthly budget, currency, and start saving date."
         case 2:
             return "Adjust your notification preferences."
         default:
@@ -95,10 +95,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             switch (row) {
             case 0:
                 cell.textLabel?.text = "Monthly Budget"
-                cell.detailTextLabel?.text = SharedUserDefaults.shared.getBudget()
+                let decimalBudget = stringToDecimal(SharedUserDefaults.shared.getBudget())!
+                cell.detailTextLabel?.text = decimalToString(decimalBudget)
             case 1:
                 cell.textLabel?.text = "Currency"
                 cell.detailTextLabel?.text = SharedUserDefaults.shared.getCurrency()
+            case 2:
+                cell.textLabel?.text = "Start Date"
+                if let date = SharedUserDefaults.shared.getStartDate() {
+                    let formatter: DateFormatter = DateFormatter()
+                    formatter.dateFormat = "dd MMM yyyy"
+                    let dateString = formatter.string(from: date)
+                    cell.detailTextLabel?.text = dateString
+                }
             default:
                 cell.textLabel?.text = ""
             }
@@ -156,9 +165,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 let cancel = UIAlertAction(title: "Cancel", style: .default)
                 let action = UIAlertAction(title: "Set", style: .default) { (alertAction) in
                     let textField = budgetAlert.textFields![0] as UITextField
-                    if let amount = stringToDecimal(textField.text!) {
-                        let stringAmount = decimalToString(amount as NSDecimalNumber)
-                        SharedUserDefaults.shared.setBudget(budget: stringAmount)
+                    if stringToDecimal(textField.text!) != nil {
+                        SharedUserDefaults.shared.setBudget(budget: textField.text!)
                         self.tableView.reloadData()
                     }
                 }
@@ -188,6 +196,22 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 currencyPicker?.toolbarButtonsColor = .systemOrange
                 
                 currencyPicker?.show()
+            case 2:
+                let initDate = SharedUserDefaults.shared.getStartDate() ?? Date()
+                let datePicker = ActionSheetDatePicker(title: "Start Date", datePickerMode: .date, selectedDate: initDate, doneBlock: { picker, date, value in
+                    SharedUserDefaults.shared.setStartDate(date: date as! Date)
+                    self.tableView.reloadData()
+                }, cancel: { ActionDateCancelBlock in return }, origin: self.view)
+                
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.alignment = .center
+                datePicker?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                datePicker?.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkText")!, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25), NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                datePicker?.pickerBackgroundColor = .systemBackground
+                datePicker?.toolbarBackgroundColor = .systemBackground
+                datePicker?.toolbarButtonsColor = .systemOrange
+                
+                datePicker?.show()
             default:
                 print("Hi")
             }

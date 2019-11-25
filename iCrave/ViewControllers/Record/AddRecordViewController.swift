@@ -96,6 +96,7 @@ class AddRecordViewController: UIViewController, UITextFieldDelegate, UIPickerVi
             ok.setValue(UIColor.systemOrange, forKey: "titleTextColor")
             alert.addAction(ok)
             present(alert, animated:true, completion: nil)
+            return
         }
         
         if let amountText = amountField.text, amountText.count > 0, let amount = Decimal(string: amountText) {

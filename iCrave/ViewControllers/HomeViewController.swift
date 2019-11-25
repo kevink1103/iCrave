@@ -42,6 +42,11 @@ class HomeViewController: UITableViewController {
             cardView.itemTitle = "0 \(item.currency!)"
             cardView.itemSubtitle = "out of \(decimalToString(item.price!)) \(item.currency!)"
             cardView.buttonText = "0%"
+            if let totalSaving = DataAnalyzer.currentTotalSaving() {
+                cardView.itemTitle = "\(decimalToString(totalSaving)) \(item.currency!)"
+                let progress = (totalSaving / (item.price! as Decimal)) * 100 // in percentage
+                cardView.buttonText = "\(decimalToString(progress))%"
+            }
             cardView.backgroundColor = .white
             cardView.backgroundImage = nil
             if let imageData = item.image {
