@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import Cards
+import GradientProgressBar
 
 class HomeViewController: UITableViewController {
     
@@ -17,6 +18,12 @@ class HomeViewController: UITableViewController {
     
     @IBOutlet var cardView: CardHighlight!
     @IBOutlet var recordsScroll: UIScrollView!
+    @IBOutlet var dailyBudgetLabel: UILabel!
+    @IBOutlet var dailyBudgetBar: GradientProgressBar!
+    @IBOutlet var monthlyBudgetLabel: UILabel!
+    @IBOutlet var monthlyBudgetBar: GradientProgressBar!
+    @IBOutlet var savingStatusLabel: UILabel!
+    @IBOutlet var savingStatusBar: GradientProgressBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +41,7 @@ class HomeViewController: UITableViewController {
         records = Record.getRecents()
         drawCardView()
         drawRecords()
+        drawBars()
     }
     
     func drawCardView() {
@@ -62,24 +70,24 @@ class HomeViewController: UITableViewController {
                     present(budgetAlert, animated:true, completion: nil)
                 }
             }
-            cardView.backgroundColor = .white
+            cardView.backgroundColor = .systemBackground
+            cardView.textColor = UIColor(named: "DarkText")!
             cardView.backgroundImage = nil
             if let imageData = item.image {
                 cardView.backgroundImage = UIImage(data: imageData)
                 cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
             }
             cardView.tintColor = .systemOrange
-            cardView.textColor = cardView.backgroundImage?.averageColor?.generateStaticTextColor() ?? .black
         }
         else {
             cardView.title = "No Wish Item"
             cardView.itemTitle = "Please add"
             cardView.itemSubtitle = "a new wish item"
             cardView.buttonText = "0%"
-            cardView.backgroundColor = .white
+            cardView.backgroundColor = .systemBackground
             cardView.backgroundImage = nil
             cardView.tintColor = .gray
-            cardView.textColor = .black
+            cardView.textColor = UIColor(named: "DarkText")!
         }
         // 50 spaces added for flexible constraints - Cards bug
         cardView.title += "                                             "
@@ -140,6 +148,26 @@ class HomeViewController: UITableViewController {
             recordsScroll.addSubview(card)
         }
         recordsScroll.contentSize = CGSize(width: xOffset+10, height: recordsScroll.frame.height)
+    }
+    
+    func drawBars() {
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count == 0 { return }
+        guard let todayBudget = DataAnalyzer.dailyBudget(formonth: Date()) else { return }
+        let todaySum = DataAnalyzer.todayTotalSpending() ?? 0
+        dailyBudgetLabel.text = "Daily Budget: \(decimalToString(todayBudget)) \(currency)"
+        let dailyBudgetProgress = ((todayBudget-todaySum) / todayBudget)
+        dailyBudgetBar.gradientColors = [.systemOrange, .systemOrange, .systemOrange]
+        dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
+        if dailyBudgetProgress <= 0 {
+            dailyBudgetBar.progress = 0.0
+        }
+        dailyBudgetBar.gradientLayer.cornerRadius = 10
+        dailyBudgetBar.layer.cornerRadius = 10
+        print(todaySum)
+        print(todayBudget)
+        print(dailyBudgetProgress)
+        
     }
     
     @objc func showAddRecordView(sender: UIGestureRecognizer) {

@@ -52,10 +52,10 @@ class WishlistTableViewController: UITableViewController {
         cell.cardView.itemTitle = "0 \(item.currency!)"
         cell.cardView.itemSubtitle = "out of \(decimalToString(item.price!)) \(item.currency!)"
         cell.cardView.buttonText = "0%"
-        cell.cardView.backgroundColor = .white
+        cell.cardView.backgroundColor = .systemBackground
         cell.cardView.backgroundImage = nil
         cell.cardView.tintColor = .gray
-        cell.cardView.textColor = .black
+        cell.cardView.textColor = UIColor(named: "DarkText")!
         
         if let imageData = item.image {
             cell.cardView.backgroundImage = UIImage(data: imageData)

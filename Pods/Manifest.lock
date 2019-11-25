@@ -65,6 +65,9 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
+  - GradientProgressBar (2.0.1):
+    - LightweightObservable (~> 1.0)
+  - LightweightObservable (1.0.3)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -77,6 +80,7 @@ DEPENDENCIES:
   - Cards
   - Charts
   - Firebase/Analytics
+  - GradientProgressBar
 
 SPEC REPOS:
   trunk:
@@ -93,6 +97,8 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GradientProgressBar
+    - LightweightObservable
     - nanopb
     - Player
 
@@ -110,9 +116,11 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
+  GradientProgressBar: 5edb703e14c9ff14a5e4d69827b5df48f5cdd8a5
+  LightweightObservable: 8687e8e1e2940ae2f64d7f71fe78c036d89c966f
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
 
-PODFILE CHECKSUM: 7baee09c0097258d7e188155382639612f93bf5e
+PODFILE CHECKSUM: 7c1c72c45b4561d6b79c37360dd2b72f3bd706d6
 
 COCOAPODS: 1.8.4

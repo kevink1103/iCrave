@@ -9,6 +9,7 @@ target 'iCrave' do
   pod 'Cards'
   pod 'ActionSheetPicker-3.0'
   pod 'Charts'
+  pod 'GradientProgressBar'
   pod 'Firebase/Analytics'
 
   # Troubleshoot Cards

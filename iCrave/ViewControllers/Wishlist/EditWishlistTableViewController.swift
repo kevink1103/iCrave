@@ -44,7 +44,8 @@ class EditWishlistTableViewController: UITableViewController, UITextFieldDelegat
         previewCard.itemTitle = "0 \(currency)"
         previewCard.itemSubtitle = "out of 0 \(currency)"
         previewCard.backgroundImage = nil
-        previewCard.backgroundColor = .white
+        previewCard.backgroundColor = .systemBackground
+        previewCard.textColor = UIColor(named: "DarkText")!
         previewCard.tintColor = .gray
         // 50 spaces added for flexible constraints - Cards bug
         previewCard.title += "                                             "

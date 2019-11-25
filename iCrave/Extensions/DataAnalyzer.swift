@@ -51,6 +51,16 @@ class DataAnalyzer {
         })
     }
     
+    static func todayTotalSpending() -> Decimal? {
+        let records = Record.getAll()
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count <= 0 { return nil }
+        let todaySum = records.filter({
+            $0.currency! == currency && (Calendar.current.dateComponents([.year, .month, .day], from: $0.timestamp!) == Calendar.current.dateComponents([.year, .month, .day], from: Date()))
+        }).map({ $0.amount! as Decimal }).reduce(0, +)
+        return todaySum
+    }
+    
     static func currentTotalSaving() -> Decimal? {
         let wishlist = WishItem.getAll()
         let records = Record.getAll()

@@ -69,6 +69,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GradientProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LightweightObservable.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Player.xcscheme</key>
 		<dict>
 			<key>isShown</key>

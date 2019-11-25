@@ -63,10 +63,92 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Ea-iBO">
-                                                    <rect key="frame" x="20" y="453" width="374" height="230"/>
-                                                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="20" y="453" width="374" height="191"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70J-aE-Apj">
+                                                            <rect key="frame" x="0.0" y="8" width="374" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="374" id="I1v-k9-PWz"/>
+                                                                <constraint firstAttribute="height" constant="21" id="hYR-ey-S0t"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ5-kO-L1y" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                                            <rect key="frame" x="0.0" y="37" width="374" height="20"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="9gG-H2-wOL"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYm-zV-V35">
+                                                            <rect key="frame" x="0.0" y="65" width="374" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="F8W-8S-STC"/>
+                                                                <constraint firstAttribute="width" constant="374" id="Kjz-Nq-5WZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2T-fq-slx" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                                            <rect key="frame" x="0.0" y="94" width="374" height="20"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="3vW-kd-qLa"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fN-cr-sfo">
+                                                            <rect key="frame" x="0.0" y="122" width="374" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="374" id="Kn6-uS-uiY"/>
+                                                                <constraint firstAttribute="height" constant="21" id="hqA-CA-sMc"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oay-wd-jy3" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                                            <rect key="frame" x="0.0" y="151" width="374" height="20"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="kaw-aY-etr"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="230" id="00L-cp-yWW"/>
+                                                        <constraint firstAttribute="height" constant="191" id="00L-cp-yWW"/>
+                                                        <constraint firstItem="d2T-fq-slx" firstAttribute="trailing" secondItem="Oay-wd-jy3" secondAttribute="trailing" id="4Ar-Br-hWJ"/>
+                                                        <constraint firstItem="WYm-zV-V35" firstAttribute="top" secondItem="WJ5-kO-L1y" secondAttribute="bottom" constant="8" id="9lu-fh-rFx"/>
+                                                        <constraint firstItem="WYm-zV-V35" firstAttribute="leading" secondItem="WJ5-kO-L1y" secondAttribute="leading" id="A7M-3w-nW4"/>
+                                                        <constraint firstItem="70J-aE-Apj" firstAttribute="leading" secondItem="dih-Ea-iBO" secondAttribute="leading" id="D1o-Dk-6VH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WJ5-kO-L1y" secondAttribute="trailing" id="E0N-Uz-JcZ"/>
+                                                        <constraint firstItem="Oay-wd-jy3" firstAttribute="top" secondItem="9fN-cr-sfo" secondAttribute="bottom" constant="8" id="QYE-Y3-XoX"/>
+                                                        <constraint firstItem="WJ5-kO-L1y" firstAttribute="top" secondItem="70J-aE-Apj" secondAttribute="bottom" constant="8" id="Sng-Fo-weX"/>
+                                                        <constraint firstItem="d2T-fq-slx" firstAttribute="top" secondItem="WYm-zV-V35" secondAttribute="bottom" constant="8" id="YWo-wF-xpw"/>
+                                                        <constraint firstItem="WYm-zV-V35" firstAttribute="leading" secondItem="9fN-cr-sfo" secondAttribute="leading" id="ckE-vp-wcU"/>
+                                                        <constraint firstItem="d2T-fq-slx" firstAttribute="trailing" secondItem="WJ5-kO-L1y" secondAttribute="trailing" id="m5Y-zX-gUe"/>
+                                                        <constraint firstItem="WYm-zV-V35" firstAttribute="leading" secondItem="d2T-fq-slx" secondAttribute="leading" id="ndT-tq-ntg"/>
+                                                        <constraint firstItem="WJ5-kO-L1y" firstAttribute="leading" secondItem="dih-Ea-iBO" secondAttribute="leading" id="p6O-yt-SkC"/>
+                                                        <constraint firstItem="9fN-cr-sfo" firstAttribute="top" secondItem="d2T-fq-slx" secondAttribute="bottom" constant="8" id="rKR-DA-cdp"/>
+                                                        <constraint firstItem="70J-aE-Apj" firstAttribute="top" secondItem="dih-Ea-iBO" secondAttribute="top" constant="8" id="v6s-3L-qk4"/>
+                                                        <constraint firstItem="WYm-zV-V35" firstAttribute="leading" secondItem="Oay-wd-jy3" secondAttribute="leading" id="vgu-aL-7fz"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2T-H3-Ppg" customClass="CardHighlight" customModule="Cards">
@@ -161,13 +243,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cardView" destination="S2T-H3-Ppg" id="33J-6U-fpY"/>
+                        <outlet property="dailyBudgetBar" destination="WJ5-kO-L1y" id="uJh-ug-Hb2"/>
+                        <outlet property="dailyBudgetLabel" destination="70J-aE-Apj" id="pkZ-nF-yPE"/>
+                        <outlet property="monthlyBudgetBar" destination="d2T-fq-slx" id="daf-rQ-Dh1"/>
+                        <outlet property="monthlyBudgetLabel" destination="WYm-zV-V35" id="h9z-qt-oxB"/>
                         <outlet property="recordsScroll" destination="md3-dx-Co7" id="Qlg-5L-UNz"/>
+                        <outlet property="savingStatusBar" destination="Oay-wd-jy3" id="w4p-iJ-N3b"/>
+                        <outlet property="savingStatusLabel" destination="9fN-cr-sfo" id="Iph-fG-dap"/>
                         <segue destination="jqn-jC-gzY" kind="showDetail" identifier="AddRecordSegue" id="Zcr-rf-MYl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCM-JI-Au1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-372"/>
+            <point key="canvasLocation" x="660.86956521739137" y="-372.32142857142856"/>
         </scene>
         <!--Edit Category View Controller-->
         <scene sceneID="A7u-zZ-5K3">
