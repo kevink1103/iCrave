@@ -172,6 +172,9 @@ class HomeViewController: UITableViewController {
         dailyBudgetBar.progress = 0.0
         monthlyBudgetBar.progress = 0.0
         savingStatusBar.progress = 0.0
+        dailyBudgetLabel.text = "Daily Budget"
+        monthlyBudgetLabel.text = "Monthly Budget"
+        savingStatusLabel.text = "Saving Status"
         
         let currency = SharedUserDefaults.shared.getCurrency()
         if currency.count == 0 { return }

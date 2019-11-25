@@ -10,6 +10,7 @@
 		0A049753238A2E3F00FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
 		0A049754238A2E4700FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
 		0A049755238A2E4800FB9F60 /* DataAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */; };
+		0A049757238C14F400FB9F60 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A049756238C14F400FB9F60 /* StatisticsTableViewController.swift */; };
 		0A1872A22357813B00DD5795 /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A12357813B00DD5795 /* AddRecordViewController.swift */; };
 		0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A32357826700DD5795 /* RecordListTableViewController.swift */; };
 		0A1872A6235782CB00DD5795 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */; };
@@ -40,7 +41,6 @@
 		0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F7B7323570F34001C4EDC /* HomeViewController.swift */; };
 		0A91D16023608F5400462F69 /* EditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */; };
 		0A91D1652361626900462F69 /* RecordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D1642361626900462F69 /* RecordExtension.swift */; };
-		0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */; };
 		0AA0AC5A237CFF9F000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
 		0AA0AC5B237D01CA000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
 		0AA0AC5C237D01CB000FA3EA /* SharedCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */; };
@@ -114,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		0A049752238A2E3F00FB9F60 /* DataAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAnalyzer.swift; sourceTree = "<group>"; };
+		0A049756238C14F400FB9F60 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
 		0A1872A12357813B00DD5795 /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
 		0A1872A32357826700DD5795 /* RecordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListTableViewController.swift; sourceTree = "<group>"; };
 		0A1872A5235782CB00DD5795 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 		0A5F7B7323570F34001C4EDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A91D15F23608F5400462F69 /* EditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewController.swift; sourceTree = "<group>"; };
 		0A91D1642361626900462F69 /* RecordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
-		0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		0AA0AC59237CFF9F000FA3EA /* SharedCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCoreData.swift; sourceTree = "<group>"; };
 		0AA0AC61237E753E000FA3EA /* DecimalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalHelper.swift; sourceTree = "<group>"; };
 		0AA0AC65237E8979000FA3EA /* WishItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishItemExtension.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				0A4835D523560DF000016806 /* LaunchScreen.storyboard */,
 				0A4835CD23560DED00016806 /* Main.storyboard */,
 				0A5F7B7323570F34001C4EDC /* HomeViewController.swift */,
-				0A91D16A2361A8ED00462F69 /* StatisticsViewController.swift */,
+				0A049756238C14F400FB9F60 /* StatisticsTableViewController.swift */,
 				0A91D1632360951100462F69 /* Record */,
 				0A91D162236094FE00462F69 /* Wishlist */,
 				0A91D161236094DB00462F69 /* Settings */,
@@ -536,9 +536,9 @@
 				0A1872A42357826700DD5795 /* RecordListTableViewController.swift in Sources */,
 				0A1872AB23578FA000DD5795 /* UIImageExtension.swift in Sources */,
 				0AF464DC237C346F003B32D1 /* SharedPersistentContainer.swift in Sources */,
+				0A049757238C14F400FB9F60 /* StatisticsTableViewController.swift in Sources */,
 				0AA0AC62237E753F000FA3EA /* DecimalHelper.swift in Sources */,
 				0AD430F5235F03F2003DAB0C /* Dummy.swift in Sources */,
-				0A91D16B2361A8ED00462F69 /* StatisticsViewController.swift in Sources */,
 				0AA0AC6F237F025C000FA3EA /* EditWishlistTableViewController.swift in Sources */,
 				0A1872B023580FC900DD5795 /* AddWishlistTableViewController.swift in Sources */,
 				0A5F7B7423570F34001C4EDC /* HomeViewController.swift in Sources */,

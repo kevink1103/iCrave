@@ -51,6 +51,21 @@ class DataAnalyzer {
         })
     }
     
+    static func groupRecordsByYear() -> [(key: Date, value: [Record])] {
+        let format: [Date: [Record]] = [:]
+        let records = Record.getAll().reduce(into: format) { store, record in
+            // Apply timezone for monthly records
+            let components = Calendar.current.dateComponents([.year], from: record.timestamp!)
+            let monthlyDate = Calendar.current.date(from: components)!
+            let date = applyTimezone(monthlyDate)
+            let existing = store[date] ?? []
+            store[date] = existing + [record]
+        }
+        return records.sorted(by: {
+            return $0.key > $1.key
+        })
+    }
+    
     static func todayTotalSpending() -> Decimal? {
         let records = Record.getAll()
         let currency = SharedUserDefaults.shared.getCurrency()

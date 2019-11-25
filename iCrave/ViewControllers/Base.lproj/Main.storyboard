@@ -59,7 +59,7 @@
                                                     <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="See More"/>
                                                     <connections>
-                                                        <segue destination="D9x-Ne-QAX" kind="show" id="Ctu-gd-l0K"/>
+                                                        <segue destination="Gzr-bw-emU" kind="show" id="RKl-FY-jKj"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Ea-iBO">
@@ -945,7 +945,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="pIi-Lc-eOE" detailTextLabel="zXL-9T-NoL" rowHeight="60" style="IBUITableViewCellStyleValue1" id="efz-nm-fTB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="pIi-Lc-eOE" detailTextLabel="zXL-9T-NoL" rowHeight="60" style="IBUITableViewCellStyleValue1" id="efz-nm-fTB">
                                 <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="efz-nm-fTB" id="hwP-fN-jbf">
@@ -1139,20 +1139,112 @@
             <point key="canvasLocation" x="661" y="368"/>
         </scene>
         <!--Statistics-->
-        <scene sceneID="f0F-Y8-7Gc">
+        <scene sceneID="PzK-xP-FJg">
             <objects>
-                <viewController id="D9x-Ne-QAX" customClass="StatisticsViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fLM-3X-6Wl">
+                <tableViewController id="Gzr-bw-emU" customClass="StatisticsTableViewController" customModule="iCrave" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="579-ho-p2t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4hQ-wR-aL0"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Statistics" id="TGx-7I-2pm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c3z-q9-kRH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection headerTitle="" id="9Di-ht-QUO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="huR-Bf-QMp">
+                                        <rect key="frame" x="0.0" y="39.666667938232422" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="huR-Bf-QMp" id="OnR-71-Spe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YWc-nw-ctS">
+                                                    <rect key="frame" x="20" y="9" width="374" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="0rF-A3-DsD"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Daily"/>
+                                                        <segment title="Monthly"/>
+                                                        <segment title="Yearly"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="periodChanged:" destination="Gzr-bw-emU" eventType="valueChanged" id="hJe-lK-oQl"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="YWc-nw-ctS" secondAttribute="trailing" constant="20" id="ALj-yo-33D"/>
+                                                <constraint firstAttribute="bottom" secondItem="YWc-nw-ctS" secondAttribute="bottom" constant="10" id="D1C-AA-PZD"/>
+                                                <constraint firstItem="YWc-nw-ctS" firstAttribute="top" secondItem="OnR-71-Spe" secondAttribute="top" constant="9" id="eXw-aI-zrl"/>
+                                                <constraint firstItem="YWc-nw-ctS" firstAttribute="leading" secondItem="OnR-71-Spe" secondAttribute="leading" constant="20" id="nwv-5d-L0c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="SPENDING" id="UXt-tO-KwC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="H2Y-Oa-oSP">
+                                        <rect key="frame" x="0.0" y="145.66666793823242" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2Y-Oa-oSP" id="aDK-FC-6k7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-Fv-7SF" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="250"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WWc-Fv-7SF" firstAttribute="top" secondItem="aDK-FC-6k7" secondAttribute="top" id="1jx-XX-FXn"/>
+                                                <constraint firstItem="WWc-Fv-7SF" firstAttribute="leading" secondItem="aDK-FC-6k7" secondAttribute="leading" constant="20" id="Mhr-MN-Oqg"/>
+                                                <constraint firstAttribute="trailing" secondItem="WWc-Fv-7SF" secondAttribute="trailing" constant="20" id="oPI-qa-obk"/>
+                                                <constraint firstAttribute="bottom" secondItem="WWc-Fv-7SF" secondAttribute="bottom" id="sLJ-hk-eRh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="SAVING" id="lf4-5x-iHq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="rpJ-L0-EgY">
+                                        <rect key="frame" x="0.0" y="451.66666793823242" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rpJ-L0-EgY" id="okW-LW-pTW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttl-2o-ZSJ" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="250"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ttl-2o-ZSJ" firstAttribute="top" secondItem="okW-LW-pTW" secondAttribute="top" id="7bC-QG-kRZ"/>
+                                                <constraint firstItem="ttl-2o-ZSJ" firstAttribute="leading" secondItem="okW-LW-pTW" secondAttribute="leading" constant="20" id="FBO-0V-f04"/>
+                                                <constraint firstAttribute="trailing" secondItem="ttl-2o-ZSJ" secondAttribute="trailing" constant="20" id="lob-Td-lme"/>
+                                                <constraint firstAttribute="bottom" secondItem="ttl-2o-ZSJ" secondAttribute="bottom" id="uLQ-cG-rPz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Gzr-bw-emU" id="lbW-Xy-Wvg"/>
+                            <outlet property="delegate" destination="Gzr-bw-emU" id="r5v-lG-s6E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Statistics" id="vYx-kn-uiH"/>
+                    <connections>
+                        <outlet property="periodControl" destination="YWc-nw-ctS" id="wap-4r-ADu"/>
+                        <outlet property="savingChart" destination="ttl-2o-ZSJ" id="A2r-EZ-e2a"/>
+                        <outlet property="spendingChart" destination="WWc-Fv-7SF" id="5sY-Mo-d6r"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taq-OA-euk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="368"/>
+            <point key="canvasLocation" x="1434.7826086956522" y="367.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BbS-DO-tBq">
