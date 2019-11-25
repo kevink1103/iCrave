@@ -10,10 +10,20 @@ import Foundation
 
 class DataAnalyzer {
     static func dailyBudget(formonth date: Date) -> Decimal? {
-        guard let monthlybudget = stringToDecimal(SharedUserDefaults.shared.getBudget()) else { return nil }
+        guard let monthlyBudget = stringToDecimal(SharedUserDefaults.shared.getBudget()) else { return nil }
         let range = Calendar.current.range(of: .day, in: .month, for: date)!
         let numDays = range.count
-        return monthlybudget / Decimal(numDays)
+        
+        // Deduct Month Overspending
+        let records = Record.getAll()
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count <= 0 { return nil }
+        let monthSpendingSum = records.filter({
+            $0.currency! == currency && (Calendar.current.dateComponents([.year, .month], from: $0.timestamp!) == Calendar.current.dateComponents([.year, .month], from: date))
+        }).map({ $0.amount! as Decimal }).reduce(0, +)
+        let monthLeft = monthlyBudget - monthSpendingSum
+        
+        return monthLeft / Decimal(numDays)
     }
     
     static func applyTimezone(_ timestamp: Date) -> Date {
