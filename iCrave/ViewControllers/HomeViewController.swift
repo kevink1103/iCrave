@@ -92,6 +92,9 @@ class HomeViewController: UITableViewController {
     }
     
     func drawRecords() {
+        for subview in recordsScroll.subviews {
+            subview.removeFromSuperview()
+        }
         let buttonPadding: CGFloat = 10
         var xOffset: CGFloat = 20
         let height = recordsScroll.frame.height
