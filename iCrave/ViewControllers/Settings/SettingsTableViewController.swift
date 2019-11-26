@@ -380,9 +380,38 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            Category.delete(category: categories[indexPath.row])
-            categories.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let category = self.categories[indexPath.row]
+            let innerRecords = Record.getAll(in: category)
+            
+            if innerRecords.count > 0 {
+                let budgetAlert = UIAlertController(title: "Delete Category", message: "Records belong to this category will be moved to Others.", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Confirm", style: .destructive) { (alertAction) in
+                    if Category.getObject(title: "Others") == nil {
+                        Category.create(title: "Others", color: "white")
+                    }
+                    let newCategory = Category.getObject(title: "Others")!
+                    for record in innerRecords {
+                        category.removeFromRecord(record)
+                        newCategory.addToRecord(record)
+                    }
+                    Category.delete(category: category)
+                    self.categories.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
+            }
+            else {
+                Category.delete(category: category)
+                categories.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
         }
     }
     
