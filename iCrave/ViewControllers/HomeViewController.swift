@@ -213,7 +213,7 @@ class HomeViewController: UITableViewController {
         let monthRange = dateComponent.month!
         
         if monthRange == 0 {
-            let passedDay = Calendar.current.dateComponents([.day], from: firstDate).day! - 1
+            let passedDay = Calendar.current.dateComponents([.year, .month, .day], from: firstDate).day! - 1
             let newMonthBudget = monthBudget - (todayBudget * Decimal(passedDay))
             let monthLeft = newMonthBudget - monthSum
             let monthBudgetProgress = monthLeft / monthBudget
