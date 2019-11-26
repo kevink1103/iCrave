@@ -31,7 +31,10 @@ class StatisticsTableViewController: UITableViewController {
         spendingChart.rightAxis.enabled = false
         spendingChart.xAxis.labelPosition = .bottom
         spendingChart.backgroundColor = .systemBackground
-        
+        spendingChart.noDataTextColor = UIColor(named: "DarkText")!
+        spendingChart.xAxis.labelTextColor = UIColor(named: "DarkText")!
+        spendingChart.leftAxis.labelTextColor = UIColor(named: "DarkText")!
+        spendingChart.rightAxis.labelTextColor = UIColor(named: "DarkText")!
         
         savingChart.isUserInteractionEnabled = false
         savingChart.legend.enabled = false
@@ -41,6 +44,10 @@ class StatisticsTableViewController: UITableViewController {
         savingChart.rightAxis.enabled = false
         savingChart.xAxis.labelPosition = .bottom
         savingChart.backgroundColor = .systemBackground
+        savingChart.noDataTextColor = UIColor(named: "DarkText")!
+        savingChart.xAxis.labelTextColor = UIColor(named: "DarkText")!
+        savingChart.leftAxis.labelTextColor = UIColor(named: "DarkText")!
+        savingChart.rightAxis.labelTextColor = UIColor(named: "DarkText")!
 
         drawCharts()
     }
@@ -192,6 +199,7 @@ class StatisticsTableViewController: UITableViewController {
         let spendingDataSet = BarChartDataSet(entries: spendingEntries)
         let spendingChartData = BarChartData(dataSet: spendingDataSet)
         spendingDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        spendingDataSet.valueTextColor = UIColor(named: "DarkText")!
         spendingChartData.barWidth = 0.5
         spendingChart.data = spendingChartData
         spendingChart.xAxis.labelCount = spendingEntries.count
@@ -203,6 +211,7 @@ class StatisticsTableViewController: UITableViewController {
         let savingDataSet = BarChartDataSet(entries: savingEntries)
         let savingChartData = BarChartData(dataSet: savingDataSet)
         savingDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        savingDataSet.valueTextColor = UIColor(named: "DarkText")!
         savingChartData.barWidth = 0.5
         savingChart.data = savingChartData
         savingChart.xAxis.labelCount = savingEntries.count

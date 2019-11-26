@@ -44,7 +44,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="fIc-5Q-app"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="See More"/>
                                                     <connections>
                                                         <segue destination="vAg-MU-5Sl" kind="show" identifier="Record" id="FZ5-J8-lzE"/>
@@ -56,7 +56,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="mOO-cF-ZVL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="See More"/>
                                                     <connections>
                                                         <segue destination="Gzr-bw-emU" kind="show" id="RKl-FY-jKj"/>
@@ -154,7 +154,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2T-H3-Ppg" customClass="CardHighlight" customModule="Cards">
                                                     <rect key="frame" x="20" y="11" width="374" height="230"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="230" id="J8d-Wo-DJR"/>
                                                     </constraints>
@@ -276,7 +276,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancel:" destination="jqn-jC-gzY" eventType="touchUpInside" id="2OJ-9m-ngG"/>
@@ -369,7 +369,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTI-WQ-oZp">
                                 <rect key="frame" x="20" y="713" width="374" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Aly-8W-Eon"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="K4A-fs-x6O"/>
@@ -431,7 +431,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancel:" destination="dDA-kt-I1x" eventType="touchUpInside" id="dzB-gV-Wva"/>
@@ -523,7 +523,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-sR-Aq7">
                                 <rect key="frame" x="20" y="713" width="374" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="THa-pR-lcP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="rLh-OK-pMh"/>
@@ -1064,7 +1064,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancel:" destination="jqn-jC-gzY" eventType="touchUpInside" id="upq-tc-ZR3"/>
@@ -1113,7 +1113,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBm-8k-Thg">
                                 <rect key="frame" x="20" y="713" width="374" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="D0u-KB-6Rc"/>
                                 </constraints>
@@ -1189,6 +1189,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="YWc-nw-ctS" secondAttribute="trailing" constant="20" id="ALj-yo-33D"/>
                                                 <constraint firstAttribute="bottom" secondItem="YWc-nw-ctS" secondAttribute="bottom" constant="10" id="D1C-AA-PZD"/>
@@ -1213,6 +1214,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="WWc-Fv-7SF" firstAttribute="top" secondItem="aDK-FC-6k7" secondAttribute="top" id="1jx-XX-FXn"/>
                                                 <constraint firstItem="WWc-Fv-7SF" firstAttribute="leading" secondItem="aDK-FC-6k7" secondAttribute="leading" constant="20" id="Mhr-MN-Oqg"/>
@@ -1237,6 +1239,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="ttl-2o-ZSJ" firstAttribute="top" secondItem="okW-LW-pTW" secondAttribute="top" id="7bC-QG-kRZ"/>
                                                 <constraint firstItem="ttl-2o-ZSJ" firstAttribute="leading" secondItem="okW-LW-pTW" secondAttribute="leading" constant="20" id="FBO-0V-f04"/>
@@ -1546,7 +1549,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancel:" destination="Nl3-au-UDN" eventType="touchUpInside" id="Wpt-7R-hZd"/>
@@ -1595,7 +1598,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCr-oB-lbq">
                                 <rect key="frame" x="20" y="713" width="374" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.43921568630000002" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="myL-zF-kvS"/>
                                 </constraints>
