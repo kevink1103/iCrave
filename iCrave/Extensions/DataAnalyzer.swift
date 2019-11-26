@@ -13,17 +13,7 @@ class DataAnalyzer {
         guard let monthlyBudget = stringToDecimal(SharedUserDefaults.shared.getBudget()) else { return nil }
         let range = Calendar.current.range(of: .day, in: .month, for: date)!
         let numDays = range.count
-        
-        // Deduct Month Overspending
-        let records = Record.getAll()
-        let currency = SharedUserDefaults.shared.getCurrency()
-        if currency.count <= 0 { return nil }
-        let monthSpendingSum = records.filter({
-            $0.currency! == currency && (Calendar.current.dateComponents([.year, .month], from: $0.timestamp!) == Calendar.current.dateComponents([.year, .month], from: date))
-        }).map({ $0.amount! as Decimal }).reduce(0, +)
-        let monthLeft = monthlyBudget - monthSpendingSum
-        
-        return monthLeft / Decimal(numDays)
+        return monthlyBudget / Decimal(numDays)
     }
     
     static func applyTimezone(_ timestamp: Date) -> Date {
@@ -96,18 +86,7 @@ class DataAnalyzer {
         return monthSum
     }
     
-    static func currentTotalSaving() -> Decimal? {
-        let wishlist = WishItem.getAll()
-        let records = Record.getAll()
-        
-        let achievedItems = wishlist.filter({ $0.achieved == true }).map({ $0.price! as Decimal }).reduce(0, +)
-        
-        let currency = SharedUserDefaults.shared.getCurrency()
-        if currency.count <= 0 { return nil }
-        let recordsSum = records.filter({ $0.currency! == currency }).map({ $0.amount! as Decimal }).reduce(0, +)
-        //  && (Calendar.current.dateComponents([.year, .month, .day], from: $0.timestamp!) != Calendar.current.dateComponents([.year, .month, .day], from: Date()))
-        
-        // Calculate for savings
+    static func currentTotalBudget() -> Decimal? {
         guard let startDate = SharedUserDefaults.shared.getStartDate() else { return nil }
         let firstDate = applyTimezone(startDate)
         let currentDate = applyTimezone(Date())
@@ -122,7 +101,7 @@ class DataAnalyzer {
         // First month
         if monthRange == 0 {
             guard let budget = dailyBudget(formonth: startDate) else { return nil }
-            let days = dateComponent.day!+1
+            let days = dateComponent.day!+2
             totalBudget += budget * Decimal(days)
             totalDays += days
         }
@@ -139,13 +118,29 @@ class DataAnalyzer {
             let newDate = Calendar.current.date(byAdding: .month, value: monthRange, to: firstDate)!
             let newComponent = Calendar.current.dateComponents([.year, .month, .day], from: newDate, to: currentDate)
             guard let budget = dailyBudget(formonth: newDate) else { return nil }
-            let days = newComponent.day!+1
+            let days = newComponent.day!+2
             totalBudget += budget * Decimal(days)
             totalDays += days
         }
         // today's budget is already included and regarded as current saving
         // print(totalDays)
-        var roundedTotal: Decimal = Decimal()
+        return totalBudget
+    }
+    
+    static func currentTotalSaving() -> Decimal? {
+        let wishlist = WishItem.getAll()
+        let records = Record.getAll()
+        
+        let achievedItems = wishlist.filter({ $0.achieved == true }).map({ $0.price! as Decimal }).reduce(0, +)
+        
+        let currency = SharedUserDefaults.shared.getCurrency()
+        if currency.count <= 0 { return nil }
+        let recordsSum = records.filter({ $0.currency! == currency }).map({ $0.amount! as Decimal }).reduce(0, +)
+        //  && (Calendar.current.dateComponents([.year, .month, .day], from: $0.timestamp!) != Calendar.current.dateComponents([.year, .month, .day], from: Date()))
+        
+        // Calculate for savings
+        guard var totalBudget = currentTotalBudget() else { return nil }
+        var roundedTotal = Decimal()
         NSDecimalRound(&roundedTotal, &totalBudget, 2, .plain)
         
         let currentTotalSaving = totalBudget - achievedItems - recordsSum

@@ -178,29 +178,58 @@ class HomeViewController: UITableViewController {
         
         let currency = SharedUserDefaults.shared.getCurrency()
         if currency.count == 0 { return }
-        
-        // Daily Budget
-        guard let todayBudget = DataAnalyzer.dailyBudget(formonth: Date()) else { return }
-        let todaySum = DataAnalyzer.todayTotalSpending() ?? 0
-        let dailyLeft = todayBudget - todaySum
-        let dailyBudgetProgress = dailyLeft / todayBudget
-        
-        dailyBudgetLabel.text = "Daily Budget: \(decimalToString(dailyLeft)) / \(decimalToString(todayBudget)) \(currency)"
-        if dailyBudgetProgress > 0 {
-            dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
-        }
-        
-        // Monthly Budget
         let storedBudget = SharedUserDefaults.shared.getBudget()
         if storedBudget.count == 0 { return }
         guard let monthBudget = stringToDecimal(storedBudget) else { return }
-        guard let monthSum = DataAnalyzer.monthTotalSpending() else { return }
-        let monthLeft = monthBudget - monthSum
-        let monthBudgetProgress = monthLeft / monthBudget
         
-        monthlyBudgetLabel.text = "Monthly Budget: \(decimalToString(monthLeft)) / \(decimalToString(monthBudget)) \(currency)"
-        if monthBudgetProgress > 0 {
-            monthlyBudgetBar.progress = Float(truncating: monthBudgetProgress as NSNumber)
+        let today = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        let monthDays = Calendar.current.range(of: .day, in: .month, for: Date())!.count
+        guard let totalSaving = DataAnalyzer.currentTotalSaving() else { return }
+        guard let todayBudget = DataAnalyzer.dailyBudget(formonth: Date()) else { return }
+        let todaySum = DataAnalyzer.todayTotalSpending() ?? 0
+        let monthSum = DataAnalyzer.monthTotalSpending() ?? 0
+        
+        if totalSaving >= 0 {
+            let todayLeft = todayBudget - todaySum
+            let dailyBudgetProgress = todayLeft / todayBudget
+            dailyBudgetLabel.text = "Daily Budget: \(decimalToString(todayLeft)) / \(decimalToString(todayBudget)) \(currency)"
+            if dailyBudgetProgress > 0 {
+                dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
+            }
+        }
+        else {
+            let newTodayBudget = todayBudget + (totalSaving / Decimal(monthDays - today.day!))
+            let todayLeft = newTodayBudget - todaySum
+            let dailyBudgetProgress = todayLeft / newTodayBudget
+            dailyBudgetLabel.text = "Daily Budget: \(decimalToString(todayLeft)) / \(decimalToString(newTodayBudget)) \(currency)"
+            if dailyBudgetProgress > 0 {
+                dailyBudgetBar.progress = Float(truncating: dailyBudgetProgress as NSNumber)
+            }
+        }
+        
+        guard let startDate = SharedUserDefaults.shared.getStartDate() else { return }
+        let firstDate = DataAnalyzer.applyTimezone(startDate)
+        let currentDate = DataAnalyzer.applyTimezone(Date())
+        let dateComponent = Calendar.current.dateComponents([.month, .day], from: firstDate, to: currentDate)
+        let monthRange = dateComponent.month!
+        
+        if monthRange == 0 {
+            let passedDay = Calendar.current.dateComponents([.day], from: firstDate).day! - 1
+            let newMonthBudget = monthBudget - (todayBudget * Decimal(passedDay))
+            let monthLeft = newMonthBudget - monthSum
+            let monthBudgetProgress = monthLeft / monthBudget
+            monthlyBudgetLabel.text = "Monthly Budget: \(decimalToString(monthLeft)) / \(decimalToString(monthBudget)) \(currency)"
+            if monthBudgetProgress > 0 {
+                monthlyBudgetBar.progress = Float(truncating: monthBudgetProgress as NSNumber)
+            }
+        }
+        else {
+            let monthLeft = monthBudget - monthSum
+            let monthBudgetProgress = monthLeft / monthBudget
+            monthlyBudgetLabel.text = "Monthly Budget: \(decimalToString(monthLeft)) / \(decimalToString(monthBudget)) \(currency)"
+            if monthBudgetProgress > 0 {
+                monthlyBudgetBar.progress = Float(truncating: monthBudgetProgress as NSNumber)
+            }
         }
         
         // Saving Status

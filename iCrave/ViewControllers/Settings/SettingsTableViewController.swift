@@ -29,7 +29,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +40,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             return 3
         case 2:
             return 3
+        case 3:
+            return 5
         default:
             return 0
         }
@@ -53,6 +55,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             return "Monetary"
         case 2:
             return "Notifications"
+        case 3:
+            return "Danger Zone"
         default:
             return ""
         }
@@ -66,6 +70,8 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             return "Set up your monthly budget, currency, and start saving date."
         case 2:
             return "Adjust your notification preferences."
+        case 3:
+            return "Reset data you want."
         default:
             return ""
         }
@@ -92,6 +98,7 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         }
         else if section == 1 {
             cell = tableView.dequeueReusableCell(withIdentifier: "MoneyCell", for: indexPath)
+            
             switch (row) {
             case 0:
                 cell.textLabel?.text = "Monthly Budget"
@@ -138,6 +145,24 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 cell.textLabel?.text = ""
             }
         }
+        else if section == 3 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ResetCell", for: indexPath)
+            
+            switch (row) {
+            case 0:
+                cell.textLabel?.text = "Reset Categories"
+            case 1:
+                cell.textLabel?.text = "Reset Records"
+            case 2:
+                cell.textLabel?.text = "Reset Wishlist"
+            case 3:
+                cell.textLabel?.text = "Reset Monetary"
+            case 4:
+                cell.textLabel?.text = "Reset All"
+            default:
+                cell.textLabel?.text = ""
+            }
+        }
         // Optimization for select style default
         let selectedBgView = UIView()
         selectedBgView.backgroundColor = cell.backgroundColor
@@ -152,16 +177,19 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            if indexPath.row < categories.count {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 0 {
+            if row < categories.count {
                 performSegue(withIdentifier: "EditCategory", sender: categories[indexPath.row])
             }
             else {
                 performSegue(withIdentifier: "AddCategory", sender: self)
             }
         }
-        else if indexPath.section == 1 {
-            switch (indexPath.row) {
+        else if section == 1 {
+            switch (row) {
             case 0:
                 // Set Budget
                 let budgetAlert = UIAlertController(title: "Monthly Budget", message: "Set your monthly budget.", preferredStyle: .alert)
@@ -220,7 +248,33 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
                 
                 datePicker?.show()
             default:
-                print("Hi")
+                return
+            }
+        }
+        else if section == 3 {
+            switch (row) {
+            case 0:
+                let budgetAlert = UIAlertController(title: "Reset Categories", message: "Set your monthly budget.", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Reset", style: .default) { (alertAction) in
+                    print("do something")
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
+            case 1:
+                return
+            case 2:
+                return
+            case 3:
+                return
+            case 4:
+                return
+            default:
+                return
             }
         }
     }
