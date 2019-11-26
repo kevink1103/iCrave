@@ -132,7 +132,7 @@ class StatisticsTableViewController: UITableViewController {
                     todayLeft = newTodayBudget - todaySum
                 }
                 
-                if startDate <= DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
+                if startDate < DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
                     savingEntries.append(BarChartDataEntry(x: Double(x), y: Double(truncating: todayLeft as NSNumber)))
                 }
                 else {
@@ -179,7 +179,7 @@ class StatisticsTableViewController: UITableViewController {
                     monthLeft = monthBudget - monthSum
                 }
                 
-                if startDate <= DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
+                if startDate < DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
                     savingEntries.append(BarChartDataEntry(x: Double(x), y: Double(truncating: monthLeft as NSNumber)))
                 }
                 else {

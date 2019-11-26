@@ -207,8 +207,7 @@ class HomeViewController: UITableViewController {
             }
         }
         
-        guard let startDate = SharedUserDefaults.shared.getStartDate() else { return }
-        let firstDate = DataAnalyzer.applyTimezone(startDate)
+        guard let firstDate = SharedUserDefaults.shared.getStartDate() else { return }
         let currentDate = DataAnalyzer.applyTimezone(Date())
         let dateComponent = Calendar.current.dateComponents([.month, .day], from: firstDate, to: currentDate)
         let monthRange = dateComponent.month!

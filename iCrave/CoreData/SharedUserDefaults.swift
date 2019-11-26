@@ -35,11 +35,27 @@ class SharedUserDefaults {
     }
     
     func setStartDate(date: Date) {
-        userDefaults?.set(date, forKey: "date")
+        var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        dateComponents.hour! = 0
+        dateComponents.minute! = 0
+        dateComponents.second! = 0
+        guard let newDate = Calendar.current.date(from: dateComponents) else { return }
+        print(date)
+        print(newDate)
+        userDefaults?.set(newDate, forKey: "date")
         userDefaults?.synchronize()
     }
     
     func getStartDate() -> Date? {
-        return userDefaults?.value(forKey: "date") as? Date
+        guard let date = userDefaults?.value(forKey: "date") as? Date else { return nil }
+        return DataAnalyzer.applyTimezone(date)
+    }
+    
+    func resetAll() {
+        guard let dictionary = userDefaults?.dictionaryRepresentation() else { return }
+        dictionary.keys.forEach { key in
+            userDefaults?.removeObject(forKey: key)
+        }
+        userDefaults?.synchronize()
     }
 }

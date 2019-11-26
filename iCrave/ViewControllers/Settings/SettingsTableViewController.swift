@@ -254,25 +254,66 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         else if section == 3 {
             switch (row) {
             case 0:
-                let budgetAlert = UIAlertController(title: "Reset Categories", message: "Set your monthly budget.", preferredStyle: .alert)
+                let budgetAlert = UIAlertController(title: "Reset Categories", message: nil, preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "Cancel", style: .default)
-                let action = UIAlertAction(title: "Reset", style: .default) { (alertAction) in
-                    print("do something")
+                let action = UIAlertAction(title: "Reset", style: .destructive) { (alertAction) in
+                    Category.deleteAll()
+                    self.tableView.reloadData()
                 }
                 cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
-                action.setValue(UIColor.systemOrange, forKey: "titleTextColor")
                 
                 budgetAlert.addAction(cancel)
                 budgetAlert.addAction(action)
                 present(budgetAlert, animated:true, completion: nil)
             case 1:
-                return
+                let budgetAlert = UIAlertController(title: "Reset Records", message: nil, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Reset", style: .destructive) { (alertAction) in
+                    Record.deleteAll()
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
             case 2:
-                return
+                let budgetAlert = UIAlertController(title: "Reset Wishlist", message: nil, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Reset", style: .destructive) { (alertAction) in
+                    WishItem.deleteAll()
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
             case 3:
-                return
+                let budgetAlert = UIAlertController(title: "Reset Monetary", message: nil, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Reset", style: .destructive) { (alertAction) in
+                    SharedUserDefaults.shared.resetAll()
+                    self.tableView.reloadData()
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
             case 4:
-                return
+                let budgetAlert = UIAlertController(title: "Reset All", message: nil, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .default)
+                let action = UIAlertAction(title: "Reset", style: .destructive) { (alertAction) in
+                    Category.deleteAll()
+                    Record.deleteAll()
+                    WishItem.deleteAll()
+                    SharedUserDefaults.shared.resetAll()
+                    self.tableView.reloadData()
+                }
+                cancel.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                
+                budgetAlert.addAction(cancel)
+                budgetAlert.addAction(action)
+                present(budgetAlert, animated:true, completion: nil)
             default:
                 return
             }

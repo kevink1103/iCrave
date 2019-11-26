@@ -87,8 +87,7 @@ class DataAnalyzer {
     }
     
     static func currentTotalBudget() -> Decimal? {
-        guard let startDate = SharedUserDefaults.shared.getStartDate() else { return nil }
-        let firstDate = applyTimezone(startDate)
+        guard let firstDate = SharedUserDefaults.shared.getStartDate() else { return nil }
         let currentDate = applyTimezone(Date())
         
         // Replace the hour (time) of both dates with 00:00
@@ -100,8 +99,8 @@ class DataAnalyzer {
         
         // First month
         if monthRange == 0 {
-            guard let budget = dailyBudget(formonth: startDate) else { return nil }
-            let days = dateComponent.day!+2
+            guard let budget = dailyBudget(formonth: firstDate) else { return nil }
+            let days = dateComponent.day! + 1
             totalBudget += budget * Decimal(days)
             totalDays += days
         }
@@ -118,12 +117,11 @@ class DataAnalyzer {
             let newDate = Calendar.current.date(byAdding: .month, value: monthRange, to: firstDate)!
             let newComponent = Calendar.current.dateComponents([.year, .month, .day], from: newDate, to: currentDate)
             guard let budget = dailyBudget(formonth: newDate) else { return nil }
-            let days = newComponent.day!+2
+            let days = newComponent.day! + 1
             totalBudget += budget * Decimal(days)
             totalDays += days
         }
         // today's budget is already included and regarded as current saving
-        // print(totalDays)
         return totalBudget
     }
     
@@ -136,7 +134,6 @@ class DataAnalyzer {
         let currency = SharedUserDefaults.shared.getCurrency()
         if currency.count <= 0 { return nil }
         let recordsSum = records.filter({ $0.currency! == currency }).map({ $0.amount! as Decimal }).reduce(0, +)
-        //  && (Calendar.current.dateComponents([.year, .month, .day], from: $0.timestamp!) != Calendar.current.dateComponents([.year, .month, .day], from: Date()))
         
         // Calculate for savings
         guard var totalBudget = currentTotalBudget() else { return nil }
