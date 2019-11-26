@@ -32,7 +32,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="pgs-o1-o4W"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="md3-dx-Co7">
@@ -192,7 +192,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="xdo-4M-yns"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1180,9 +1180,9 @@
                                                         <constraint firstAttribute="height" constant="31" id="0rF-A3-DsD"/>
                                                     </constraints>
                                                     <segments>
-                                                        <segment title="Daily"/>
-                                                        <segment title="Monthly"/>
-                                                        <segment title="Yearly"/>
+                                                        <segment title="D"/>
+                                                        <segment title="M"/>
+                                                        <segment title="Y"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="periodChanged:" destination="Gzr-bw-emU" eventType="valueChanged" id="hJe-lK-oQl"/>

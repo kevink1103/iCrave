@@ -25,7 +25,7 @@ class StatisticsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         spendingChart.isUserInteractionEnabled = false
         spendingChart.legend.enabled = false
-        spendingChart.xAxis.avoidFirstLastClippingEnabled = false
+        spendingChart.xAxis.avoidFirstLastClippingEnabled = true
         spendingChart.xAxis.drawGridLinesEnabled = false
         spendingChart.leftAxis.enabled = false
         spendingChart.rightAxis.enabled = false
@@ -35,7 +35,7 @@ class StatisticsTableViewController: UITableViewController {
         
         savingChart.isUserInteractionEnabled = false
         savingChart.legend.enabled = false
-        savingChart.xAxis.avoidFirstLastClippingEnabled = false
+        savingChart.xAxis.avoidFirstLastClippingEnabled = true
         savingChart.xAxis.drawGridLinesEnabled = false
         savingChart.leftAxis.enabled = false
         savingChart.rightAxis.enabled = false
@@ -50,13 +50,10 @@ class StatisticsTableViewController: UITableViewController {
     }
     
     func drawCharts() {
-        drawSpendingChart()
-        drawSavingChart()
-    }
-    
-    func drawSpendingChart() {
-        var dataEntries: [BarChartDataEntry] = []
+        var spendingEntries: [BarChartDataEntry] = []
+        var savingEntries: [BarChartDataEntry] = []
         let now = Date()
+        guard let startDate = SharedUserDefaults.shared.getStartDate() else { return }
         let mode = periodControl.selectedSegmentIndex
         switch (mode) {
         case 0:
@@ -72,9 +69,77 @@ class StatisticsTableViewController: UITableViewController {
                 if filterData.count > 0 {
                     y = Double(truncating: filterData[0] as NSNumber)
                 }
-                dataEntries.append(BarChartDataEntry(x: Double(x), y: y))
+                spendingEntries.append(BarChartDataEntry(x: Double(x), y: y))
+                
+                let today = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+                let monthDays = Calendar.current.range(of: .day, in: .month, for: Date())!.count
+                guard let totalSaving = DataAnalyzer.currentTotalSaving() else { return }
+                guard let todayBudget = DataAnalyzer.dailyBudget(formonth: newDate) else { return }
+                var todaySum: Decimal = 0
+                if filterData.count > 0 {
+                    todaySum = filterData[0]
+                }
+                
+                var todayLeft: Decimal = 0
+                if totalSaving >= 0 {
+                    todayLeft = todayBudget - todaySum
+                }
+                else {
+                    let newTodayBudget = todayBudget + (totalSaving / Decimal(monthDays - today.day!))
+                    todayLeft = newTodayBudget - todaySum
+                }
+                
+                if startDate < DataAnalyzer.applyTimezone(newDate) {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: Double(truncating: todayLeft as NSNumber)))
+                }
+                else {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: 0))
+                }
             }
         case 1:
+            let data = DataAnalyzer.groupRecordsByDay()
+            let range = Calendar.current.range(of: .day, in: .month, for: Date())!.count
+            for day in 1...range {
+                var newComponent = Calendar.current.dateComponents([.year, .month, .day], from: now)
+                newComponent.day = day
+                let x = newComponent.day!
+                var y: Double = 0
+                let filterData = data.filter({
+                    Calendar.current.dateComponents([.year, .month, .day], from: $0.key) == newComponent
+                }).map({ $0.value.map({ $0.amount! as Decimal }).reduce(0, +) })
+                if filterData.count > 0 {
+                    y = Double(truncating: filterData[0] as NSNumber)
+                }
+                spendingEntries.append(BarChartDataEntry(x: Double(x), y: y))
+                
+                let today = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+                let monthDays = Calendar.current.range(of: .day, in: .month, for: Date())!.count
+                guard let totalSaving = DataAnalyzer.currentTotalSaving() else { return }
+                newComponent.day! += 1
+                guard let newDate = Calendar.current.date(from: newComponent) else { return }
+                guard let todayBudget = DataAnalyzer.dailyBudget(formonth: newDate) else { return }
+                var todaySum: Decimal = 0
+                if filterData.count > 0 {
+                    todaySum = filterData[0]
+                }
+                
+                var todayLeft: Decimal = 0
+                if totalSaving >= 0 {
+                    todayLeft = todayBudget - todaySum
+                }
+                else {
+                    let newTodayBudget = todayBudget + (totalSaving / Decimal(monthDays - today.day!))
+                    todayLeft = newTodayBudget - todaySum
+                }
+                
+                if startDate <= DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: Double(truncating: todayLeft as NSNumber)))
+                }
+                else {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: 0))
+                }
+            }
+        case 2:
             let data = DataAnalyzer.groupRecordsByMonth()
             for month in 1...12 {
                 let newDate = Calendar.current.date(byAdding: .month, value: -12+month, to: now)!
@@ -87,49 +152,64 @@ class StatisticsTableViewController: UITableViewController {
                 if filterData.count > 0 {
                     y = Double(truncating: filterData[0] as NSNumber)
                 }
-                dataEntries.append(BarChartDataEntry(x: Double(x), y: y))
-            }
-        case 2:
-            let data = DataAnalyzer.groupRecordsByYear()
-            for year in 1...10 {
-                let newDate = Calendar.current.date(byAdding: .year, value: -10+year, to: now)!
-                let newComponent = Calendar.current.dateComponents([.year], from: newDate)
-                let x = newComponent.year!
-                var y: Double = 0
-                let filterData = data.filter({
-                    Calendar.current.dateComponents([.year], from: $0.key) == newComponent
-                }).map({ $0.value.map({ $0.amount! as Decimal }).reduce(0, +) })
+                spendingEntries.append(BarChartDataEntry(x: Double(x), y: y))
+                
+                let storedBudget = SharedUserDefaults.shared.getBudget()
+                if storedBudget.count == 0 { return }
+                guard let monthBudget = stringToDecimal(storedBudget) else { return }
+                var monthSum: Decimal = 0
                 if filterData.count > 0 {
-                    y = Double(truncating: filterData[0] as NSNumber)
+                    monthSum = filterData[0]
                 }
-                dataEntries.append(BarChartDataEntry(x: Double(x), y: y))
+                
+                guard let startDate = SharedUserDefaults.shared.getStartDate() else { return }
+                let firstDate = DataAnalyzer.applyTimezone(startDate)
+                let currentDate = DataAnalyzer.applyTimezone(Date())
+                let dateComponent = Calendar.current.dateComponents([.month, .day], from: firstDate, to: currentDate)
+                let monthRange = dateComponent.month!
+                guard let todayBudget = DataAnalyzer.dailyBudget(formonth: currentDate) else { return }
+                
+                var monthLeft: Decimal = 0
+                if monthRange == 0 {
+                    let passedDay = Calendar.current.dateComponents([.day], from: firstDate).day! - 1
+                    let newMonthBudget = monthBudget - (todayBudget * Decimal(passedDay))
+                    monthLeft = newMonthBudget - monthSum
+                }
+                else {
+                    monthLeft = monthBudget - monthSum
+                }
+                
+                if startDate <= DataAnalyzer.applyTimezone(newDate) && newDate < DataAnalyzer.applyTimezone(now) {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: Double(truncating: monthLeft as NSNumber)))
+                }
+                else {
+                    savingEntries.append(BarChartDataEntry(x: Double(x), y: 0))
+                }
             }
         default:
             return
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries)
-        let chartData = BarChartData(dataSet: chartDataSet)
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
-        chartData.barWidth = 0.5
-        spendingChart.data = chartData
-        spendingChart.xAxis.labelCount = dataEntries.count
-        spendingChart.animate(xAxisDuration: 0.5, yAxisDuration: 1.5)
-    }
-    
-    func drawSavingChart() {
-        var dataEntries: [BarChartDataEntry] = []
-        let now = DataAnalyzer.applyTimezone(Date())
-        let mode = periodControl.selectedSegmentIndex
-        switch (mode) {
-        case 0:
-            print("daily")
-        case 1:
-            print("monthly")
-        case 2:
-            print("yearly")
-        default:
-            return
+        let spendingDataSet = BarChartDataSet(entries: spendingEntries)
+        let spendingChartData = BarChartData(dataSet: spendingDataSet)
+        spendingDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        spendingChartData.barWidth = 0.5
+        spendingChart.data = spendingChartData
+        spendingChart.xAxis.labelCount = spendingEntries.count
+        if spendingEntries.count >= 30 {
+            spendingChart.xAxis.labelCount = spendingEntries.count / 2
         }
+        spendingChart.animate(xAxisDuration: 0.5, yAxisDuration: 1.5)
+        
+        let savingDataSet = BarChartDataSet(entries: savingEntries)
+        let savingChartData = BarChartData(dataSet: savingDataSet)
+        savingDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        savingChartData.barWidth = 0.5
+        savingChart.data = savingChartData
+        savingChart.xAxis.labelCount = savingEntries.count
+        if savingEntries.count >= 30 {
+            savingChart.xAxis.labelCount = savingEntries.count / 2
+        }
+        savingChart.animate(xAxisDuration: 0.5, yAxisDuration: 1.5)
     }
     
     @IBAction func periodChanged(_ sender: Any) {
