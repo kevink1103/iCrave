@@ -51,6 +51,15 @@ class SharedUserDefaults {
         return DataAnalyzer.applyTimezone(date)
     }
     
+    func setNotification(id: String, mode: Bool) {
+        userDefaults?.set(mode, forKey: id)
+        userDefaults?.synchronize()
+    }
+    
+    func getNotification(id: String) -> Bool {
+        return userDefaults?.value(forKey: id) as? Bool ?? false
+    }
+    
     func resetAll() {
         guard let dictionary = userDefaults?.dictionaryRepresentation() else { return }
         dictionary.keys.forEach { key in

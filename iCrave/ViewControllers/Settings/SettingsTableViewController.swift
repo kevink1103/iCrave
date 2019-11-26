@@ -133,17 +133,22 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
             switchView.tag = indexPath.row
             switchView.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
             cell.accessoryView = switchView
+            var status = false
             
             switch (row) {
             case 0:
                 cell.textLabel?.text = "Morning Reminder"
+                status = SharedUserDefaults.shared.getNotification(id: "morning")
             case 1:
                 cell.textLabel?.text = "Evening Reminder"
+                status = SharedUserDefaults.shared.getNotification(id: "evening")
             case 2:
                 cell.textLabel?.text = "Monthly Report"
+                status = SharedUserDefaults.shared.getNotification(id: "monthly")
             default:
                 cell.textLabel?.text = ""
             }
+            switchView.setOn(status, animated: true)
         }
         else if section == 3 {
             cell = tableView.dequeueReusableCell(withIdentifier: "ResetCell", for: indexPath)
@@ -171,9 +176,51 @@ class SettingsTableViewController: UITableViewController, UIPickerViewDelegate, 
         return cell
     }
     
-    @objc func switchChanged(_ sender : UISwitch!){
-          print("table row switch Changed \(sender.tag)")
-          print("The switch is \(sender.isOn ? "ON" : "OFF")")
+    @objc func switchChanged(_ sender : UISwitch!) {
+        //notification
+        let manager = LocalNotificationManager()
+        guard let dailyBudget = DataAnalyzer.dailyBudget(formonth: DataAnalyzer.applyTimezone(Date())) else { return }
+        let amount = decimalToString(dailyBudget)
+        var date = DateComponents()
+        date.timeZone = TimeZone.current
+        date.hour = 8
+        date.minute = 0
+        let morning = myNotification(id: "morning", title: "Your Daily Budget", body: "For today, you can use $\(amount). Spend less to afford your goal.", datetime: date)
+        date.hour = 21
+        let evening = myNotification(id: "evening", title: "How much did you spend today?", body: "Don't forget to record your spendings for today.", datetime: date)
+        date.hour = 8
+        date.day = 28
+        let monthly = myNotification(id: "monthly", title: "Your wishitem is on your way!", body: "Check out the latest saving progress to buy your wishitem.", datetime: date)
+        
+        switch (sender.tag) {
+        case 0:
+            if (sender.isOn) {
+                SharedUserDefaults.shared.setNotification(id: morning.id, mode: true)
+                manager.notifications.append(morning)
+            } else {
+                SharedUserDefaults.shared.setNotification(id: morning.id, mode: false)
+                manager.cancelNoti(id: "morning")
+            }
+        case 1:
+            if (sender.isOn) {
+                SharedUserDefaults.shared.setNotification(id: evening.id, mode: true)
+                manager.notifications.append(evening)
+            } else {
+                SharedUserDefaults.shared.setNotification(id: evening.id, mode: false)
+                manager.cancelNoti(id: "evening")
+            }
+        case 2:
+            if (sender.isOn) {
+                SharedUserDefaults.shared.setNotification(id: monthly.id, mode: true)
+                manager.notifications.append(monthly)
+            } else {
+                SharedUserDefaults.shared.setNotification(id: monthly.id, mode: true)
+                manager.cancelNoti(id: "monthly")
+            }
+        default:
+            break
+        }
+        manager.schedule()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
