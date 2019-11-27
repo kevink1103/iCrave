@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYn-0U-2Cb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-t5-ClX" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="8" y="37" width="304" height="20"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6y9-Y2-oRJ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbi-SH-TTw">
+                                        <rect key="frame" x="8" y="65" width="304" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ZaY-ZT-dPL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvc-20-Sem" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="8" y="94" width="304" height="20"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="PNe-26-lbg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-5e-h0J">
+                                        <rect key="frame" x="8" y="122" width="304" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="DQJ-e9-smv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dn3-NL-iKY" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="8" y="151" width="304" height="20"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="9Oq-Id-ZDU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-7I-Ek1">
+                                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="WK8-hk-ODy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h5f-t5-ClX" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="0Ig-qO-88W"/>
+                                    <constraint firstItem="h5f-t5-ClX" firstAttribute="top" secondItem="J9d-7I-Ek1" secondAttribute="bottom" constant="8" id="6RA-e9-LPA"/>
+                                    <constraint firstItem="J9d-7I-Ek1" firstAttribute="top" secondItem="iYn-0U-2Cb" secondAttribute="top" constant="8" id="6fc-FF-bYn"/>
+                                    <constraint firstItem="Aod-5e-h0J" firstAttribute="top" secondItem="hvc-20-Sem" secondAttribute="bottom" constant="8" id="EbS-8O-Slv"/>
+                                    <constraint firstItem="Pbi-SH-TTw" firstAttribute="top" secondItem="h5f-t5-ClX" secondAttribute="bottom" constant="8" id="Esg-ib-kfQ"/>
+                                    <constraint firstItem="hvc-20-Sem" firstAttribute="top" secondItem="Pbi-SH-TTw" secondAttribute="bottom" constant="8" id="MyR-qh-APU"/>
+                                    <constraint firstAttribute="trailing" secondItem="dn3-NL-iKY" secondAttribute="trailing" constant="8" id="O4H-vQ-Lar"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aod-5e-h0J" secondAttribute="trailing" constant="8" id="Og3-u6-wTr"/>
+                                    <constraint firstItem="Pbi-SH-TTw" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="PJq-qY-SPu"/>
+                                    <constraint firstAttribute="height" constant="180" id="QfV-NU-aBT"/>
+                                    <constraint firstAttribute="trailing" secondItem="J9d-7I-Ek1" secondAttribute="trailing" constant="8" id="RLg-mN-x1E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pbi-SH-TTw" secondAttribute="trailing" constant="8" id="RoN-rb-3fC"/>
+                                    <constraint firstItem="Aod-5e-h0J" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="TfQ-ZD-MHx"/>
+                                    <constraint firstAttribute="trailing" secondItem="hvc-20-Sem" secondAttribute="trailing" constant="8" id="ZM0-1E-vhe"/>
+                                    <constraint firstItem="dn3-NL-iKY" firstAttribute="top" secondItem="Aod-5e-h0J" secondAttribute="bottom" constant="8" id="aI5-d2-1FU"/>
+                                    <constraint firstItem="J9d-7I-Ek1" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="ipU-lQ-MhM"/>
+                                    <constraint firstAttribute="trailing" secondItem="h5f-t5-ClX" secondAttribute="trailing" constant="8" id="mVY-8v-Bxt"/>
+                                    <constraint firstItem="hvc-20-Sem" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="zAq-og-iFX"/>
+                                    <constraint firstItem="dn3-NL-iKY" firstAttribute="leading" secondItem="iYn-0U-2Cb" secondAttribute="leading" constant="8" id="zry-Mw-QAp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iYn-0U-2Cb" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="9Uq-g8-V3f"/>
+                            <constraint firstItem="iYn-0U-2Cb" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="BfW-7K-UEc"/>
+                            <constraint firstItem="iYn-0U-2Cb" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="YAK-dG-tHx"/>
+                            <constraint firstItem="iYn-0U-2Cb" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="aET-W4-dJB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="180"/>
+                    <connections>
+                        <outlet property="dailyBudgetBar" destination="h5f-t5-ClX" id="E3F-eU-Kcj"/>
+                        <outlet property="dailyBudgetLabel" destination="J9d-7I-Ek1" id="mtY-Jj-Srv"/>
+                        <outlet property="monthlyBudgetBar" destination="hvc-20-Sem" id="6AX-ak-faU"/>
+                        <outlet property="monthlyBudgetLabel" destination="Pbi-SH-TTw" id="8QQ-Wj-A4j"/>
+                        <outlet property="savingStatusBar" destination="dn3-NL-iKY" id="lsW-MJ-UlK"/>
+                        <outlet property="savingStatusLabel" destination="Aod-5e-h0J" id="VJs-RA-QvK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+</document>

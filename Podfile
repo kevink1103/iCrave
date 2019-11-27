@@ -22,3 +22,12 @@ target 'iCrave' do
   end
 
 end
+
+target 'Widget' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for iCrave
+  pod 'GradientProgressBar'
+
+end

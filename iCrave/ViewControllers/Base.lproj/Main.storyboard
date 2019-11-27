@@ -63,7 +63,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Ea-iBO">
-                                                    <rect key="frame" x="20" y="453" width="374" height="191"/>
+                                                    <rect key="frame" x="20" y="453" width="374" height="190"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70J-aE-Apj">
                                                             <rect key="frame" x="0.0" y="8" width="374" height="21"/>
@@ -133,7 +133,7 @@
                                                         </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="191" id="00L-cp-yWW"/>
+                                                        <constraint firstAttribute="height" constant="190" id="00L-cp-yWW"/>
                                                         <constraint firstItem="d2T-fq-slx" firstAttribute="trailing" secondItem="Oay-wd-jy3" secondAttribute="trailing" id="4Ar-Br-hWJ"/>
                                                         <constraint firstItem="WYm-zV-V35" firstAttribute="top" secondItem="WJ5-kO-L1y" secondAttribute="bottom" constant="8" id="9lu-fh-rFx"/>
                                                         <constraint firstItem="WYm-zV-V35" firstAttribute="leading" secondItem="WJ5-kO-L1y" secondAttribute="leading" id="A7M-3w-nW4"/>
